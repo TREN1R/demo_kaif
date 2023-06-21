@@ -1,0 +1,370 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="ru">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Задачи бухгалтерского учета</title>
+</head>
+
+<body>
+
+<table border="3" cellpadding="20" cellspacing="0" width="1715" height="7360" bordercolorlight="#0000FF" background="Fon.jpg">
+	<!-- MSTableType="layout" -->
+	<tr>
+		<td valign="top">
+		<!-- MSCellType="DecArea" -->
+		&nbsp;</td>
+		<td valign="top" height="115">
+		<!-- MSCellType="ContentHead" -->
+		&nbsp;<p align="center"><font size="6"><b><i>Лабораторная работа №11. </i>
+		</b></font><i><b><font size="6">Задачи бухгалтерского учета</font></b></i></td>
+	</tr>
+	<tr>
+		<td valign="top" width="149">
+		<!-- MSCellType="NavBody" -->
+		<p align="justify"><a name="Бухгалтерская_запись_">Бухгалтерская запись 
+</a>называется <b><i>проводкой.&nbsp;
+</i></b>Для&nbsp; формирования проводки требуется специализированный справочник,
+<i><b>План счетов.</b></i> Проводка, сформированная только с использованием 
+плана счетов содержит верную информацию, но не очень понятную. Такая проводка 
+называется <i><b>синтетической,</b></i> а денежные операции с использованием 
+таких проводок называют <i><b>синтетическим учетом.</b></i></p>
+		<p align="justify">Чтобы получить проводку, содержащую пояснения 
+		выполненной операции, используют специальный объект <i><b>План видов 
+		характеристик</b></i> и справочник <i><b>Субконто</b></i> тогда 
+		полученная проводка называется <i><b>аналитической</b></i>, а денежные 
+		операции с использованием таких проводок <i><b>аналитическим учетом, </b>
+		</i>рисунок 1а.</p>
+		<p align="justify">&nbsp;</td>
+		<td valign="top" height="7239" width="1400">
+		<!-- MSCellType="ContentBody" -->
+		<a href="../Page1.htm">В оглавление</a><p><font color="#800080"><b>
+		<a name="Техническое_задание">Техническое задание</a></b></font></p>
+		<p>Для решения задач бухгалтерского учета потребуется создать несколько 
+		объектов:</p>
+		<ol>
+			<li>план счетов,</li>
+			<li>регистр бухгалтерии,</li>
+			<li>план видов характеристик,</li>
+			<li>справочник &quot;Субконто&quot;, </li>
+			<li>документ, который будет формировать проводки.</li>
+		</ol>
+		<p>Для ведения задач по бухгалтерскому учету требуется в состав 
+		конфигурации ввести несколько дополнительных объектов,
+		<a href="#Бухгалтерская_запись_">специфичных для бухгалтерии</a>:</p>
+		<ul>
+			<li>план счетов;</li>
+			<li>справочник &quot;Субконто&quot;;</li>
+			<li>план видов характеристик;</li>
+			<li>регистр бухгалтерии.</li>
+		</ul>
+		<p align="justify">План счетов - это специализированный справочник, 
+		используемый при автоматизации бухгалтерского учета. Записи справочника 
+		представляют собой описание бухгалтерских счетов, которые имеют помимо 
+		наименования специальный код. Бухгалтерские счета используются для 
+		формирования бухгалтерской записи (проводки), которая свидетельствует о 
+		проведенной денежной операции. Сформированная проводка сохраняется в регистре бухгалтерии. Бухгалтерская запись 
+		без расшифровки называется синтетическим учетом, расшифрованная 
+		бухгалтерская запись называется аналитическим учетом, структура 
+		бухгалтерских записей обоих типов приведена в соответствии с рисунком 1.</p>
+		<p align="center">
+		<img border="0" src="Lab8_b1.gif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</p>
+		<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Рисунок 1 
+		- Схема, отражающая структуру проводок&nbsp; </p>
+		<p><font color="#800080"><b>Решение задачи</b></font></p>
+		<ol>
+			<li>В существующей Конфигурации создайте новую подсистему
+			<font color="#800080"><i><b>Бухгалтерия</b></i></font></li>
+			<li>Создайте новый справочник с именем&nbsp; <font color="#800080">
+			<i><b>Субконто </b></i></font>без реквизитов</li>
+			<li>Документ <b><font color="#800080">&quot;Приходная накладная&quot;</font></b> 
+			включите в состав созданной подсистемы</li>
+		</ol>
+		<p>&nbsp; 4.&nbsp;&nbsp;В режиме Конфигуратор создайте&nbsp; новый 
+		объект конфигурации&nbsp; <i><font color="#800080"><b>План видов характеристик</b></font></i> с именем
+		<font color="#800080"><i><b>ВидыСубконто,&nbsp; </b></i></font>включите 
+		его в состав подсистемы <font color="#800080"><b><i>Бухгалтерия.</i></b>
+		</font>Подключите к нему справочники, которые потребуются для 
+		организации аналитического учета, рисунок 2.&nbsp; В справочнике 
+		<b><font color="#800080">Субконто</font></b> укажите в качестве владельца План видов характеристик. Добавление 
+		справочника Субконто необходимо для того, чтобы в дальнейшем 
+		использовать дополнительную аналитику&nbsp; в документах, рисунок 3.</p>
+		<p align="center">&nbsp;<img border="0" src="Lab8_b2.jpg" width="876" height="639"><img border="0" src="Lab8_b10.jpg"></p>
+		<p align="center">Рисунок 2 - Подключение к плану видов характеристик 
+		справочников&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Рисунок 3 - Выбор владельца справочника</p>
+		<p align="center">&nbsp;</p>
+		<p align="left">5. Перейдите на вкладку Прочее&nbsp; Плана видов 
+		характеристик и введите 
+		предопределенные элементы, рисунок 4.</p>
+		<p align="center"><img border="0" src="Lab8_b25.jpg"></p>
+		<p align="center">Рисунок 4 - Ввод предопределенных элементов</p>
+		<p align="left">6.&nbsp; Создайте новый объект План счетов с именем <b>
+		ПланСчетовПробный</b>. На вкладке<b> 
+		Основные</b> укажите Представление списка &quot;Основной план счетов&quot;, на 
+		вкладке Данные добавьте признак учета Количественный, рисунок 5 и 
+		реквизит КодБыстрогоВыбора (строка, длина 9)</p>
+		<p align="center"><img border="0" src="Lab8_b26.jpg"></p>
+		<p align="center">Рисунок 5 - Добавление признака учета</p>
+		<p align="left">&nbsp;7.&nbsp; На вкладке Субконто&nbsp; укажите 
+		количество уровней субконто и подключите к плану счетов план видов 
+		характеристик, рисунок 6.</p>
+		<p align="center"><img border="0" src="Lab8_b27.jpg"></p>
+		<p align="center">Рисунок 6 - Добавление уровней субконто</p>
+		<p align="left">8.&nbsp; На вкладке <font color="#800080"><b>Прочее</b></font> добавьте в план счетов 
+		предопределенные элементы, которые будут используемыми счетами, рисунок 
+		7.</p>
+		<p align="center"><img border="0" src="Lab8_b31.jpg"></p>
+		<p align="center">Рисунок 7&nbsp; - Добавление счетов в план счетов</p>
+		<p align="left">9. Создайте новый регистр бухгалтерии. На вкладке 
+		Основные свяжите его с планом счетов, на вкладке Данные Введите ресурсы 
+		Количество и Сумма, рисунок 8. На вкладке Регистраторы свяжите регистр с 
+		документом &quot;Приходная накладная&quot;. Флажок &quot;Корреспонденция&quot; 
+		свидетельствует о том, что счета,&nbsp; корреспондирующие между собой 
+		должны отражаться в структуре регистровой записи.</p>
+		<p align="center"><img border="0" src="Lab8_b52.jpg"></p>
+		<p align="center">Рисунок 8 - Создание регистра бухгалтерии</p>
+		<p align="left">10.&nbsp; Создайте форму списка регистра бухгалтерии, 
+		рисунок 9.</p>
+		<p align="center"><img border="0" src="Lab8_b41.jpg"></p>
+		<p align="center">Рисунок 9 - Создание формы списка регистра бухгалтерии</p>
+		<p align="left">
+		<a href="#Техническое_задание">В начало</a><p align="left">11.&nbsp;&nbsp; Откройте окно&nbsp; документа 
+		&quot;Приходная накладная&quot; 
+		и с помощью конструктора движений сформируйте процедуру, рисунки 10-11 
+		(Работа с регистром &quot;Товары&quot; была сформирована Вами раньше).</p>
+		<p align="center"><img border="0" src="Lab8_b42.jpg"><img border="0" src="Lab8_b43.jpg"> </p>
+		<p align="center">Рисунок 10 - Работа с конструктором движений</p>
+		<p align="center"><img border="0" src="Lab8_b44.jpg"></p>
+		<p align="center">Рисунок 11 - Сформированная процедура</p>
+		<p align="left">12. Зайдите в режим пользователя, откройте 
+		сформированный ранее документ &quot;Приходная накладная&quot;,&nbsp; и еще раз 
+		проведите его. Создайте еще один документ &quot;Приходная Накладная&quot; и тоже 
+		его проведите. Откройте регистр бухгалтерии и посмотрите сформированные проводки, рисунок 12. 
+		Из рисунка видно, что были сформированы три проводки: первая проводка за 
+		05.01.2021, а вторая и третья - таким же документом, но за 22.02.2021. 
+		Это говорит о том, что были созданы два документа, в первом табличная 
+		часть состояла из одной строки, а во втором - из двух строк. Так как 
+		счет 10.01 был определен как количественный, поэтому в проводке 
+		присутствует количество по дебету. Счет 60.01 не количественный, поэтому 
+		количество по кредиту отсутствует.</p>
+		<p align="left"><b>Примечание.</b> В предлагаемом примере документ, 
+		формирующий бухгалтерские проводки, называется &quot;Проба бух&quot;.</p>
+		<p align="center"><img border="0" src="Lab8_b45.jpg"></p>
+		<p align="center">Рисунок 12 - Сформированные проводки<p align="left">
+		<b>Самостоятельно №1.</b><p align="left">1.&nbsp; В процедуре, рисунок 
+		11, табличная часть документа просматривается два раза, хотя можно за 
+		один прогон выполнить эту работу. Организуйте в процедуре, рисунок 11, 
+		один цикл, формирующий&nbsp; записи в два различных регистра.<p align="left">2.&nbsp; Доработайте&nbsp; документ
+		<font color="#800080"><b><i>Расходная</i></b></font><font color="#800080"><i><b>Накладная</b></i> </font>
+		по аналогии с Приходной накладной: включите в его состав формирование 
+		проводок: ДТ 62.01 не количественный (субконто Контрагент и Договор), КТ 
+		10.01. Счет 62.01 Покупатели включите в состав плана счетов.<p align="left">
+		3.&nbsp; В 
+		полученной процедуре имеется два цикла, обрабатывающих одну и ту же 
+		таблицу. Это не рационально. Объедините код в один цикл.<p align="center">&nbsp;<p align="left">
+		<a href="#Техническое_задание">В начало</a><p align="left">
+		13. По созданным проводкам создайте бухгалтерский отчет, 
+		оборотно-сальдовую ведомость. Выделите ветку отчеты и создайте новый 
+		отчет с именем<i><b><font color="#800080"> ОборотноСальдовая</font></b></i>. 
+		Войдите из окна конструктора отчета&nbsp; и откройте схему компоновки 
+		данных, рисунок 13.<p align="center">
+		<img border="0" src="Lab8_b14.jpg"><p align="center">
+		Рисунок 13 - Построение отчета, первый этап<p align="left">
+		14.&nbsp; Создайте набор данных Запрос и откройте конструктор запроса, 
+		рисунок 14.<p align="center">
+		<img border="0" src="Lab8_b15.jpg"><p align="center">
+		Рисунок 14 - Создание запроса<p align="left">
+		15.&nbsp; В конструкторе запроса перенесите&nbsp; в область ТАБЛИЦЫ
+		<font color="#800080"><i><b>План счетов</b></i></font> и виртуальную 
+		таблицу регистра бухгалтерии <b><i><font color="#800080">Остатки и 
+		обороты</font></i></b>. А в таблицу&nbsp;&nbsp; ПОЛЯ добавьте отдельные 
+		поля из виртуальной таблицы и поле код и наименование из плана счетов, 
+		рисунок 15. 
+		<p align="center">
+		<img border="0" src="Lab8_b16.jpg"><p align="center">
+		Рисунок 15 - Построение запроса, вкладка<font color="#800080"><i><b> 
+		Таблицы и поля</b></i></font><p align="left">
+		&nbsp;<p align="left">
+		16. Прейдите на вкладку Связи и укажите, что из плана счетов будут 
+		выбираться все записи, а из регистра только те, которые соответствуют 
+		условию связи, рисунок 16.<p align="center">
+		<img border="0" src="Lab8_b17.jpg"><p align="center">
+		Рисунок 16 - Построение запроса, вкладка <font color="#800080"><i><b>
+		Связи</b></i></font><p align="left">
+		17.&nbsp; Перейдите на вкладку Объединения/Псевдонимы и переименуйте 
+		выбранные поля (переименованное поле выделяется жирным шрифтом), рисунок 
+		17.<p align="center">
+		<img border="0" src="Lab8_b18.jpg"><p align="center">
+		Рисунок 17 - Построение запроса, вкладка <font color="#800080"><i><b>
+		Объединения/Псевдонимы</b></i></font><p align="left">
+		18.&nbsp; На вкладке <font color="#800080"><i><b>Порядок</b></i></font> 
+		укажите, что отчет будет сортироваться по полю КОД по возрастанию, 
+		нажатие на ОК откроет основное окно запроса. В нижней секции окна 
+		отражается сформированный текст запроса, рисунок 18. Текст запроса 
+		сформирован на русифицированном языке запросов <span lang="en-us">SQL</span>, 
+		входящим в состав платформы 1С. Голубым цветом выделены операторы языка. 
+		<p align="center">
+		<img border="0" src="Lab8_b11.gif"><p align="center">
+		Рисунок 18 - Текст сформированного запроса<p align="left">
+		<a href="#Техническое_задание">В начало</a><p align="left">
+		19.&nbsp; В верхней секции находится информация по выбранным полям. 
+		Колонку <font color="#800080"><i><b>Роль</b></i></font>, где 
+		отображается информация, необходимо изменить, чтобы схема компоновки 
+		данных могла отобразить&nbsp; общие итоги по остаткам, рисунок 19.<p align="center">
+		<img border="0" src="Lab8_b19.jpg"><p align="center">
+		Рисунок 19 - Внесение изменений в колонку <i><b><font color="#800080">
+		Роль</font></b></i><p align="left">
+		20. На вкладке Ресурсы выберите все доступные ресурсы, кнопка
+		<span lang="en-us">&gt;&gt; </span>, рисунок 20. При переходе на вкладку 
+		ПАРАМЕТРЫ видно, что заголовки Начало и Конец периода сформированы. Их 
+		изменять не требуется.<p align="center">
+		<img border="0" src="Lab8_b46.jpg"><p align="center">
+		Рисунок 20 - Настройка ресурсной части отчета<p align="left">
+		&nbsp;&nbsp;<p align="left">
+		21.&nbsp; Перейдите на вкладку Настройки, где создайте структуру отчета, 
+		рисунок 21.<p align="left">
+		<img border="0" src="Lab8_b21.jpg"><img border="0" src="Lab8_b22.jpg"><p align="center">
+		Рисунок 21 - Настройка отчета<p align="left">22.&nbsp; Результатом этих 
+		действий будет заполнена информацией вкладка Выбранные поля. Откройте 
+		вкладку Параметры и выполните настройку даты. Окно <i><b>
+		<font color="#800080">Пользовательские настройки элемента</font></b></i> 
+		позволяет в состав отчета пользователю вводить свой интервал дат, 
+		рисунок 22. Настройки выполните для обоих параметров.</p>
+		<p align="center"><img border="0" src="Lab8_b47.jpg"></p>
+		<p align="center">Рисунок 22 - Настройка параметров</p>
+		<p align="left">23.&nbsp; Откройте вкладку Другие настройки и укажите 
+		заголовок отчета ОБОРОТНО-САЛЬДОВАЯ ВЕДОМОСТЬ, а для параметра 
+		Расположение общих итогов по вертикали укажите значение Начало и Конец.&nbsp; 
+		Значение &quot;Начало и конец&quot; позволяет вывести итоговую строку с начале и в 
+		конце ведомости. Это актуально, если ведомость объемная. Подключите созданный отчет к подсистеме Бухгалтерия, войдите в режим 
+		Пользователя и сформируйте ведомость, рисунок 23.Секция, содержащая 
+		начальные остатки заполнена, потому что в регистре находится информация 
+		за более ранний период, чем был указан в ведомости (см. рисунок 12, 
+		документ за 05.01.2021). Если указать в ведомости начало периода 
+		01.01.2021, то начальные остатки отобразятся в секции ОБОРОТЫ, рисунок 
+		24.</p>
+		<p align="center">
+		<img border="0" src="Lab8_b48.jpg"><p align="center">
+		Рисунок 23 - Сформированная ведомость<p align="center">
+		<img border="0" src="Lab8_b49.jpg"><p align="center">
+		Рисунок 24 - Ведомость с измененным периодом<p align="left">
+		24. Когда в плане счетов много записей, то возникает проблема как убрать 
+		из ведомости пустые строки. Войдите в Конфигуратор, откройте схему 
+		компоновки данных. Войдите в Конструктор Запроса, вкладку &quot;Связи&quot;, 
+		рисунок 25. Оборотно-сальдовая ведомость примет вид как на рисунке 26.<p align="center">
+		<img border="0" src="Lab8_b50.jpg"><p align="center">
+		Рисунок 25 - Настройка структуры ведомости<p align="center">
+		<img border="0" src="Lab8_b51.jpg"><p align="center">
+		Рисунок 26 - Ведомость после настройки<p align="left">
+		<a href="#Техническое_задание">В начало</a><p align="left">
+		<a href="../Page1.htm">В оглавление</a><p align="left">
+		<b>Самостоятельно №2.</b>
+		<p align="left">
+		1.&nbsp; В документе &quot;Поступление денежных средств&quot; сформируйте 
+		процедуру, которая будет формировать проводку ДТ 50.1 КТ 62.01 на сумму 
+		5200 рублей. 
+		После проведения документа сформируйте еще раз оборотно-сальдовую 
+		ведомость, на счете 50.1 появились деньги в колонке ДТ, а на счете 62.01 
+		эта же сумма по КТ.<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:2.85pt;margin-bottom:.0001pt;line-height:150%">&nbsp;</p>
+		<p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:2.85pt;margin-bottom:.0001pt;line-height:150%"><b>
+		<span style="font-size: 12.0pt; line-height: 150%; font-family: 'Times New Roman',serif">
+		Примечание</span></b></p>
+		<blockquote>
+			<blockquote>
+				<p class="MsoListParagraphCxSpMiddle" style="text-indent: -18.0pt; line-height: 150%; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; line-height: 150%; font-family: 'Times New Roman',serif">
+				<span style="font-style: normal; font-variant: normal; font-weight: normal">
+				1</span><span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</span>Самостоятельная работа выполняется на созданной ранее 
+				вами базе данных.</span></p>
+				<p class="MsoListParagraphCxSpMiddle" style="text-indent: -18.0pt; line-height: 150%; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; line-height: 150%; font-family: 'Times New Roman',serif">
+				<span style="font-style: normal; font-variant: normal; font-weight: normal">
+				2</span><span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</span>Для выполнения настоящего задания необходимо, чтобы в 
+				состав БД входили: </span></p>
+			</blockquote>
+			<p class="MsoListParagraphCxSpMiddle" style="text-indent: -18.0pt; line-height: 150%; margin-left: 72.0pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+			<span style="font-size: 12.0pt; line-height: 150%; font-family: 'Times New Roman',serif">
+			a.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+			Регистр бухгалтерии;</span></p>
+			<p class="MsoListParagraphCxSpMiddle" style="text-indent: -18.0pt; line-height: 150%; margin-left: 72.0pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+			<span style="font-size: 12.0pt; line-height: 150%; font-family: 'Times New Roman',serif">
+			b.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+			План счетов;</span></p>
+			<p class="MsoListParagraphCxSpMiddle" style="text-indent: -18.0pt; line-height: 150%; margin-left: 72.0pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+			<span style="font-size: 12.0pt; line-height: 150%; font-family: 'Times New Roman',serif">
+			c.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+			Справочник субконто;</span></p>
+			<p class="MsoListParagraphCxSpMiddle" style="text-indent: -18.0pt; line-height: 150%; margin-left: 72.0pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+			<span style="font-size: 12.0pt; line-height: 150%; font-family: 'Times New Roman',serif">
+			d.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+			План видов характеристик;</span></p>
+			<p class="MsoListParagraphCxSpMiddle" style="text-indent: -18.0pt; line-height: 150%; margin-left: 72.0pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+			<span style="font-size: 12.0pt; line-height: 150%; font-family: 'Times New Roman',serif">
+			e.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+			Набор справочников, которые будут выполнять роль субконто;</span></p>
+			<p class="MsoListParagraphCxSpLast" style="text-indent: -18.0pt; line-height: 150%; margin-left: 72.0pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+			<span style="font-size: 12.0pt; line-height: 150%; font-family: 'Times New Roman',serif">
+			f.<span style="font:7.0pt &quot;Times New Roman&quot;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+			Документ «Поступление денежных средств»</span></p>
+		</blockquote>
+		<p align="left">
+		<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman; line-height: 150%">
+		&nbsp;&nbsp;&nbsp;&nbsp;</span><p class="MsoNormal" style="margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:2.85pt;margin-bottom:.0001pt;text-indent:35.45pt;line-height:150%">
+		Контрольные вопросы</p>
+		<p align="center">
+		&nbsp;<p align="left">
+		<a href="#Техническое_задание">В начало</a><p align="left">
+		<a href="../Page1.htm">В оглавление</a><p align="left"><b>Контрольные 
+		вопросы</b></p>
+			<ol>
+				<li>
+				<p align="left">Характеристика плана счетов</li>
+				<li>
+				<p align="left">Роль плана видов характеристик</li>
+				<li>
+				<p align="left">Виды проводок, их различие</li>
+				<li>
+				<p align="left">В какие объекты бухгалтерского учета вводятся 
+				предопределенные элементы?</li>
+				<li>
+				<p align="left">Для каких целей используется маска? Как она 
+				задается?</li>
+				<li>
+				<p align="left">Какие объекты БД Вы использовали при построении 
+				Оборотно-сальдовой ведомости?</li>
+				<li>
+				<p align="left">Как задается наименование ведомости и вывод 
+				итоговой строки?</li>
+				<li>
+				<p align="left">Чем аналитический учет отличается от 
+				синтетического?</li>
+				<li>
+				<p align="left">Объясните структуру проводки</li>
+				<li>Какую роль играет объект &quot;План счетов&quot;?</li>
+				<li>Для каких целей создаются субконто?</li>
+				<li>Поясните термин САЛЬДО</li>
+				<li>Из каких разделов состоит оборотно-сальдовая ведомость и их 
+				назначение</li>
+				<li>Каким образом можно перемещать в оборотно-сальдовой 
+				ведомости из раздела в раздел?</li>
+		</ol>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p align="left">
+		&nbsp;<p align="left">
+		&nbsp;</td>
+	</tr>
+</table>
+
+</body>
+
+</html>

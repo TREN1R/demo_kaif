@@ -1,0 +1,1512 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="ru">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Синтаксис и основные понятия язы</title>
+<style>
+<!--
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	}
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman","serif";
+	}
+-->
+</style>
+</head>
+
+<body>
+
+<table border="2" cellpadding="0" cellspacing="0" bgcolor="#0000FF" background="Fon.jpg" width="1375" height="12287" bordercolor="#000080">
+	<!-- MSTableType="layout" -->
+	<tr>
+		<td valign="top" bordercolor="#000080">
+		<!-- MSCellType="ContentHead" -->
+		&nbsp;<p align="center"><span lang="en-us">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span><b>
+		<span style="font-size: 24.0pt; line-height: 107%; font-family: 'Times New Roman',serif; color: #000080; font-style: italic">
+		Синтаксис и основные понятия языка XML</span></b></td>
+		<td valign="top" height="91">
+		<!-- MSCellType="DecArea" -->
+		&nbsp;</td>
+	</tr>
+	<tr>
+		<th valign="top" bordercolor="#000080" bordercolorlight="#000080" bordercolordark="#000080" background="Fon.jpg" width="1138">
+		<!-- MSCellType="ContentBody" -->
+		&nbsp;&nbsp; 
+		<p class="MsoNormal"><b>
+		<span style="font-size: 18.0pt; font-family: 'Times New Roman',serif; color: black">
+		<span lang="ru">П</span>онятие о языке XML</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		XML - это расширяемый язык разметки (Extensible Markup Language), 
+		разработанный специально для размещения информации в World Wide Web, 
+		наряду с HTML, который давно стал стандартным языком создания 
+		Web-страниц. В отличие от HTML, вместо использования ограниченного 
+		набора определённых элементов вы имеете возможность создавать ваши 
+		собственные элементы и присваивать им любые имена по вашему выбору. 
+		Примечание: подразумевается, что читатель данной статьи хотя бы очень 
+		поверхностно знаком с языком HTML.</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		XML решает ряд проблем, которые не решает HTML, например:</span></p>
+		<ul type="disc" style="margin-bottom: 0cm">
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Представление документов любого (не только текстового) типа, 
+			например, музыки, математических уравнений и т.д.</span></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Сортировка, фильтрация и поиск информации.</span></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Представление информации в структурированном (иерархическом) виде.</span></li>
+		</ul>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		В зависимости от уровня соответствия стандартам документ может быть 
+		&quot;верно сформированным&quot; (&quot;well-formed&quot;), либо &quot;валидным&quot; (&quot;valid&quot;). Вот 
+		несколько основных правил создания верно сформированного документа:</span></p>
+		<ul type="disc" style="margin-bottom: 0cm">
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Каждый элемент XML должен содержать начальный и конечный тэг (либо 
+			пустой тэг типа &lt;TAG /&gt;, который может нести информацию посредством 
+			своих атрибутов).</span></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Любой вложенный элемент должен быть полностью определён внутри 
+			элемента, в состав которого он входит.</span></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Документ должен иметь только один элемент верхнего уровня.</span></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Имена элементов чувствительны к регистру.</span></li>
+		</ul>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Есть три основных способа сообщить браузеру, как отображать каждый из 
+		созданных вами XML-элементов:</span></p>
+		<ul type="disc" style="margin-bottom: 0cm">
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Каскадная таблица стилей (Cascading Style Sheet - CSS) или 
+			расширяемая таблица в формате языка стилевых таблиц (Extensible 
+			Stylesheet Language - XSL).</span></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Связывание данных. Этот метод требует создания HTML-страницы, 
+			связывания с ней XML-документа и установления взаимодействий 
+			HTML-элементов с элементами XML. В дальнейшем HTML-элементы 
+			автоматически отображают информацию из связанных с ними 
+			XML-элементов.</span></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Написание сценария. Этот метод требует создания HTML-страницы, 
+			связывания с ней XML-документа и получение доступа к XML-элементам с 
+			помощью кода сценария JavaScript или VBScript.</span></li>
+		</ul>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Индивидуальный пользователь, компания или комитет по стандартам может 
+		определить необходимый набор элементов XML и структуру документа, 
+		которые будут применяться для особого класса документов. Подобный набор 
+		элементов и описание структуры документа называют XML-приложением или 
+		XML-словарём.</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		XML-приложение обычно определяется созданием описателя типа документа (DTD), 
+		который является допустимым компонентом XML-документа. DTD устанавливает 
+		и определяет имена элементов, которые могут быть использованы в 
+		документе, порядок, в котором элементы могут появляться, и доступные к 
+		применению атрибуты элементов. DTD обычно включается в XML-документ и 
+		ограничивает круг элементов и структур, которые будут использоваться. 
+		Примечание: приложение XML Schema позволяет разрабатывать подробные 
+		схемы для ваших XML-документов с использованием стандартного синтаксиса 
+		XML и является альтернативой DTD.</span></p>
+		<p class="MsoNormal" style="text-indent: 15.6pt; line-height: normal">
+		<b>
+		<span style="font-size: 18.0pt; font-family: 'Times New Roman',serif; color: black">
+		Простейший XML-документ</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Простейший XML-документ состоит из двух частей: пролога и корневого 
+		элемента. Пролог содержит объявление XML, указывающее на то, что это 
+		XML-документ, и содержит номер версии XML. Пролог может также содержать 
+		необязательные компоненты:</span></p>
+		<ul type="disc" style="margin-bottom: 0cm">
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Объявление типа документа.</span></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Одну или несколько инструкций по обработке.</span></li>
+		</ul>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		XML-документ может содержать комментарии, начинающиеся с символов &quot;&lt;!--&quot; 
+		и заканчивающиеся символами &quot;--&gt;&quot;. Комментарий может содержать любой 
+		текст, за исключением символов &quot;--&quot;. Тексты комментариев доступны для 
+		написанного внутри HTML-страницы кода сценария.</span></p>
+		<p class="MsoNormal" style="text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt" align="left">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		XML-документ можно набрать в любом текстовом редакторе, сохранив 
+		документ как текстовый файл с расширением .xml. В дальнейшем такой 
+		документ будет открываться двойным щелчком в Internet Explorer. Вот 
+		пример простейшего</span><span lang="EN-US" style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black"> 
+		XML-</span><span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">документа</span><span lang="EN-US" style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">:&nbsp;<br>
+		<br>
+		</span><b>
+		<span lang="EN-US" style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;?xml version=&quot;1.0&quot;?&gt;<br>
+		<br>
+		&lt;!-- Comment --&gt;<br>
+		<br>
+		&lt;PRODUCTS&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; &lt;PRODUCT&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;TITLE&gt; Product #1 &lt;/TITLE&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;PRICE&gt; 10.00 &lt;/PRICE&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; &lt;/PRODUCT&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; &lt;PRODUCT&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;TITLE&gt; Product #2 &lt;/TITLE&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;PRICE&gt; 20.00 &lt;/PRICE&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; &lt;/PRODUCT&gt;<br>
+		&lt;/PRODUCTS&gt;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Чтобы иметь возможность использовать в XML-документе символы кириллицы 
+		(как в символьных данных, так и в именах элементов), вы можете указать 
+		кодировку в прологе:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;?xml version=&quot;1.0&quot; encoding=&quot;windows-1251&quot;?&gt;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-indent: 15.6pt; line-height: normal">
+		<b>
+		<span style="font-size: 18.0pt; font-family: 'Times New Roman',serif; color: black">
+		Отображение XML-документа с помощью CSS</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Приведённая ниже каскадная таблица стилей (Cascading Style Sheet - CSS) 
+		отобразит каждый элемент PRODUCT XML-документа с переводом строки сверху 
+		и снизу, каждый элемент TITLE - курсивом, а каждый элемент PRICE - 
+		полужирным шрифтом. Наберите таблицу стилей в любом текстовом редакторе, 
+		сохранив документ как текстовый файл с расширением .css:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		/* Comment */<br>
+		PRODUCT {display:block;}<br>
+		TITLE {font-style:italic;}<br>
+		PRICE {font-weight:bold;}</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		В конце пролога XML-документа необходимо добавить инструкцию по 
+		обработке:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;?xml-stylesheet type=&quot;text/css&quot; href=&quot;Sample.css&quot;?&gt;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		В результате при открытии XML-документа в Internet Explorer он будет 
+		отображён в соответствии с инструкциями, записанными в таблице стилей.</span></p>
+		<p class="MsoNormal" style="text-indent: 15.6pt; line-height: normal">
+		<b>
+		<span style="font-size: 18.0pt; font-family: 'Times New Roman',serif; color: black">
+		Задание атрибутов элементов</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		В начальный тэг элемента либо в тэг пустого элемента вы можете включить 
+		одно или несколько описаний атрибутов. Описание атрибута представляет 
+		собой пару имя - значение, например:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;PRICE type=&quot;retail&quot;&gt;$10.55&lt;/PRICE&gt;&nbsp;</span></b><span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black"><br>
+		<br>
+		или&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;PRICE type=&quot;retail&quot; /&gt;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Если XML-документ отображается с помощью таблицы стилей CSS, браузер не 
+		выводит атрибуты и их значения. Доступ к атрибутам и их значениям даёт 
+		отображение XML-документа с использованием XSL-таблицы, связывания 
+		данных или сценария (см. выше описание способов отображения 
+		XML-документа).</span></p>
+		<p class="MsoNormal" style="text-indent: 15.6pt; line-height: normal">
+		<b>
+		<span style="font-size: 18.0pt; font-family: 'Times New Roman',serif; color: black">
+		Инструкции по обработке</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Инструкция по обработке имеет следующую форму записи:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;? кому инструкция ?&gt;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Здесь &quot;кому&quot; есть имя приложения, которому адресована инструкция, а 
+		&quot;инструкция&quot; - есть информация, передаваемая приложению. Инструкция 
+		может состоять из любой последовательности символов, кроме пары ?&gt;.</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Если вы используете в качестве XML-процессора Internet Explorer, у вас 
+		есть две возможности применения инструкций по обработке:</span></p>
+		<ul type="disc" style="margin-bottom: 0cm">
+			<li class="MsoNormal" style="color: black; line-height: normal; margin-bottom: 13.5pt">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Стандартные инструкции для сообщения браузеру, как отображать 
+			документ с использованием таблицы стилей, например:&nbsp;<br>
+			<br>
+			</span><b>
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+			&lt;?xml-stylesheet type=&quot;text/css&quot; href=&quot;Sample.css&quot;?&gt;&nbsp;</span></b></li>
+			<li class="MsoNormal" style="color: black; line-height: normal; margin-bottom: 13.5pt">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Если вы пишете Web-сценарий для отображения XML-документа, вы можете 
+			поместить в документ любые незарезервированные инструкции по 
+			обработке, а ваш сценарий будет считывать эти инструкции. Например, 
+			вы можете вставить в документ инструкцию по обработке, сообщающую 
+			вашему сценарию уровень детализации при отображении:&nbsp;<br>
+			<br>
+			</span><b>
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+			&lt;?MyScript detail=&quot;2&quot;?&gt;&nbsp;</span></b></li>
+		</ul>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Вы можете поместить инструкцию по обработке в любое место XML-документа 
+		вне других элементов разметки: в пролог документа, после корневого 
+		элемента, либо внутри содержимого элемента:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;PRODUCT&gt; ... &lt;?MyScript detail=&quot;2&quot;?&gt; ... &lt;/PRODUCT&gt;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-indent: 15.6pt; line-height: normal">
+		<b>
+		<span style="font-size: 18.0pt; font-family: 'Times New Roman',serif; color: black">
+		Использование разделов CDATA</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Внутри символьных данных в содержимом элемента нельзя помещать символы 
+		угловых скобок (например, &lt;) или знак амперсанда &amp;. Одним из способов 
+		преодолеть это ограничение является использование ссылки на символ 
+		(&amp;#60; или &amp;#38;). Другим способом является использование ссылки на 
+		предопределённый общий примитив (&amp;lt; или &amp;amp;). Однако, в случае, если 
+		вам требуется многократно вставлять символы &lt; и &amp; (если, например, это 
+		какой-либо исходный код или разметка HTML), использование ссылок 
+		неудобно и затрудняет восприятие данных. В этом случае проще поместить 
+		текст, содержащий такие символы, в раздел CDATA.</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Раздел CDATA начинается с символов &lt;![CDATA[ и заканчивается символами 
+		]]&gt;. Между этими двумя ограничителями вы можете поместить любые символы, 
+		кроме ]]&gt;. В разделе CDATA не нужно использовать ссылки на символы или 
+		предопределённые общие примитивы, т.к. синтаксический анализатор не 
+		будет замещать такую ссылку соответствующим символом. Разделы CDATA не 
+		могут быть вложенными. Вы можете поместить раздел CDATA в любое место, 
+		занимаемое символьными данными - т.е. внутри содержимого элемента, но не 
+		внутри XML-разметки:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;PRODUCT&gt; ... &lt;![CDATA[ Text: &lt;&amp;&gt; ]]&gt; ... &lt;/PRODUCT&gt;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Разделы CDATA отображаются браузером как содержимое элемента.</span></p>
+		<p class="MsoNormal" style="text-indent: 15.6pt; line-height: normal">
+		<b>
+		<span style="font-size: 18.0pt; font-family: 'Times New Roman',serif; color: black">
+		Создание валидных XML-документов</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Валидным (valid) называется корректно сформированный (well-formed) 
+		документ, отвечающий двум дополнительным требованиям:</span></p>
+		<ul type="disc" style="margin-bottom: 0cm">
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Пролог документа должен содержать определение типа документа (DTD - 
+			Document Type Definition), задающее структуру документа.</span></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Оставшаяся часть документа должна отвечать структуре, заданной в DTD.</span></li>
+		</ul>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Любое отклонение от требований корректности формирования (well-formed) 
+		считается фатальной ошибкой (fatal error). Если XML-процессор 
+		сталкивается с фатальной ошибкой, он останавливает обработку документа и 
+		не пытается её возобновить. Отклонение от требований валидности (valid) 
+		считается лишь ошибкой (error). Если XML-процессор сталкивается с 
+		ошибкой, он может просто выдать сообщение о ней и продолжить обработку. 
+		Процессор Internet Explorer проверяет документ на валидность только в 
+		том случае, если вы открываете документ через HTML Web-страницу.</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Большинство так называемых XML-приложений (XML-словарей) состоят из 
+		стандартного DTD, которое все пользователи приложения включают в свои 
+		XML-документы.</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Объявление типа документа (DTD) представляет собой блок разметки, 
+		который вы должны добавить в пролог XML-документа, и имеет следующую 
+		форму записи:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;!DOCTYPE Имя DTD&gt;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt" align="left">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Здесь &quot;Имя&quot; указывает на имя корневого элемента. &quot;DTD&quot; содержит 
+		объявления, задающие элементы и их атрибуты. &quot;DTD&quot; состоит из символа 
+		левой квадратной скобки, после которой следует ряд объявлений разметки, 
+		заканчивающийся правой квадратной скобкой. Пример:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;!DOCTYPE PRODUCTS<br>
+		&nbsp;&nbsp;&nbsp; [<br>
+		&nbsp;&nbsp;&nbsp; &lt;!ELEMENT PRODUCT ANY&gt;<br>
+		&nbsp;&nbsp;&nbsp; ]<br>
+		&gt;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		DTD может содержать следующие типы объявлений разметки:</span></p>
+		<ul type="disc" style="margin-bottom: 0cm">
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Объявления типов элементов, которые может содержать документ, их 
+			содержимое и порядок следования.</span></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Объявления списков атрибутов, которые могут быть использованы с 
+			определёнными типами элементов, типы данных атрибутов и значения 
+			атрибутов по умолчанию.</span></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Объявления примитивов для хранения часто используемых фрагментов 
+			текста или для встраивания не относящихся к XML данных в ваш 
+			документ.</span></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Объявления нотаций, которые описывают форматы данных или 
+			идентифицируют программу, используемую для обработки определённого 
+			формата.</span></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Инструкции по обработке.</span></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Комментарии.</span></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Ссылки на параметрические примитивы. Любой из приведённых выше 
+			компонентов может содержаться внутри параметрического примитива и 
+			добавляться путём ссылки на параметрический примитив.</span></li>
+		</ul>
+		<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		<br>
+		<br>
+&nbsp;</span></p>
+		<p class="MsoNormal" style="text-indent: 15.6pt; line-height: normal">
+		<b>
+		<span style="font-size: 18.0pt; font-family: 'Times New Roman',serif; color: black">
+		Объявления типов элементов</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Объявление типа элемента имеет следующую форму:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;!ELEMENT Имя Опись_содержимого&gt;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Здесь &quot;Имя&quot; есть имя объявляемого типа элемента. &quot;Опись_содержимого&quot; 
+		можно заполнить четырьмя различными способами:</span></p>
+		<ul type="disc" style="margin-bottom: 0cm">
+			<li class="MsoNormal" style="color: black; line-height: normal; margin-bottom: 13.5pt">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Пустое содержимое (EMPTY). Указывает, что элемент не может иметь 
+			содержимого, например:&nbsp;<br>
+			<br>
+			</span><b>
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+			&lt;!ELEMENT IMAGE EMPTY&gt;&nbsp;</span></b><span style="font-size: 13.5pt; font-family: 'Times New Roman',serif"><br>
+			<br>
+			После этого в документ можно поместить такие элементы:&nbsp;<br>
+			<br>
+			</span><b>
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+			&lt;IMAGE&gt;&lt;/IMAGE&gt;<br>
+			&lt;IMAGE /&gt;&nbsp;</span></b></li>
+			<li class="MsoNormal" style="color: black; line-height: normal; margin-bottom: 13.5pt">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Любое содержимое (ANY). Элемент может иметь или не иметь дочерние 
+			элементы в любом порядке с любым количеством вхождений, иметь или не 
+			иметь чередующиеся символьные данные. Пример:&nbsp;<br>
+			<br>
+			</span><b>
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+			&lt;!ELEMENT IMAGE ANY&gt;&nbsp;</span></b></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Содержимое (дочернее содержимое) элемента. Элемент может содержать 
+			дочерние элементы, но не может непосредственно содержать символьные 
+			данные.</span></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Смешанное содержимое. Элемент может содержать любое количество 
+			смешанных данных, в том числе и чередующихся с дочерними элементами 
+			определённых типов.</span></li>
+		</ul>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		В третьем случае (когда &quot;Опись содержимого&quot; представляет из себя 
+		&quot;дочернее содержимое элемента&quot;) модель содержимого может иметь одну из 
+		следующих форм:</span></p>
+		<ul type="disc" style="margin-bottom: 0cm">
+			<li class="MsoNormal" style="color: black; line-height: normal; margin-bottom: 13.5pt">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Последовательная форма. Например, элемент PRODUCT должен иметь один 
+			дочерний элемент TITLE, после которого идёт один дочерний элемент 
+			PRICE, за которым следует один дочерний элемент MASS:&nbsp;<br>
+			<br>
+			</span><b>
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+			&lt;!ELEMENT PRODUCT (TITLE, PRICE, MASS)&gt;&nbsp;</span></b></li>
+			<li class="MsoNormal" style="color: black; line-height: normal; margin-bottom: 13.5pt">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Выборочная форма. Например, элемент PRODUCT должен иметь один 
+			дочерний элемент TITLE, или один дочерний элемент PRICE, или один 
+			дочерний элемент MASS:&nbsp;<br>
+			<br>
+			</span><b>
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+			&lt;!ELEMENT PRODUCT (TITLE | PRICE | MASS)&gt;&nbsp;</span></b></li>
+		</ul>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Вы можете изменить любую из этих форм модели содержимого, используя 
+		знаки:&nbsp;</span></p>
+		<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="100%" style="width: 100.0%">
+			<tr>
+				<td width="50" style="width: 37.5pt; padding: .75pt">
+				<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				?</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&nbsp;&nbsp;Ни одного или один из предшествующих элементов.</span></td>
+			</tr>
+			<tr>
+				<td width="50" style="width: 37.5pt; padding: .75pt">
+				<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				+</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&nbsp;&nbsp;Один или несколько из предшествующих элементов.</span></td>
+			</tr>
+			<tr>
+				<td width="50" style="width: 37.5pt; padding: .75pt">
+				<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				*</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&nbsp;&nbsp;Ни одного или несколько из предшествующих элементов.</span></td>
+			</tr>
+		</table>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		&nbsp;</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Например, следующее объявление означает, что вы можете включить один или 
+		более дочерних элементов TITLE, и что дочерний элемент PRICE является 
+		необязательным:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;!ELEMENT PRODUCT (TITLE+, PRICE?, MASS)&gt;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Следующее объявление означает, что вы можете включить несколько или ни 
+		одного дочерних элементов TITLE, либо один дочерний элемент PRICE, либо 
+		один дочерний элемент MASS:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;!ELEMENT PRODUCT (TITLE* | PRICE | MASS)&gt;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Следующее объявление означает, что вы можете включить один или несколько 
+		дочерних элементов любого из этих трёх типов в любом порядке:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;!ELEMENT PRODUCT (TITLE | PRICE | MASS)+&gt;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Следующее объявление означает, что каждый элемент PRODUCT должен иметь 
+		один дочерний элемент TITLE; за ним должен следовать один дочерний 
+		элемент PRICE; после него должен идти один дочерний элемент MASS, NET 
+		или GROSS:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;!ELEMENT PRODUCT (TITLE, PRICE, (MASS | NET | GROSS))+&gt;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		В четвёртом случае (когда &quot;Опись содержимого&quot; представляет из себя 
+		&quot;смешанное содержимое&quot;) элемент может включать символьные данные. При 
+		смешанном содержимом вы можете задавать типы дочерних элементов, но не 
+		можете задавать порядок и количество вхождений дочерних элементов. 
+		Модель смешанного содержимого может иметь одну из следующих форм:</span></p>
+		<ul type="disc" style="margin-bottom: 0cm">
+			<li class="MsoNormal" style="color: black; line-height: normal; margin-bottom: 13.5pt">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Только символьные данные (синтаксически анализируемые символьные 
+			данные, Parsed Character Data):&nbsp;<br>
+			<br>
+			</span><b>
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+			&lt;!ELEMENT TITLE (#PCDATA)&gt;&nbsp;</span></b></li>
+			<li class="MsoNormal" style="color: black; line-height: normal; margin-bottom: 13.5pt">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Cимвольные данные с необязательными дочерними элементами. Например, 
+			следующее объявление означает, что каждый элемент PRODUCT может 
+			содержать символьные данные плюс ни одного или несколько дочерних 
+			элементов TITLE:&nbsp;<br>
+			<br>
+			</span><b>
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+			&lt;!ELEMENT PRODUCT (#PCDATA | TITLE)*&gt;&nbsp;</span></b></li>
+		</ul>
+		<p class="MsoNormal" style="text-indent: 15.6pt; line-height: normal">
+		<b>
+		<span style="font-size: 18.0pt; font-family: 'Times New Roman',serif; color: black">
+		Объявления атрибутов</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Объявление списка атрибутов определяет имена атрибутов, устанавливает 
+		тип для каждого атрибута и задаёт востребованность для каждого атрибута, 
+		в частности, может задавать значение атрибута по умолчанию. Объявление 
+		списка атрибутов имеет следующую форму записи:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;!ATTLIST Имя ОпрАтр&gt;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Здесь &quot;Имя&quot; - имя элемента, для которого задаются атрибуты. &quot;ОпрАтр&quot; - 
+		это одно или несколько определений атрибутов. Определение атрибута имеет 
+		следующую форму записи:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		Имя ОпрАтр ОбъявУмолч&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Здесь &quot;Имя&quot; - имя атрибута. ОпрАтр представляет собой тип атрибута. 
+		ОбъявУмолч - это объявление значения по умолчанию, которое указывает на 
+		востребованность атрибута и содержит некоторую дополнительную 
+		информацию. Пример объявления</span><span lang="EN-US" style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">:&nbsp;<br>
+		<br>
+		</span><b>
+		<span lang="EN-US" style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;!ATTLIST PRODUCT Retail CDATA &quot;retail&quot; Title CDATA #REQUIRED&gt;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Вышеприведённое объявление означает, что вы можете присвоить атрибуту 
+		Retail любую строку в кавычках (ключевое слово CDATA); если этот атрибут 
+		опущен, ему будет присвоено значение по умолчанию &quot;retail&quot;. Вы можете 
+		присвоить атрибуту Title любую строку в кавычках; этот атрибут должен 
+		быть обязательно задан для каждого элемента PRODUCT (ключевое слово #REQUIRED) 
+		и не имеет значения по умолчанию.</span></p>
+		<p class="MsoNormal" style="text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Объявления атрибутов просто включаются в DTD наряду с объявлениями типов 
+		элементов, например:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		...<br>
+		</span>
+		<span lang="EN-US" style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;!ELEMENT PRODUCT (#PCDATA)&gt;<br>
+		&lt;!ATTLIST PRODUCT Retail CDATA &quot;retail&quot; Title CDATA #REQUIRED&gt;<br>
+		...</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Вы можете задавать тип атрибута тремя различными способами:</span></p>
+		<ul type="disc" style="margin-bottom: 0cm">
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Строковый тип (ключевое слово CDATA, что означает символьные данные, 
+			Character Data).</span></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Маркерный тип.</span></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Нумерованный тип.</span></li>
+		</ul>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Вот список ключевых слов, которые вы можете использовать в определении 
+		маркерных типов атрибутов:&nbsp;</span></p>
+		<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="100%" style="width: 100.0%">
+			<tr>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				ID</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&nbsp;&nbsp;Для каждого элемента атрибут должен иметь уникальное значение. 
+				Элемент может иметь только один атрибут типа ID. В объявлении 
+				значения по умолчанию такого атрибута должно фигурировать #REQUIRED 
+				или #IMPLIED.</span></td>
+			</tr>
+			<tr>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				IDREF</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&nbsp;&nbsp;Значение такого атрибута является ссылкой на атрибут типа ID 
+				другого элемента .</span></td>
+			</tr>
+			<tr>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				IDREFS</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&nbsp;&nbsp;Этот тип атрибута похож на IDREF, но его значение может 
+				включать ссылки на несколько идентификаторов - разделённых 
+				пробелами - внутри строки в кавычках.</span></td>
+			</tr>
+			<tr>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				ENTITY</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&nbsp;&nbsp;Значение атрибута должно совпадать с именем примитива, 
+				объявленного в DTD. Такой примитив ссылается на внешний файл, 
+				обычно содержащий не XML-данные. Таким способом, например, 
+				определяют путь к файлу, содержащему графические данные 
+				(рисунок).</span></td>
+			</tr>
+			<tr>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				ENTITIES</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&nbsp;&nbsp;Этот тип атрибута похож на ENTITY, но его значение может 
+				включать ссылки на несколько идентификаторов, разделённых 
+				пробелами - внутри строки в кавычках. Таким способом, например, 
+				определяют пути к файлам, содержащим графические данные 
+				(рисунки) в альтернативных форматах.</span></td>
+			</tr>
+			<tr>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				NMTOKEN</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&nbsp;&nbsp;Элементарное имя.</span></td>
+			</tr>
+			<tr>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				NMTOKENS</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&nbsp;&nbsp;Этот тип атрибута похож на NMTOKEN, но его значение может 
+				включать несколько элементарных имён, разделённых пробелами - 
+				внутри строки в кавычках..</span></td>
+			</tr>
+		</table>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		&nbsp;</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Два способа, которые вы можете использовать в определении нумерованных 
+		типов атрибутов:</span></p>
+		<ul type="disc" style="margin-bottom: 0cm">
+			<li class="MsoNormal" style="color: black; line-height: normal; margin-bottom: 13.5pt">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Если вы хотите ограничить значение атрибута &quot;Mass&quot; словами &quot;net&quot; и &quot;gross&quot;, 
+			вы можете написать следующее:&nbsp;<br>
+			<br>
+			</span><b>
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+			&lt;!ATTLIST PRODUCT Mass (net | gross) &quot;net&quot;&gt;&nbsp;</span></b></li>
+			<li class="MsoNormal" style="color: black; line-height: normal; margin-bottom: 13.5pt">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Нумерованный тип можно определить с помощью ключевого слова NOTATION. 
+			Каждая из указанных нотаций должна точно соответствовать имени 
+			нотации, объявленному в DTD. Нотация описывает формат данных или 
+			идентифицирует программу, применяемую для обработки определённого 
+			формата данных:&nbsp;<br>
+			<br>
+			</span><b>
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+			&lt;!ATTLIST PRODUCT Description NOTATION (HTML | SGML | RTF) #REQUIRED&gt;&nbsp;</span></b></li>
+		</ul>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Объявление значения атрибута по умолчанию может иметь четыре формы:&nbsp;</span></p>
+		<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="100%" style="width: 100.0%">
+			<tr>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				#REQUIRED</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&nbsp;&nbsp;Вы должны задать значение атрибута для каждого элемента.</span></td>
+			</tr>
+			<tr>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				#IMPLIED</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&nbsp;&nbsp;Вы можете опустить атрибут, но никакое значение по умолчанию 
+				назначено не будет.</span></td>
+			</tr>
+			<tr>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				AttValue</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&nbsp;&nbsp;Собственно значение по умолчанию. Вы можете опустить атрибут, 
+				и ему будет назначено это значение по умолчанию.</span></td>
+			</tr>
+			<tr>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				#FIXED&nbsp;AttValue</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&nbsp;&nbsp;Вы можете опустить атрибут, и ему будет назначено это значение 
+				по умолчанию (AttValue). Если вы не опускаете атрибут, вы 
+				обязаны назначить ему это значение по умолчанию. При таком 
+				объявлении указывать атрибут в элементе имеет смысл только для 
+				того, чтобы сделать документ более понятным для восприятия.</span></td>
+			</tr>
+		</table>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		&nbsp;</span></p>
+		<p class="MsoNormal" style="text-indent: 15.6pt; line-height: normal">
+		<b>
+		<span style="font-size: 18.0pt; font-family: 'Times New Roman',serif; color: black">
+		Использование внешних DTD</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Вы можете поместить все или часть объявлений DTD документа в отдельный 
+		файл, а затем ссылаться на этот файл из объявления типа документа. DTD, 
+		или часть DTD, содержащаяся в отдельном файле, называется внешним 
+		подмножеством DTD. Применение внешнего подмножества DTD имеет смысл для 
+		DTD, которые являются общими для группы документов.</span></p>
+		<p class="MsoNormal" style="text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt" align="left">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Ссылка на внешний DTD выглядит следующим образом:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;!DOCTYPE PRODUCTS SYSTEM &quot;Products.dtd&quot;<br>
+		&nbsp;&nbsp;&nbsp; [<br>
+		&nbsp;&nbsp;&nbsp; ...<br>
+		&nbsp;&nbsp;&nbsp; ]<br>
+		&gt;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Файл, содержащий внешнее подмножество DTD, может включать любые 
+		объявления разметки, которые могут быть включены во внутреннее 
+		подмножество DTD. Например, содержимое файла &quot;Products.dtd&quot; может 
+		выглядеть так:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;!ELEMENT PRODUCT ANY&gt;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		XML-процессор осуществляет слияние внутреннего и внешнего подмножества 
+		DTD. Если одно и то же объявление встречается более одного раза, 
+		XML-процессор использует первое объявление и игнорирует все последующие. 
+		Внутреннее подмножество DTD имеет приоритет перед внешним (т.е. внешнее 
+		подмножество DTD всегда обрабатывается после того, как полностью будет 
+		обработано подмножество внутреннего DTD). Такой способ объединения DTD 
+		даёт вам возможность адаптировать (или субклассировать) DTD для 
+		конкретного документа.</span></p>
+		<p class="MsoNormal" style="text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt" align="left">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Вы можете заставить XML-процессор игнорировать часть внешнего DTD с 
+		помощью раздела IGNORE. Такой приём подобен &quot;комментированию&quot; фрагмента 
+		кода:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;!ELEMENT PRODUCT ANY&gt;<br>
+		&lt;![IGNORE[<br>
+		&nbsp;&nbsp;&nbsp; &lt;!-- Comment --&gt;<br>
+		&nbsp;&nbsp;&nbsp; &lt;!ELEMENT TITLE ANY&gt;<br>
+		]]&gt;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Если вы хотите временно восстановить блок разметки в разделе IGNORE, 
+		достаточно просто заменить ключевое слово IGNORE на INCLUDE, не удаляя 
+		при этом символы-ограничители разметки, чтобы потом можно было быстро 
+		опять &quot;закомментировать&quot; код.</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Примечание: разделы IGNORE и INCLUDE можно использовать только во 
+		внешнем DTD.</span></p>
+		<p class="MsoNormal" style="text-indent: 15.6pt; line-height: normal" align="left">
+		<b>
+		<span style="font-size: 18.0pt; font-family: 'Times New Roman',serif; color: black">
+		Пример валидного XML-документа</span></b></p>
+		<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt" align="left">
+		<b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;?xml version=&quot;1.0&quot;?&gt;<br>
+		<br>
+		</span>
+		<span lang="EN-US" style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;!-- Comment --&gt;<br>
+		<br>
+		&lt;!DOCTYPE PRODUCTS<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; [<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; &lt;!ELEMENT PRODUCTS (PRODUCT)*&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; &lt;!ELEMENT PRODUCT (TITLE, PRICE)&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; &lt;!ELEMENT TITLE (#PCDATA)&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; &lt;!ELEMENT PRICE (#PCDATA)&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; ]<br>
+		&gt;<br>
+		<br>
+		&lt;PRODUCTS&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; &lt;PRODUCT&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;TITLE&gt; Product #1 &lt;/TITLE&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;PRICE&gt; 10.00 &lt;/PRICE&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; &lt;/PRODUCT&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; &lt;PRODUCT&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;TITLE&gt; Product #2 &lt;/TITLE&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &lt;PRICE&gt; 20.00 &lt;/PRICE&gt;<br>
+		&nbsp;&nbsp;&nbsp;&nbsp; &lt;/PRODUCT&gt;<br>
+		&lt;/PRODUCTS&gt;<br>
+		</span></b>
+		<span lang="EN-US" style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		<br>
+		<br>
+&nbsp;</span></p>
+		<p class="MsoNormal" style="text-indent: 15.6pt; line-height: normal">
+		<b>
+		<span style="font-size: 18.0pt; font-family: 'Times New Roman',serif; color: black">
+		Использование примитивов</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Термин &quot;примитив&quot; в широком смысле относится к любому из следующих типов 
+		единиц хранения информации для XML-документов:</span></p>
+		<ul type="disc" style="margin-bottom: 0cm">
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Собственно XML-документ как единое целое (файл).</span></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Внешнее подмножество DTD (файл).</span></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Внешний файл, определённый как внешний примитив в DTD и допускающий 
+			использование посредством ссылки (файл).</span></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Строка в кавычках, определённая как внутренний примитив в DTD и 
+			допускающая использование посредством ссылки (не файл).</span></li>
+		</ul>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Однако чаще термин &quot;примитив&quot; используется в узком смысле, а именно - в 
+		двух последних смыслах.</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Механизм примитивов может оказаться удобным для сокращения времени 
+		набора документа, а также может облегчить внесение изменений в документ. 
+		Кроме того, механизм примитивов необходим при включении не XML-данных в 
+		XML-документ. В принципе, механизм примитивов сходен с определением 
+		констант в различных языках программирования.</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Примитивы классифицируются по трём признакам:</span></p>
+		<ul type="disc" style="margin-bottom: 0cm">
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Общие и параметрические. Общий примитив включает текстовые или 
+			нетекстовые данные, которые вы можете использовать внутри корневого 
+			элемента. Параметрический примитив содержит XML-текст, который может 
+			быть помещён в DTD.</span></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Внутренние и внешние. Внутренний примитив содержится внутри строки в 
+			кавычках. Внешний примитив содержится в отдельном файле.</span></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Разбираемые и неразбираемые. Разбираемый примитив содержит XML-текст 
+			(символьные данные, разметка или и то, и другое). Когда вы 
+			вставляете ссылку на разбираемый примитив в документ, ссылка 
+			замещается содержимым примитива. Синтаксический анализатор разбирает 
+			содержимое примитива точно так же, как он сканирует текст, 
+			непосредственно введённый в документ. Неразбираемый примитив может 
+			содержать как XML-данные, так и не XML-данные. Его содержимое нельзя 
+			непосредственно вставить в документ посредством ссылки.</span></li>
+		</ul>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Реально в XML поддерживается пять типов примитивов:</span></p>
+		<ul type="disc" style="margin-bottom: 0cm">
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Общие внутренние разбираемые.</span></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Общие внешние разбираемые.</span></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Общие внешние неразбираемые.</span></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Параметрические внутренние разбираемые.</span></li>
+			<li class="MsoNormal" style="color: black; line-height: normal">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Параметрические внешние разбираемые.</span></li>
+		</ul>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Примитив создаётся путём объявления его в DTD документа.</span></p>
+		<p class="MsoNormal" style="text-indent: 15.6pt; line-height: normal">
+		<b>
+		<span style="font-size: 18.0pt; font-family: 'Times New Roman',serif; color: black">
+		Использование общих примитивов и нотаций</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Объявление общего внутреннего разбираемого примитива имеет следующую 
+		форму записи:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;!ENTITY Имя Значение&gt;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Здесь &quot;Имя&quot; есть имя примитива. Примитив может иметь такое же имя, что и 
+		другой параметрический примитив в документе, т.к. общие и 
+		параметрические примитивы занимают различные пространства имён. Примитив 
+		также может иметь такое же имя, что и элемент или атрибут. &quot;Значение&quot; 
+		есть строка, заключённая в кавычки (литерал). Строка не может содержать 
+		символы амперсанда (&amp;) и процентов (%). Содержимое строки должно быть 
+		корректным для места, в которое вы предполагаете вставить примитив.</span></p>
+		<p class="MsoNormal" style="text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt" align="left">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Пример</span><span lang="EN-US" style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">:&nbsp;<br>
+		<br>
+		</span><b>
+		<span lang="EN-US" style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		...<br>
+		&lt;!ENTITY title<br>
+		&nbsp;&nbsp;&nbsp; &quot;Groceries<br>
+		&nbsp;&nbsp;&nbsp; &lt;SUBTITLE&gt;Dry Produce&lt;/SUBTITLE&gt;&quot;<br>
+		&gt;<br>
+		...<br>
+		</span>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;PRODUCT&gt;<br>
+		&nbsp;&nbsp;&nbsp; Title: &amp;title<br>
+		&lt;PRODUCT&gt;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Объявление общего внешнего разбираемого примитива имеет следующую форму 
+		записи:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;!ENTITY Имя SYSTEM Литерал&gt;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Здесь &quot;Имя&quot; есть имя примитива. &quot;Литерал&quot; есть путь к файлу, содержащему 
+		данные примитива. Вы можете вставить общий внешний разбираемый примитив 
+		только внутрь содержимого элемента.</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Объявление общего внешнего неразбираемого примитива имеет следующую 
+		форму записи:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;!ENTITY Имя SYSTEM Литерал NDATA ИмяНотации&gt;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Здесь &quot;Имя&quot; есть имя примитива. &quot;Литерал&quot; есть путь к файлу, содержащему 
+		данные примитива. Ключевое слово NDATA указывает, что файл примитива 
+		содержит неразбираемые данные (они не обрабатываются синтаксическим 
+		анализатором). &quot;ИмяНотации&quot; есть имя нотации, объявленной в DTD.</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Файл неразбираемого внешнего примитива может содержать любой тип текста 
+		или нетекстовые данные. Фактически единственный способ использования 
+		этого типа примитива состоит в присвоении его имени атрибуту с типом 
+		ENTITY или ENTITIES. Процессор просто делает примитив и его нотацию 
+		доступными приложению, которое может выполнять необходимые действия с 
+		этой информацией (например, он может запустить программу, 
+		ассоциированную с нотацией, и указать ей отобразить данные из файла 
+		примитива).</span></p>
+		<p class="MsoNormal" style="text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt" align="left">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Пример</span><span lang="EN-US" style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">:&nbsp;<br>
+		<br>
+		</span><b>
+		<span lang="EN-US" style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		...<br>
+		&lt;!ENTITY faun SYSTEM &quot;Faun.gif&quot; NDATA GIF&gt;<br>
+		...<br>
+		</span>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;COVERIMAGE Source=&quot;faun&quot; /&gt;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Нотация описывает определённый формат данных. Это делается путём 
+		указания адреса описания формата, адреса программы, которая может 
+		обрабатывать данные в этом формате, либо указания просто описания 
+		формата. Вы можете использовать нотацию, чтобы описать формат общего 
+		внешнего неразбираемого примитива, либо можете присвоить нотацию 
+		атрибуту, который имеет нумерованный тип NOTATION.</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Нотация имеет следующую форму записи:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;!NOTATION Имя SYSTEM Литерал&gt;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Здесь &quot;Имя&quot; есть имя нотации. &quot;Литерал&quot; есть строка, куда вы можете 
+		включить любое описание формата, которое проинформирует приложение, как 
+		отображать или обрабатывать документ. Например, вы можете включить в 
+		литерал одно из следующих описаний:</span></p>
+		<ul type="disc" style="margin-bottom: 0cm">
+			<li class="MsoNormal" style="color: black; line-height: normal; margin-bottom: 13.5pt">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			URL программы, которая может обрабатывать или отображать нужный 
+			формат данных:&nbsp;<br>
+			<br>
+			</span><b>
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+			&lt;!NOTATION BMP SYSTEM &quot;Pbrush.exe&quot;&gt;&nbsp;</span></b></li>
+			<li class="MsoNormal" style="color: black; line-height: normal; margin-bottom: 13.5pt">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			URL документа, который описывает нужный формат данных:&nbsp;<br>
+			<br>
+			</span><b>
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+			&lt;!NOTATION STRANGEFORMAT SYSTEM &quot;http://StrangeFormat.com/StrangeFormat.htm&quot;&gt;&nbsp;</span></b></li>
+			<li class="MsoNormal" style="color: black; line-height: normal; margin-bottom: 13.5pt">
+			<p align="left">
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Простое описание формата</span><span lang="EN-US" style="font-size: 13.5pt; font-family: 'Times New Roman',serif">:&nbsp;<br>
+			<br>
+			</span><b>
+			<span lang="EN-US" style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+			&lt;!NOTATION GIF SYSTEM &quot;Graphic Interchange Format&quot;&gt;&nbsp;</span></b></li>
+		</ul>
+		<p class="MsoNormal" style="text-indent: 15.6pt; line-height: normal">
+		<b>
+		<span style="font-size: 18.0pt; font-family: 'Times New Roman',serif; color: black">
+		Использование параметрических примитивов</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Объявление параметрического внутреннего разбираемого примитива имеет 
+		следующую форму записи:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;!ENTITY % Имя Значение&gt;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Здесь &quot;Имя&quot; есть имя примитива. Примитив может иметь такое же имя, что и 
+		общий примитив в документе, т.к. параметрические и общие примитивы 
+		занимают различные пространства имён. Имя примитива также может 
+		совпадать с именем элемента или атрибута. &quot;Значение&quot; есть литерал, 
+		который не может содержать символа процентов (%) и символа амперсанда 
+		(&amp;), если это не начальный символ в ссылке на символ или общий примитив. 
+		Строка &quot;Значение&quot; должна содержать одно или несколько объявлений 
+		разметки, которые разрешено использовать в DTD.</span></p>
+		<p class="MsoNormal" style="text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt" align="left">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Пример</span><span lang="EN-US" style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black"> 
+		DTD:&nbsp;<br>
+		<br>
+		</span><b>
+		<span lang="EN-US" style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;!DOCTYPE PRODUCTS<br>
+		&nbsp;&nbsp;&nbsp; [<br>
+		&nbsp;&nbsp;&nbsp; &lt;!ENTITY % contents &quot;<br>
+		&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;!ELEMENT TITLE (#PCDATA)&gt;<br>
+		&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &lt;!ELEMENT PRICE (#PCDATA)&gt;&quot;&gt;<br>
+		&nbsp;&nbsp;&nbsp; &lt;!ELEMENT PRODUCT (TITLE, PRICE)&gt;<br>
+		&nbsp;&nbsp;&nbsp; %contents;<br>
+		&nbsp;&nbsp;&nbsp; ]<br>
+		&gt;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt" align="left">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Приведённое выше</span><span lang="EN-US" style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black"> 
+		DTD </span>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		эквивалентно следующему</span><span lang="EN-US" style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">:&nbsp;<br>
+		<br>
+		</span><b>
+		<span lang="EN-US" style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;!DOCTYPE PRODUCTS<br>
+		&nbsp;&nbsp;&nbsp; [<br>
+		&nbsp;&nbsp;&nbsp; &lt;!ELEMENT PRODUCT (TITLE, PRICE)&gt;<br>
+		&nbsp;&nbsp;&nbsp; &lt;!ELEMENT TITLE (#PCDATA)&gt;<br>
+		&nbsp;&nbsp;&nbsp; &lt;!ELEMENT PRICE (#PCDATA)&gt;<br>
+		&nbsp;&nbsp;&nbsp; ]<br>
+		&gt;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Объявление параметрического внешнего разбираемого примитива имеет 
+		следующую форму записи:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&lt;!ENTITY % Имя SYSTEM Литерал&gt;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Здесь &quot;Имя&quot; есть имя примитива. &quot;Литерал&quot; есть путь к файлу, содержащему 
+		данные примитива. Файл параметрического внешнего разбираемого примитива 
+		должен содержать полные объявления разметки любых типов, допустимых в 
+		DTD.</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Вы можете использовать параметрические внешние разбираемые примитивы для 
+		хранения группы взаимосвязанных объявлений. Это позволит вам объединять 
+		эти группы объявлений различными способами. Параметрический внешний 
+		разбираемый примитив работает во многом аналогично внешнему подмножеству 
+		DTD, но обеспечивает большую гибкость - вы можете включать несколько 
+		файлов внешних объявлений, причём в любом порядке.</span></p>
+		<p class="MsoNormal" style="text-indent: 15.6pt; line-height: normal">
+		<b>
+		<span style="font-size: 18.0pt; font-family: 'Times New Roman',serif; color: black">
+		Вставка ссылок на примитивы в XML-документ</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Ссылка на общий примитив имеет следующую форму записи:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		&amp;ИмяПримитива;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Ссылка на параметрический примитив имеет следующую форму записи:&nbsp;<br>
+		<br>
+		</span><b>
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: navy">
+		%ИмяПримитива;&nbsp;</span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		В представленной ниже таблице приведены формы записи ссылок на примитивы 
+		и перечень возможных мест их помещения:&nbsp;</span></p>
+		<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="100%" style="width: 100.0%">
+			<tr>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; margin-bottom: .0001pt">
+				<b>
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				Тип примитива</span></b></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; margin-bottom: .0001pt">
+				<b>
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				Форма записи ссылки</span></b></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; margin-bottom: .0001pt">
+				<b>
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				Места помещения</span></b></td>
+			</tr>
+			<tr>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				Общий внутренний разбираемый</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&amp;ИмяПримитива;</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&nbsp;&nbsp;Содержимое элемента, значение атрибута (в т.ч. объявление 
+				значения по умолчанию), значение в объявлении внутреннего 
+				примитива.</span></td>
+			</tr>
+			<tr>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				Общий внешний разбираемый</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&amp;ИмяПримитива;</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&nbsp;&nbsp;Содержимое элемента.</span></td>
+			</tr>
+			<tr>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				Общий внешний неразбираемый</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				Атрибут='ИмяПримитива'</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&nbsp;&nbsp;Значение атрибута, имеющего тип ENTITY или ENTITIES (в т.ч. в 
+				объявлении внутреннего примитива).</span></td>
+			</tr>
+			<tr>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				Параметрический внутренний разбираемый</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				%ИмяПримитива;</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&nbsp;&nbsp;В DTD, но не внутри объявлений разметки.</span></td>
+			</tr>
+			<tr>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				Параметрический внешний разбираемый</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				%ИмяПримитива;</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&nbsp;&nbsp;В DTD, но не внутри объявлений разметки.</span></td>
+			</tr>
+			<tr>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				Ссылка на символ</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&amp;#Число;<br>
+				&amp;#xЧисло;</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&nbsp;&nbsp;Содержимое элемента, значение атрибута (в т.ч. объявление 
+				значения по умолчанию), значение в объявлении внутреннего 
+				примитива. &quot;Число&quot; - десятичный или шестнадцатеричный код 
+				символа.</span></td>
+			</tr>
+		</table>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		&nbsp;</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: .0001pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Для вставки ссылок на символы используется международная таблица 
+		символов ISO-IEC 10646, содержащая символы многих языков. Например, 
+		&amp;#169; или &amp;#xA9; соответствуют символу ©. Коды первых 128 символов 
+		совпадают с кодами набора ASCII.</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 24.0pt; line-height: normal; margin-bottom: 13.5pt">
+		<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif; color: black">
+		Кроме того, в XML-документе вы можете использовать ссылку на 
+		предопределённый примитив, чтобы вставить следующие четыре стандартных 
+		символа:&nbsp;</span></p>
+		<table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" width="100%" style="width: 100.0%">
+			<tr>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&amp;amp;</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&amp;</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&amp;#38</span></td>
+			</tr>
+			<tr>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&amp;lt;</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&lt;&nbsp;</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&amp;#60</span></td>
+			</tr>
+			<tr>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&amp;gt;</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&gt;&nbsp;</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&amp;#62</span></td>
+			</tr>
+			<tr>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&amp;quot;</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&quot;</span></td>
+				<td style="padding: .75pt">
+				<p class="MsoNormal" style="line-height: normal; margin-bottom: .0001pt">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				&amp;#34</span></td>
+			</tr>
+		</table>
+		<p class="MsoNormal" align="right" style="text-align: right; line-height: normal">
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Людоговский Александр</span></p>
+		<p class="MsoNormal" style="line-height: normal">&nbsp;</p>
+		<p class="MsoNormal" style="line-height: normal">
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		&nbsp;<a style="color: blue; text-decoration: underline; text-underline: single" href="http://www.script-coding.com/"><span style="color: blue">http://www.script-coding.com</span></a>&nbsp;При 
+		любом использовании материалов сайта обязательна&nbsp;<b>ссылка</b>&nbsp;на него 
+		как на источник информации, а также сохранение&nbsp;<b>целостности</b>&nbsp;и&nbsp;<b>авторства</b>&nbsp;материалов.</span></th>
+		<td valign="top" height="12196" width="237">
+		<!-- MSCellType="NavBody" -->
+		&nbsp;</td>
+	</tr>
+</table>
+
+</body>
+
+</html>

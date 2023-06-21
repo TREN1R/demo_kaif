@@ -1,0 +1,242 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="ru">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Лабораторная работа №8-2</title>
+</head>
+
+<body>
+
+<table border="3" cellpadding="0" cellspacing="0" style="text-align: justify; text-indent: 20; margin-left: 20; margin-right: 20" background="Fon.jpg" bordercolor="#000080" width="1200" height="1732">
+	<!-- MSTableType="layout" -->
+	<tr>
+		<td valign="top">
+		<!-- MSCellType="DecArea" -->
+		&nbsp;</td>
+		<td valign="top" height="72">
+		<!-- MSCellType="ContentHead" -->
+		<p style="text-align: center"><font color="#800080">
+<a name="Лабораторная_работа_№8-2._Заполнение_объектов_конфигурации_данными_из_Excel_"><i><b>
+		<font size="5">Лабораторная работа №8-2. </font></b></i>
+		<b><i><font size="5">
+		Заполнение объектов конфигурации данными из <span lang="en-us">
+		Excel</span></font></i></b></a></font></td>
+	</tr>
+	<tr>
+		<td valign="top" width="158">
+		<!-- MSCellType="NavBody" -->
+		&nbsp;<p><a href="#Описание_процедуры_ПрочестьExcel()"><font size="2">
+		Процедура Прочесть</font><span lang="en-us"><font size="2">Excel()</font></span></a></p>
+		<p>&nbsp;</p>
+		<p><a href="#Описание_процедуры_ПрочестьExcelНаСервере()">
+		<font size="2">Процедура Прочесть<span lang="en-us">Excel</span>НаСервере()</font></a></p>
+		<p>&nbsp;</td>
+		<td valign="top" height="1654" width="1232">
+		<!-- MSCellType="ContentBody" -->
+		&nbsp;<p><a href="../Page1_1.htm">В оглавление</a></p>
+		<p style="text-align: center"><font color="#000080" size="4"><i>
+		<b>Техническое задание</b></i></font></p>
+		<p>Требуется создать обработку со следующими функциями:</p>
+		<p>1) Чтение <span lang="en-us">Excel</span> файла и вывод его 
+		содержания в динамический список и пополнение этими записями справочника 
+		&quot;Товары&quot;</p>
+		<p>2)&nbsp; Чтение и&nbsp; вывод информации&nbsp; <span lang="en-us">
+		Excel</span> файла в табличную часть документа &quot;ПроверкаОбработки&quot;</p>
+		<p style="text-align: center"><i><b><font size="4" color="#000080">
+		&nbsp;Рекомендации к решению</font></b></i></p>
+		<p>1&nbsp; Создать обработку <i><b>Загрузка<span lang="en-us">Excel</span>
+		</b></i>в составе&nbsp; конфигурации. В обработку включите реквизит&nbsp;
+		<i><b>ИмяФайла</b></i> (строка, длина неограниченная), кнопку <i><b>
+		Прочесть <span lang="en-us">Excel</span></b></i> и динамический список
+		<i><b>Товары</b></i>, созданный на основании справочника <i><b>Товары</b></i>. 
+		Справочник <i><b>Товары</b></i> содержит пять реквизитов Код (число, 
+		длина 9), Наименование (строка, 25), Артикул (строка, 16), Размер 
+		(число, 2), Страна (строка, 16), рисунок 1.</p>
+		<p style="text-align: center"><img border="0" src="lab8-22.jpg"></p>
+		<p style="text-align: center">Рисунок 1 Создание обработки</p>
+		<p>2&nbsp;&nbsp; Создайте файл <span lang="en-us">Excel</span> и 
+		создайте на странице &quot;Лист1&quot; таблицу, рисунок 2.<span lang="en-us">
+		</span>Файл сохраните в любом удобном для Вас месте с расширением <i><b>
+		.<span lang="en-us">xlsx</span></b></i></p>
+		<p style="text-align: center"><img border="0" src="lab8-23.gif"></p>
+		<p style="text-align: center">Рисунок 2 -&nbsp; Файл <span lang="en-us">
+		Excel</span></p>
+		<p><span lang="en-us">3&nbsp; </span>Закрепите за реквизитом <i><b>
+		ИмяФайла</b></i> процедуру, которая будет открывать диалоговое окно для 
+		выбора файла <span lang="en-us">Excel</span>, рисунок 3.</p>
+		<p style="text-align: center"><img border="0" src="lab8-24.gif">э</p>
+		<p style="text-align: center">Рисунок 3 _Процедура открытия окна выбора 
+		файла</p>
+		<p>4&nbsp; Настройте динамический список таким образом, чтобы текст 
+		запроса имел следующий вид, рисунок 4.</p>
+		<p style="text-align: center"><img border="0" src="lab8-25.jpg"></p>
+		<p style="text-align: center">Рисунок 4 - Настройка текста запроса</p>
+		<p>5&nbsp; Закрепите за кнопкой <i><b>Прочесть<span lang="en-us">Excel</span></b></i> 
+		две процедуры, которые буду считывать информацию из <span lang="en-us">
+		Excel</span> файла, выводить ее в справочник <i><b>Товары</b></i> и 
+		отображать в динамическом списке,&nbsp; рисунок 5 и 5а.</p>
+		<p style="text-align: center"><img border="0" src="lab8-21.gif"></p>
+		<p style="text-align: center">Рисунок 5 -Процедура, обрабатывающая 
+		нажатие на кнопку <i><b>Прочесть<span lang="en-us">Excel</span></b></i><b><i>&nbsp;
+		</i></b><img border="0" src="lab8-27.gif"><img border="0" src="lab8-28.gif"><img border="0" src="lab8-29.gif"></p>
+		<p style="text-align: center">Рисунок 5а - Процедура для чтения файла
+		<span lang="en-us">Excel</span> и формирования строк справочника</p>
+		<p style="text-align: left"><a href="../Page1_1.htm">В оглавление</a></p>
+		<p style="text-align: left"><font color="#800080"><i><b>
+		<a name="Описание_процедуры_ПрочестьExcel()">Описание процедуры Прочесть<span lang="en-us">Excel()</span></a></b></i></font></p>
+		<blockquote>
+			<blockquote>
+				<p style="text-align: left">В процедуре создается новый 
+				табличный документ (резервируется область в оперативной памяти), 
+				в который считывается информация из файла&nbsp;
+				<span lang="en-us">Excel</span>. Для того, чтобы предотвратить 
+				ошибочную ситуацию, связанную с чтением&nbsp; файла
+				<span lang="en-us">Excel</span> (чтобы программа не заканчивала 
+				работу аварийно) используется оператор <b><i>Попытка - 
+				Исключение - КонецПопытки</i></b>. Если ситуация аварийная, то 
+				работа прерывается. Если&nbsp; нет аварийного останова, то 
+				управление передается процедуре&nbsp; <b><i>Прочесть<span lang="en-us">Excel</span>НаСервере<span lang="en-us">(</span>ТабДок<span lang="en-us">)</span>
+				</i></b>и ей передается ссылка на таблицу, в которую был считан 
+				файл<span lang="en-us"> Excel</span>.</p>
+			</blockquote>
+		</blockquote>
+		<p style="text-align: left"><font color="#800080">
+		<a name="Описание_процедуры_ПрочестьExcelНаСервере()"><b><i>Описание 
+		процедуры Прочесть<span lang="en-us">Excel</span>НаСервере<span lang="en-us">()</span></i></b></a></font></p>
+		<blockquote>
+			<blockquote>
+				<p style="text-align: left">1)&nbsp; Выполняется чтение версии 
+				программной платформы. Прочитанная информация может иметь вид, 
+				например 8.3.1610. Выполняется ее преобразование, отбрасывание 
+				точек с помощью функций <i><b>Лев</b></i> и<i><b> СтрЗаменить</b></i>. 
+				Функция <i><b>СтрЗаменить</b></i> выполняется первой и точки 
+				заменяет на &quot;&quot;(пусто), функция <i><b>Лев</b></i> выбирает слева 
+				4 символа, т.е. 8316. Это необходимо в связи с тем, что для 
+				редакции платформы ниже чем 8.3.9 функции для работы с файлом
+				<span lang="en-us">Excel</span> немного отличаются.</p>
+			</blockquote>
+		</blockquote>
+		<p style="text-align: center"><img border="0" src="lab8-25.gif"></p>
+		<blockquote>
+			<blockquote>
+				<p style="text-align: left">2)&nbsp; Создается&nbsp; таблица 
+				значений, в которую добавляются наименования колонок таблицы, 
+				считанной из файла <span lang="en-us">Excel</span></p>
+			</blockquote>
+		</blockquote>
+		<p style="text-align: center"><img border="0" src="lab8-30.gif"></p>
+		<blockquote>
+			<blockquote>
+				<p style="text-align: left"><span lang="en-us">3)&nbsp; </span>С 
+				помощью запроса определяется количество строк в справочнике <i>
+				<b>Товары</b></i>. Это необходимо для того, чтобы новые строки, 
+				добавляемые из файла <span lang="en-us">Excel</span>, 
+				дописывались к существующим.</p>
+			</blockquote>
+		</blockquote>
+		<p style="text-align: left"><img border="0" src="lab8-31.gif"></p>
+		<blockquote>
+			<blockquote>
+				<p style="text-align: left">4)&nbsp; С помощью цикла выполняется 
+				добавление в таблицу значений (в которой определили наименования 
+				колонок) строк из файла <span lang="en-us">Excel</span>. В
+				<span lang="en-us">Excel </span>адрес ячейки имеет вид <i><b>
+				<span lang="en-us">RnCm</span></b></i>, где <span lang="en-us">n</span> 
+				- номер строки, а <span lang="en-us">&nbsp; m</span> - номер 
+				колонки. Так как первая строка файла <span lang="en-us">Excel</span> 
+				- это заголовок таблицы, поэтому чтение начинается со второй 
+				строки (Сч=2). В процедуре номер строки определяется по 
+				счетчику, а номер колонки определен как постоянная величина (это 
+				является недостатком процедуры, потому что таблица в файле
+				<span lang="en-us">Excel</span> может располагаться по разному).</p>
+			</blockquote>
+		</blockquote>
+		<p style="text-align: left"><img border="0" src="lab8-32.gif"></p>
+		<blockquote>
+			<blockquote>
+				<p style="text-align: left">5)&nbsp; Создается новая строка в 
+				справочнике Товары и заполняется считанной информацией. Для 
+				определения номера строки берется количество существующих строк 
+				справочника к ним&nbsp; прибавляется номер считанной строки из 
+				файла и вычитается 1, потому что отсчет строк в файле
+				<span lang="en-us">Excel</span> начался с 2. </p>
+			</blockquote>
+		</blockquote>
+		<p style="text-align: center"><img border="0" src="lab8-33.gif"></p>
+		<blockquote>
+			<blockquote>
+				<p style="text-align: left">6)&nbsp; Процесс формирования строк 
+				файла также выполняется&nbsp; с применением оператора Попытка 
+				-Исключение -КонецПопытки для предотвращения аварийной остановки 
+				программы. В секции Исключение не предусмотрен останов 
+				программы, потому что при ошибочном чтении строк файла дефектная 
+				строка не будет записана в справочник.</p>
+			</blockquote>
+		</blockquote>
+		<p style="text-align: left">6&nbsp; Закрепите созданную обработку и 
+		справочник <i><b>Товары</b></i> за подсистемой&nbsp; <i><b>Прочее</b></i> 
+		и перейдите в режим пользователя для тестирования выполненной работы. 
+		Откройте справочник <i><b>Товары</b></i> и введите в него одну строку, 
+		рисунок 6. </p>
+		<p style="text-align: center"><img border="0" src="lab8-210.jpg">э</p>
+		<p style="text-align: center">Рисунок 6 - Справочник Товары с введенной 
+		одной строкой</p>
+		<p style="text-align: left">7&nbsp; Откройте обработку, выберите адрес 
+		созданного Вами файла <span lang="en-us">Excel</span>, кликните по 
+		кнопке. Чтобы увидеть результаты работы, откройте еще раз справочник <i>
+		<b>Товары</b></i>, в нем появились новые записи, рисунок 7. При 
+		повторном открытии обработки эти же записи Вы увидите и в динамическом 
+		списке.</p>
+		<p style="text-align: center"><img border="0" src="lab8-211.jpg"><img border="0" src="lab8-212.jpg"></p>
+		<p style="text-align: center">Рисунок 7 - Справочник Товары, заполненный 
+		записями из <span lang="en-us">Excel</span> файла</p>
+		<p style="text-align: left">8&nbsp; Создайте документ <i><b>
+		ПроверкаОбработки</b></i> с табличной частью <i><b>Товары</b></i> и 
+		реквизитами Номер ( число, 10), Наименование (строка, 10), Артикул 
+		(строка, 10), Размер (число, 2), Страна (строка, 10), рисунок 8.</p>
+		<p style="text-align: center"><img border="0" src="lab8-213.jpg"></p>
+		<p style="text-align: center">Рисунок 8 - Структура документа <i><b>
+		ПроверкаОбработки</b></i></p>
+		<p style="text-align: left">9&nbsp; В процедуру, связанную с кнопкой 
+		внесите дополнение, рисунок 9. Обратите внимание, подчеркнутая строка в 
+		процедуре уже была.</p>
+		<p style="text-align: center"><img border="0" src="lab8-23.jpg"></p>
+		<p style="text-align: center">Рисунок 9 - Внесение дополнений в 
+		процедуру, связанную с кнопкой</p>
+		<p style="text-align: left">10&nbsp; Создайте процедуру <b><i>
+		ПрочестьExcel2НаСервере() </i></b>для формирования строк табличной части 
+		документа <b><i>ПроверкаОбработки</i></b>, рисунок 10.</p>
+		<p style="text-align: center"><img border="0" src="lab8-215.gif"></p>
+		<p style="text-align: center">Рисунок 10 - Процедура, формирующая 
+		табличную часть документа записями файла <span lang="en-us">Excel</span></p>
+		<p style="text-align: left">11 Закрепите документ <i><b>
+		ПроверкаОбработки</b></i> за подсистемой<i><b> Прочее</b></i>, сохраните 
+		все изменения, и перейдите в режим пользователя. Загрузите обработку, 
+		нажатие на кнопку вызовет диалог, рисунок 11, а после клика на <i><b>ОК</b></i> 
+		откройте документ <i><b>ПроверкаОбработки</b></i> и посмотрите его 
+		содержание, рисунок 12.</p>
+		<p style="text-align: center"><img border="0" src="lab8-216.jpg"></p>
+		<p style="text-align: center">Рисунок 11 - Выбор режима работы обработки</p>
+		<p style="text-align: center"><img border="0" src="lab8-217.jpg"></p>
+		<p style="text-align: center">Рисунок 12 - Документ с заполненной 
+		табличной частью</p>
+		<p style="text-align: left"><a href="../Page1_1.htm">В оглавление</a>&nbsp;&nbsp;&nbsp;
+		<a href="#Лабораторная_работа_№8-2._Заполнение_объектов_конфигурации_данными_из_Excel_">
+		В начало</a></p>
+		<p style="text-align: left"><i><b><font size="4" color="#800000">
+		Самостоятельно</font></b></i></p>
+		<p style="text-align: left">Создайте справочник <i><b>ЕдиницыИзмерений</b></i> 
+		с реквизитами (Код, Наименование, Обозначение) и выполните его 
+		заполнение информацией из файла <span lang="en-us">Excel</span> с 
+		помощью второго метода (используя построитель запроса, рисунок<span lang="en-us"> 
+		10</span>).</p>
+		<p style="text-align: left">&nbsp;</p>
+		<p style="text-align: left">&nbsp;</p>
+		<p>&nbsp;</td>
+	</tr>
+</table>
+
+</body>
+
+</html>

@@ -1,0 +1,537 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="ru">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Лабораторная работа №14</title>
+</head>
+
+<body>
+
+<p>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" width="1375" height="666" style="border: 1px solid #000080; padding-left: 16px; padding-right: 4px; padding-top: 20px; padding-bottom: 4px" background="Fon.jpg">
+	<!-- MSTableType="layout" -->
+	<tr>
+		<td valign="top" style="border: 2px solid #0000FF">
+		<!-- MSCellType="DecArea" -->
+		&nbsp;</td>
+		<td valign="top" height="91" style="border: 2px solid #0000FF; padding-left: 20px; padding-right: 10px; padding-top: 20px; padding-bottom: 10px">
+		<!-- MSCellType="ContentHead" -->
+		<p align="center"><i><b><font size="5" color="#000080">Лабораторная 
+		работа №<span lang="en-us">2</span>3<span lang="en-us">-1</span>. Автоматизированное тестирование&nbsp; 
+(части1-2)</font></b></i></td>
+	</tr>
+	<tr>
+		<td valign="top" width="237" style="border: 1px solid #0000FF; padding-left: 10px; padding-right: 4px; padding-top: 10px; padding-bottom: 4px">
+		<!-- MSCellType="NavBody" -->
+		&nbsp;</td>
+		<td valign="top" height="575" width="1138" style="border: 1px solid #000080; padding-left: 20px; padding-right: 6px; padding-top: 20px; padding-bottom: 6px">
+		<!-- MSCellType="ContentBody" -->
+		<p><a href="#13.__Ответить_на_вопросы_и_подготовиться_к_сдаче_зачета_">
+<font color="#000080">К 
+		вопросам </font> </a><font color="#000080">&nbsp; </font> <a href="Page_1.htm">
+<font color="#000080">В оглавление&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font>
+		</a> </p>
+		<p class="MsoNormal" align="justify"><font color="#000080">В платформе 
+		«1С:Предприятие 8.3» появился новый механизм, предназначенный для 
+		имитации интерактивных действий пользователей системы – 
+		автоматизированное тестирование. Автоматизированное тестирование не 
+		поддерживает работу с обычным интерфейсом, а только с<b> <i>управляемым.</i></b></font></p>
+		<div style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+			<p class="MsoNormal" align="justify"><b><font color="#000080">
+			Автоматизированное тестирование - это использование встроенного в 1С 
+			8.3 механизма для автоматизированного занесения в объекты информации 
+			как верной, так и не правильной.</font></b></div>
+		<p class="MsoNormal" align="justify"><font color="#000080">&nbsp;При 
+		тестировании используются два вида клиентских приложений – <i><b>
+		менеджер тестирования</b></i> и <i><b>клиент тестирования</b></i>. 
+		Менеджер тестирования устанавливает связь с клиентом тестирования и 
+		выполняет сценарий тестирования.</font></p>
+		<p class="MsoNormal" align="justify"><font color="#000080">&nbsp;<i><b>Сценарий 
+		тестирования</b></i> – это код на встроенном языке, в котором 
+		описывается последовательность выполняемых <i><b>интерактивных</b></i> 
+		действий.</font></p>
+		<p class="MsoNormal" align="justify"><font color="#000080">&nbsp;Для этого во 
+		встроенный язык добавлены новые объекты, которые на абстрактном уровне 
+		описывают интерфейс приложения (оперируя понятиями окна, формы, 
+		элементов управления и т.п.), а также описывают действия пользователей 
+		(навигация по конфигурации, ввод данных и т.п.).</font></p>
+		<p class="MsoNormal" align="justify"><font color="#000080">&nbsp;Менеджер 
+		тестирования может быть <i><b>толстым</b></i> или <i><b>тонким</b></i> 
+		клиентом. Клиент тестирования –<i><b> толстым, тонким</b></i> клиентом 
+		или <i><b>веб-клиентом.</b></i></font></p>
+		<p class="MsoNormal"><font color="#000080">&nbsp;<i><b>Менеджер тестирования</b></i> 
+		может быть подключен к нескольким клиентам тестирования, а <b><i>клиент 
+		тестирования</i></b> может быть подключен только к одному менеджеру.</font></p>
+		<p class="MsoNormal" align="justify"><font color="#000080">&nbsp;Для 
+		управления клиентом менеджер устанавливает с ним TCP-соединение. Важно, 
+		что для проведения автоматизированного тестирования не требуется вносить 
+		изменений в структуру конфигурации. По сути, клиент и менеджер 
+		тестирования – это конфигурации, запущенные с определенными параметрами 
+		командной строки, причем менеджер осуществляет управление клиентами, 
+		“заставляя” окна и элементы управления вести себя таким образом, как 
+		будто с ними взаимодействует пользователь.</font></p>
+		<p class="MsoNormal" align="justify"><font color="#000080">
+		.Автоматизированное тестирование имеет свои ограничения. Так, например, 
+		не поддерживается работа с обычным интерфейсом, а только с управляемым. 
+		Для выполнения автоматизированного тестирования должен быть запущен<i><b> 
+		менеджер и клиент тестирования.</b></i></font></p>
+		<p class="MsoNormal"><font color="#000080"><i><b>Менеджер тестирования</b></i> 
+		можно запустить несколькими способами:</font></p>
+		<ol>
+			<li>
+			<p class="MsoNormal"><font color="#000080">С помощью командной 
+			строки, используя ключ /TESTMANAGER.&nbsp; Например, </font></li>
+		</ol>
+		<p class="MsoNormal"><font color="#000080"><b><span lang="EN-US">
+		“c:\Program Files (x86)\1cv8\8.3.4.437\bin\1cv8c.exe” 
+		ENTERPRISE /F “X:\test” /N </span>Администратор<span lang="EN-US"> 
+		/TESTMANAGER</span></b></font></p>
+		<p class="MsoNormal"><font color="#000080"><span lang="EN-US">&nbsp;</span>&nbsp;&nbsp; 
+		2.&nbsp;&nbsp; Из конфигуратора. &nbsp;Для этого через меню<i><b> Сервис – 
+		Параметры</b></i> открываем диалог “Параметры”, в котором на закладке <i>
+		<b>Запуск 1С:Предприятия – Дополнительные</b></i> отмечаем пункт <i><b>
+		“Запускать как менеджер тестирования”</b></i></font></p>
+		<p class="MsoNormal"><font color="#000080"><i><b>&nbsp;&nbsp; </b></i>&nbsp;3.&nbsp;&nbsp; 
+		Из встроенного языка при помощи метода <b>ЗапуститьСистему()</b>, в 
+		котором следует указать командную строку. Например,</font></p>
+		<p class="MsoNormal"><font color="#000080"><b>ЗапуститьСистему<span lang="EN-US">(“c:\Program Files 
+		(x86)\1cv8\8.3.4.437\bin\1cv8c.exe” ENTERPRISE /F X:\test /N </span>
+		Администратор<span lang="EN-US"> /TESTMANAGER”)</span></b></font></p>
+		<p class="MsoNormal"><font color="#000080"><span lang="EN-US">&nbsp;</span><i><b>Клиента 
+		тестирования</b></i> также можно запустить следующими способами:</font></p>
+		<ol>
+			<li>
+			<p class="MsoNormal"><font color="#000080">С помощью&nbsp; командной 
+			строки. Для этого следует воспользоваться ключом параметра командной 
+			строки /TESTCLIENT и при помощи параметра <i><b>TPort, </b></i>
+			указав номер порта, через который будет вестись взаимодействие 
+			менеджера и клиента тестирования. Если этот параметр не указан в 
+			командной строке, то будет использован порт 1538. Например, </font>
+			</li>
+		</ol>
+		<p class="MsoNormal"><font color="#000080"><i><b><span lang="EN-US">
+		“c:\Program Files (x86)\1cv8\8.3.4.437\bin\1cv8c.exe” 
+		ENTERPRISE /F “X:\Platform8Demo” /N </span>Администратор<span lang="EN-US"> /TESTCLIENT -TPort 
+		1539</span></b></i></font></p>
+		<p align="justify"><font color="#000080">&nbsp;&nbsp; 2.&nbsp; Из 
+		конфигуратора. Для этого через меню <i><b>Сервис – Параметры</b></i> 
+		открываем диалог “Параметры”, в котором на закладке <i><b>Запуск 
+		1С:Предприятия </b></i>– <i><b>Дополнительные</b></i> отмечаем пункт 
+		“Запускать как клиент тестирования”. <u>При этом надо будет указать 
+		номер используемого порта.</u></font></p>
+		<p class="MsoNormal"><font color="#000080">&nbsp;Для подключения к <i>
+		<b>клиенту тестирования</b></i> необходимо знать два параметра: <i><b>
+		IP-адрес (или имя) компьютера</b></i>, на котором запущен клиент 
+		тестирования, и номер <i><b>TCP-порта</b></i>, с помощью которого будет 
+		выполняться взаимодействие.</font></p>
+		<div style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+			<p class="MsoNormal"><font color="#000080">В качестве <i><b>
+			менеджера </b></i>и<i><b> клиента тестирования</b></i> могут 
+			использоваться как разные информационные базы (конфигурация базы 
+			менеджера тестирования может не совпадать с конфигурацией клиента 
+			тестирования), так и одна и та же информационная база.</font></div>
+		<p class="MsoNormal"><font color="#000080">Для выполнения 
+		автоматизированного тестирования необходимо проделать следующие шаги:</font></p>
+		<p class="MsoNormal" align="justify"><font color="#000080">&nbsp;1.&nbsp;&nbsp; 
+		Разработать сценарий тестирования – написать внешнюю или встроенную в 
+		конфигурацию обработку, в которой будут последовательно описаны 
+		выполняемые шаги.</font></p>
+		<p class="MsoNormal"><font color="#000080">&nbsp; 2.&nbsp;&nbsp;&nbsp; 
+		Запустить менеджер тестирования.</font></p>
+		<p class="MsoNormal"><font color="#000080">&nbsp; 3.&nbsp;&nbsp;&nbsp; 
+		Запустить клиент тестирования (один или несколько).</font></p>
+		<p class="MsoNormal"><font color="#000080">&nbsp; 4.&nbsp;&nbsp;&nbsp; В 
+		менеджере тестирования запустить на исполнение созданную обработку, 
+		убедиться в выполнении запрограммированных действий на клиенте.</font></p>
+		<p class="MsoNormal"><font color="#000080">Тестируемое приложение 
+		описывается набором объектов встроенного языка, которые используются для 
+		написания сценария:</font></p>
+		<ul>
+			<li>
+			<p class="MsoNormal" align="left"><font color="#000080">&nbsp;&nbsp;
+			<b><i>&nbsp; ТестируемоеПриложение;</i></b></font></li>
+			<li>
+			<p class="MsoNormal" align="left"><font color="#000080"><b><i>&nbsp;&nbsp;&nbsp;&nbsp; 
+			ТестируемоеОкноКлиентскогоПриложения;</i></b></font></li>
+			<li>
+			<p class="MsoNormal" align="left"><font color="#000080"><b><i>&nbsp;&nbsp;&nbsp;&nbsp; 
+			ТестируемыйКомандныйИнтерфейсОкна;</i></b></font></li>
+			<li>
+			<p class="MsoNormal" align="left"><font color="#000080"><b><i>&nbsp;&nbsp;&nbsp;&nbsp; 
+			ТестируемаяГруппаКомандногоИнтерфейса;</i></b></font></li>
+			<li>
+			<p class="MsoNormal" align="left"><font color="#000080"><b><i>&nbsp;&nbsp;&nbsp;&nbsp; 
+			ТестируемаяКнопкаКомандногоИнтерфейса;</i></b></font></li>
+			<li>
+			<p class="MsoNormal" align="left"><font color="#000080"><b><i>&nbsp;&nbsp;&nbsp;&nbsp; 
+			ТестируемаяФорма;</i></b></font></li>
+			<li>
+			<p class="MsoNormal" align="left"><font color="#000080"><b><i>&nbsp;&nbsp;&nbsp;&nbsp; 
+			ТестируемоеПолеФормы;</i></b></font></li>
+			<li>
+			<p class="MsoNormal" align="left"><font color="#000080"><b><i>&nbsp;&nbsp;&nbsp;&nbsp; 
+			ТестируемаяГруппаФормы;</i></b></font></li>
+			<li>
+			<p class="MsoNormal" align="left"><font color="#000080"><b><i>&nbsp;&nbsp;&nbsp;&nbsp; 
+			ТестируемаяКнопкаФормы;</i></b></font></li>
+			<li>
+			<p class="MsoNormal" align="left"><font color="#000080"><b><i>&nbsp;&nbsp;&nbsp;&nbsp; 
+			ТестируемаяТаблицаФормы;</i></b></font></li>
+			<li>
+			<p class="MsoNormal" align="left"><font color="#000080"><b><i>&nbsp;&nbsp;&nbsp;&nbsp; 
+			ТестируемаяДекорацияФормы.</i></b></font></li>
+		</ul>
+		<p class="MsoNormal" align="left"><font color="#000080">
+		<span style="font-family: Times New Roman; letter-spacing: normal">В 
+		свою очередь Объект <i><b>ТестируемоеПриложение</b></i> использует ряд 
+		методов:</span></font></p>
+		<ul>
+			<li>
+			<p class="MsoNormal" align="left">
+			<a style="font-family: Times New Roman; font-style: italic; font-variant-caps: normal; font-weight: 700; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration: none" href="v8help://SyntaxHelperContext/objects/catalog63/catalog2032/TestedApplication/methods/FinishUILogRecording4278.html">
+			<font color="#000080">ЗавершитьЗаписьЖурналаДействийПользователя (FinishUILogRecording)</font></a></li>
+			<li>
+			<p class="MsoNormal" align="left">
+			<a style="font-family: Times New Roman; font-style: italic; font-variant-caps: normal; font-weight: 700; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration: none" href="v8help://SyntaxHelperContext/objects/catalog63/catalog2032/TestedApplication/methods/FindObject4200.html">
+			<font color="#000080">НайтиОбъект (FindObject)</font></a></li>
+			<li>
+			<p class="MsoNormal" align="left">
+			<a style="font-family: Times New Roman; font-style: italic; font-variant-caps: normal; font-weight: 700; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration: none" href="v8help://SyntaxHelperContext/objects/catalog63/catalog2032/TestedApplication/methods/FindObjects4201.html">
+			<font color="#000080">НайтиОбъекты (FindObjects)</font></a></li>
+			<li>
+			<p class="MsoNormal" align="left">
+			<a style="font-family: Times New Roman; font-style: italic; font-variant-caps: normal; font-weight: 700; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration: none" href="v8help://SyntaxHelperContext/objects/catalog63/catalog2032/TestedApplication/methods/StartUILogRecording4274.html">
+			<font color="#000080">НачатьЗаписьЖурналаДействийПользователя (StartUILogRecording)</font></a></li>
+			<li>
+			<p class="MsoNormal" align="left">
+			<a style="font-family: Times New Roman; font-style: italic; font-variant-caps: normal; font-weight: 700; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration: none" href="v8help://SyntaxHelperContext/objects/catalog63/catalog2032/TestedApplication/methods/WaitForObjectDisplayed4202.html">
+			<font color="#000080">ОжидатьОтображениеОбъекта (WaitForObjectDisplayed)</font></a></li>
+			<li>
+			<p class="MsoNormal" align="left">
+			<a style="font-family: Times New Roman; font-style: italic; font-variant-caps: normal; font-weight: 700; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration: none" href="v8help://SyntaxHelperContext/objects/catalog63/catalog2032/TestedApplication/methods/WaitForCondition5763.html">
+			<font color="#000080">ОжидатьСостояния (WaitForCondition)</font></a></li>
+			<li>
+			<p class="MsoNormal" align="left">
+			<a style="font-family: Times New Roman; font-style: italic; font-variant-caps: normal; font-weight: 700; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration: none" href="v8help://SyntaxHelperContext/objects/catalog63/catalog2032/TestedApplication/methods/ClearAccumulatedPerformanceIndicators4846.html">
+			<font color="#000080">
+			ОчиститьНакопленныеПоказателиПроизводительности (ClearAccumulatedPerformanceIndicators)</font></a></li>
+			<li>
+			<p class="MsoNormal" align="left">
+			<a style="font-family: Times New Roman; font-style: italic; font-variant-caps: normal; font-weight: 700; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration: none" href="v8help://SyntaxHelperContext/objects/catalog63/catalog2032/TestedApplication/methods/GetActiveWindow4335.html">
+			<font color="#000080">ПолучитьАктивноеОкно (GetActiveWindow)</font></a></li>
+			<li>
+			<p class="MsoNormal" align="left">
+			<a style="font-family: Times New Roman; font-style: italic; font-variant-caps: normal; font-weight: 700; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration: none" href="v8help://SyntaxHelperContext/objects/catalog63/catalog2032/TestedApplication/methods/GetMaxActionExecutionTime5421.html">
+			<font color="#000080">ПолучитьМаксимальноеВремяВыполненияДействия (GetMaxActionExecutionTime)</font></a></li>
+			<li>
+			<p class="MsoNormal" align="left">
+			<a style="font-family: Times New Roman; font-style: italic; font-variant-caps: normal; font-weight: 700; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration: none" href="v8help://SyntaxHelperContext/objects/catalog63/catalog2032/TestedApplication/methods/GetAccumulatedPerformanceIndicators4815.html">
+			<font color="#000080">
+			ПолучитьНакопленныеПоказателиПроизводительности (GetAccumulatedPerformanceIndicators)</font></a></li>
+			<li>
+			<p class="MsoNormal" align="left">
+			<a style="font-family: Times New Roman; font-style: italic; font-variant-caps: normal; font-weight: 700; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration: none" href="v8help://SyntaxHelperContext/objects/catalog63/catalog2032/TestedApplication/methods/GetObject4333.html">
+			<font color="#000080">ПолучитьОбъект (GetObject)</font></a></li>
+			<li>
+			<p class="MsoNormal" align="left">
+			<a style="font-family: Times New Roman; font-style: italic; font-variant-caps: normal; font-weight: 700; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration: none" href="v8help://SyntaxHelperContext/objects/catalog63/catalog2032/TestedApplication/methods/GetChildObjects4199.html">
+			<font color="#000080">ПолучитьПодчиненныеОбъекты (GetChildObjects)</font></a></li>
+			<li>
+			<p class="MsoNormal" align="left">
+			<a style="font-family: Times New Roman; font-style: italic; font-variant-caps: normal; font-weight: 700; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration: none" href="v8help://SyntaxHelperContext/objects/catalog63/catalog2032/TestedApplication/methods/GetCurrentErrorInfo4336.html">
+			<font color="#000080">ПолучитьТекущуюИнформациюОбОшибке (GetCurrentErrorInfo)</font></a></li>
+			<li>
+			<p class="MsoNormal" align="left">
+			<a style="font-family: Times New Roman; font-style: italic; font-variant-caps: normal; font-weight: 700; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration: none" href="v8help://SyntaxHelperContext/objects/catalog63/catalog2032/TestedApplication/methods/CancelUILogRecording4277.html">
+			<font color="#000080">ПрерватьЗаписьЖурналаДействийПользователя (CancelUILogRecording)</font></a></p>
+			<p class="MsoNormal" align="left">
+			<br style="caret-color: rgb(0, 0, 0); color: #000080; font-family: Times New Roman; font-style: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px">
+			<i><b><font size="5" color="#000080">Часть 1.</font></b></i></li>
+		</ul>
+		<p> <font color="#000080"><u><b>Техническое задание</b></u></font></p>
+		<ol>
+			<li><font color="#000080">Разработать обработку предназначенную для 
+			выполнения тестирования созданного программного продукта</font></li>
+			<li><font color="#000080">Настроить менеджер тестирования для 
+			выполнения работы</font></li>
+			<li><font color="#000080">Настроить клиента тестирования для 
+			выполнения работы</font></li>
+			<li><font color="#000080">Проверить выполненную работу</font></li>
+		</ol>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#000080"><u><b>Рекомендации к выполнению задания</b></u></font></p>
+		<p align="justify"><font color="#000080">1. Откройте конфигурацию, в 
+		которой Вы выполняли лабораторные работы и создайте внешнюю обработку,
+		<b><i>Файл - Новый - Внешняя обработка, </i></b>которой присвойте имя <b>
+		<i>ДляТестирования, </i></b>рисунок 1. </font></p>
+		<p align="center"><font color="#000080"><img border="0" src="Lab14.1.jpg"></font></p>
+		<p align="center"><font color="#000080">Рисунок 1 - Создание внешней 
+		обработки</font></p>
+		<p align="left"><font color="#000080">2.&nbsp; Включите в состав 
+		обработки кнопку <i><b>Запустить тестирование</b></i> и закрепите за ней 
+		процедуру, рисунок 2</font></p>
+		<p align="center"><font color="#000080"><img border="0" src="Lab23_1.gif"></font></p>
+		<p align="center"><font color="#000080">Рисунок 2 - Текст процедуры, 
+		обслуживающей кнопку обработки</font></p>
+		<p align="left"><font color="#000080">В строке <i><b>
+		ТестируемоеПриложение = Новый ТестируемоеПриложение(&quot;comp-PC&quot;,1539,</b></i>)&nbsp; 
+		информация <b><i>&quot;comp-PC&quot;,1539 </i></b>содержит 
+		сведения о компьютере и номере порта, на котором будет запускаться 
+		клиент тестирования. Так как запуск менеджера и клиента будет 
+		выполняться на одном компьютере, необходимо узнать имя ПК, на котором 
+		будет выполняться работа.</font></p>
+		<p align="left"><font color="#000080">&nbsp;В команде<span lang="en-us">
+		<i><b>e1cib</b></i></span><b><i>/<span lang="en-us">command&nbsp;&nbsp;
+		</span></i></b>второй символ ЕДИНИЦА, а не буква &quot;<span lang="en-us">L</span>&quot;.</font></p>
+		<p align="left"><font color="#000080">В созданной процедуре определены 
+		две переменные </font><i><b><font color="#000080">Перем 
+		ВведенноеЗначение</font></b></i><font color="#000080">; и </font><i><b>
+		<font color="#000080">Перем КоличЭлементов</font></b></i><font color="#000080">; 
+		необходимые для ввода количества элементов, вводимых в состав 
+		справочника и ввода очередного наименования, вводимого в тестируемую 
+		форму. Ввод осуществляется с помощью системных функций для вызова 
+		диалога: <i><b>ВвестиЧисло() </b></i>и<i><b> ВвестиЗначение().</b></i></font></p>
+		<p align="left"><font color="#000080">3.&nbsp; Определите Конфигурацию, 
+		которую Вы будете тестировать (в нашем случае возьмем другую 
+		конфигурацию) и выберем в ней справочник, который будет тестироваться. 
+		На рисунке 2 определен справочник <b><i>Отдел, </i></b>в который нужно 
+		записать информацию в поле Наименование, она будет <i><b>Администрация</b></i>.</font></p>
+		<p align="left"><font color="#000080">Откройте свойства компьютера и 
+		скопируйте его имя, под которым он зарегистрирован в системе, рисунок 3. 
+		Это имя впишите в текст строки кода, номер порта можно оставить таким 
+		как на рисунке.</font></p>
+		<p align="center"><font color="#000080"><img border="0" src="Lab14.3.jpg"></font></p>
+		<p align="center"><font color="#000080">Рисунок 3 - Определение имени 
+		компьютера</font></p>
+		<p align="left"><font color="#000080">4.&nbsp; Сохраните созданную 
+		обработку методом <i><b>Файл - Сохранить как...</b></i> В качестве 
+		адреса укажите папку, в которой размещенена Ваша БД.</font></p>
+		<p align="left"><font color="#000080">5.&nbsp;&nbsp; Выполните настройку 
+		менеджера и клиента. В Конфигураторе последовательностью <i><b>Сервис 
+		-Параметры - Запуск 1С Предприятие - Дополнительные</b></i> настройте 
+		конфигурацию той БД, которая будет играть роль менеджера, рисунок 4, в 
+		этой конфигурации Вы создали обработку. Откройте конфигурацию второй БД, 
+		которую Вы собираетесь тестировать,&nbsp; последовательностью <i><b>Сервис 
+		-Параметры - Запуск 1С Предприятие - Дополнительные </b></i> настройте 
+		конфигурацию под<i><b> клиента, </b></i> рисунок 4а.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font color="#000080"><img border="0" src="Lab14.4.jpg"><img border="0" src="Lab14.5.jpg"></font></p>
+		<p align="center"><font color="#000080">Рисунок 4 - Настройка Менеджера&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Рисунок 4а - Настройка клиента</font></p>
+		<p align="left"><font color="#000080">6. Откройте обе конфигурации в 
+		режиме пользователя, в пользователе, открытом как менеджер, откройте 
+		обработку и путем нажатия кнопки <i><b>Запустить тестирование</b></i> 
+		активизируйте написанную Вами процедуру. Результатом работы этой 
+		процедуры будет добавление в справочник Отдел новых записей , рисунок 5.</font></p>
+		<p align="center"><font color="#000080"><img border="0" src="Lab23_2.jpg"></font></p>
+		<p align="center"><font color="#000080">Рисунок 5 - Добавленный в справочник элемент методом 
+		автоматизированного тестирования</font></p>
+		<p align="left"><font color="#000080"><u><b>Самостоятельно</b></u></font></p>
+		<p align="left"><font color="#000080">1) В тестируемую 
+		конфигурацию, справочник <i><b>Отделы</b></i> добавьте реквизит <i><b>
+		Численность</b></i>&nbsp; и откорректируйте процедуру <i><b>
+		ЗапуститьТестирование() </b></i>путем добавления в ее состав строк кода, 
+		позволяющих добавлять в поле <i><b>численность</b></i>&nbsp; информацию 
+		о количестве работающих в отделе.</font></p>
+		<p align="left"><font color="#000080">2) Включите в состав 
+		тестируемой конфигурации справочник <i><b>Номенклатура</b></i> путем 
+		копирования его из основной базы в тестируемую и проверьте выдачу 
+		аварийного сообщения, если флажок <i><b>Услуга=Истина</b></i>, а размер
+		<i><b>НДС <span lang="en-us">&lt;&gt; 18%</span>.</b></i></font></p>
+		<p align="left"><font color="#000080">3) Изучите теоретическую 
+		часть в начале лабораторной работы и подготовьте ответы на вопросы:</font></p>
+		<ul>
+			<li>
+			<p align="left"><font color="#000080">какие объекты 
+			встроенного языка были использованы для доступа к форме справочника?</font></p>
+			</li>
+			<li>
+			<p align="left"><font color="#000080">можно ли использовать 
+			для тестирования одну и ту же конфигурацию?</font></p></li>
+			<li>
+			<p align="left"><font color="#000080">допускается ли 
+			использовать автоматизированное тестирование при работе с обычным 
+			интерфейсом?</font></p></li>
+		</ul>
+		<p align="left"><i><b><font color="#000080" size="5">Часть 2.</font></b></i></p>
+		<p align="left"><b><font color="#000080">Техническое задание</font></b></p>
+		<p align="left"><font color="#000080">Выполнить автоматизацию 
+		тестирования Путем записи произведенных действий </font>
+		<a style="font-family: Times New Roman; font-style: italic; font-variant-caps: normal; font-weight: 700; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration: none" href="v8help://SyntaxHelperContext/objects/catalog63/catalog2032/TestedApplication/methods/StartUILogRecording4274.html">
+		<font color="#000080">&nbsp;<span style="font-weight: 400; font-style: normal">в</span> 
+		ЖурналеДействийПользователя.</font></a><font color="#000080"> Результат 
+		выполнения автоматизированного теста может контролироваться или 
+		визуально или программно путем сравнения полученных результатов с&nbsp;&nbsp; 
+		эталонными значениями. Чтобы не писать длинный код в платформе 
+		реализована функция автоматической записи интерактивных действий 
+		пользователя. Они записываются&nbsp; виде <span lang="en-us">XML</span> 
+		файла. Полученный результат может быть использован для анализа 
+		последовательности действий пользователя или для создания на его основе 
+		автоматизированного теста. Кроме того, автоматизацию можно выполнять 
+		путем программной настройки клиента.</font></p>
+		<p align="left"><b><font color="#000080">Рекомендации к выполнению</font></b></p>
+		<p align="left">
+		<a style="font-family: Times New Roman; font-style: italic; font-variant-caps: normal; font-weight: 700; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration: none" href="v8help://SyntaxHelperContext/objects/catalog63/catalog2032/TestedApplication/methods/StartUILogRecording4274.html">
+		<font color="#000080">&nbsp;</font></a><font color="#000080">1) Создайте 
+		три конфигурации. Присвойте каждой имена <i><b>Клиент1, Клиент2</b></i> 
+		и&nbsp; <b><i>Менеджер. </i></b>В конфигурациях <i><b>Клиент1 и Клиент2
+		</b></i>создайте справочник <i><b>Номенклатура</b></i> с реквизитом <i>
+		<b>Артикул</b></i>, а также форму элемента.</font></p>
+		<p align="left"><font color="#000080">2) В конфигурации <i><b>Менеджер</b></i> 
+		создайте справочник <i><b>ТестированиеПриложений</b></i> с реквизитами
+		<i><b>ИмяПК</b></i> (тип строка неограниченной длины) и <i><b>
+		<span lang="en-us">IP</span>Порта</b></i>(число длина 4). В справочнике 
+		создайте форму элемента и форму списка. В форму списка добавьте кнопку 
+		ПроверкаКлиента, за созданной кнопкой закрепите процедуру, рисунок 6.</font></p>
+		<p align="center"><font color="#000080">
+		<img border="0" src="Lab23_1.jpg"></font></p>
+		<p align="center"><font color="#000080">Рисунок 6 - Процедура 
+		справочника ПроверкаКлиента</font></p>
+		<div style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+			<p align="left"><i><font color="#CC0066" size="4"><b>Примечание. При 
+			предлагаемой организации подключения клиента номер порта может быть 
+			произвольным</b></font></i></p>
+		</div>
+		<p align="left"><font color="#000080">3) В конфигурации <i><b>Менеджер</b></i> 
+		создайте регистр сведений <i><b>ЖурналДействий</b></i>, таблица 1 и 
+		форму элемента, рисунок 7.</font></p>
+		<p align="left"><font color="#000080">Таблица 1 - Требования к регистру</font></p>
+		<table border="1" width="72%" height="294">
+			<tr>
+				<td width="106" align="center">&nbsp;</td>
+				<td width="113" align="center"><font color="#000080">
+				Наименование</font></td>
+				<td width="320" align="center"><font color="#000080">Тип</font></td>
+				<td width="320" rowspan="4" align="center">
+				<font color="#000080"><img border="0" src="Lab23_3.jpg"></font></td>
+			</tr>
+			<tr>
+				<td width="106" align="center"><font color="#000080">Измерение</font></td>
+				<td width="113" align="center"><font color="#000080">Приложение</font></td>
+				<td width="320" align="center"><font color="#000080">Справочник 
+				ТестированиеПриложений</font></td>
+			</tr>
+			<tr>
+				<td width="106" align="center"><font color="#000080">Ресурс</font></td>
+				<td width="113" align="center"><font color="#000080">
+				ТекстЖурнала</font></td>
+				<td width="320" align="center"><font color="#000080">Строка 
+				переменной длины</font></td>
+			</tr>
+			<tr>
+				<td width="539" colspan="3" align="center">&nbsp;</td>
+			</tr>
+		</table>
+		<p align="center"><font color="#000080"><br>
+		<img border="0" src="Lab23_4.jpg"></font></p>
+		<p align="center"><font color="#000080">Рисунок 7- Форма регистра 
+		сведений</font></p>
+		<p align="left"><font color="#000080">Для добавления контекстного меню 
+		выделите реквизит <i><b>ТекстЖурнала</b></i>, откройте контекстное меню 
+		и выберите функцию <i><b>ПоказатьКонтекстноеМеню</b></i>. Затем выделите 
+		ПоказатьКонтекстное меню и введите в его состав две кнопки, используя 
+		также правую кнопку мыши: <i><b>ТекстЖурналаКонтекстноеМенюНачатьЗапись</b></i> 
+		и <i><b>ТекстЖурналаКонтекстноеМенюЗавершитьЗапись</b></i></font></p>
+		<p align="left"><font color="#000080">4) Добавьте в состав формы две 
+		кнопки <i><b>Начать запись </b></i>и<b><i> Завершить запись</i></b>. За&nbsp; 
+		кнопкой <i><b>НачатьЗапись</b></i> закрепите процедуру, рисунок 8 .</font></p>
+		<p align="center"><font color="#000080">
+		<img border="0" src="Lab23_5.jpg"></font></p>
+		<p align="center"><font color="#000080">Рисунок 8 - Текст процедуры <i>
+		<b>НачатьЗапись</b></i></font></p>
+		<p align="left"><font color="#000080">Приведенная процедура обращается к 
+		функции <i><b>Экземпляр </b></i>расположенной в общем модуле<b><i> 
+		_ТестируемоеПриложение. </i></b>Параметр <i><b>Запись.Приложение</b></i> 
+		выбирает информацию из поля <i><b>Приложение</b></i> формы регистра. 
+		Текст функции <i><b>Экземпляр() </b></i>и процедуры<i><b> 
+		ПараметрыПодключения()</b></i> приведены на рисунках 9-10.</font></p>
+		<p align="center"><font color="#000080">
+		<img border="0" src="Lab23_6.jpg"></font></p>
+		<p align="center"><font color="#000080">Рисунок 9 - Текст процедур 
+		общего модуля</font></p>
+		<p align="left"><font color="#000080"><img border="0" src="Lab23_7.jpg"></font></p>
+		<p align="center"><font color="#000080">Рисунок 10 - Свойства общих 
+		модулей</font></p>
+		<p align="left"><font color="#000080">5) За&nbsp; кнопкой <b><i>
+		Завершить</i></b><i><b>Запись</b></i> закрепите процедуру, рисунок 11 .</font></p>
+		<p align="center"><font color="#000080">
+		<img border="0" src="Lab23_7.gif"></font></p>
+		<p align="center"><font color="#000080">Рисунок 11 - Текст процедуры<i><b> 
+		ЗавершитьЗапись</b></i></font></p>
+		<p align="left"><font color="#000080">6) Откройте&nbsp; в режиме 
+		пользователя созданные Вами конфигурации. В конфигурации <i><b>Менеджер
+		</b></i>введите в справочник <i><b>ТестированиеПриложений</b></i> 
+		записи, рисунок 12. Кнопкой <i><b>Проверка клиента</b></i> можно 
+		проверить готов ли клиент к тестированию.</font></p>
+		<p align="center"><font color="#000080">
+		<img border="0" src="Lab23_8.jpg"></font></p>
+		<p align="center"><font color="#000080">Рисунок 12 - Справочник <i><b>
+		ТестированиеПриложений</b></i></font></p>
+		<p align="left"><font color="#000080">7) откройте <i><b>Журнал действий</b></i>, 
+		выберите подключенное приложение и кнопкой <i><b>Начать запись</b></i> 
+		выполните тестирование выбранного клиента, рисунок 12. На панели формы 
+		элемента появились кнопки связанные с журналом контекстного меню.</font></p>
+		<p align="center"><font color="#000080">
+		<img border="0" src="Lab23_9.jpg"></font></p>
+		<p align="center"><font color="#000080">Рисунок 13 - Форма справочника
+		<i><b>Номенклатура</b></i></font></p>
+		<p align="justify"><font color="#000080">8)&nbsp; Войдите в режим <i><b>
+		Менеджер</b></i> и соответствующей кнопкой завершите запись, рисунок 14. 
+		Кнопка <i><b>Записать и закрыть</b></i> запишет новую запись в журнал, 
+		рисунок 15. Из рисунка 15 видно, что одновременно можно тестировать 
+		нескольких клиентов.</font></p>
+		<p align="center"><font color="#000080">
+		<img border="0" src="Lab23_10.jpg"></font></p>
+		<p align="center"><font color="#000080">Рисунок 14 - Завершение записи в 
+		журнал</font></p>
+		<p align="center"><font color="#000080">
+		<img border="0" src="Lab23_11.jpg"></font></p>
+		<p align="center"><font color="#000080">Рисунок 15 - Записи сохраненные 
+		в журнале</font></p>
+		<p align="left"><font color="#000080">Самостоятельно</font></p>
+		<p align="left"><font color="#000080">1)&nbsp; Отредактируйте процедуру, 
+		поддерживаемую кнопкой <i><b>НачатьЗапись</b></i> чтобы информация 
+		вводилась в справочник не в виде постоянной величины, а выбиралась из 
+		диалогового окна (по аналогии с частью 1).</font></p>
+		<p align="left"><font color="#000080">2)&nbsp; Разработайте сценарий 
+		тестирования по выполненной лабораторной работе</font></p>
+		<p align="left"><font color="#000080">3) <i><b>&nbsp;Подготовьте ответы 
+		на вопросы</b></i></font></p>
+		<ul>
+			<li>
+			<p align="left"><font color="#000080">Сколько вы знаете способов 
+			запуска менеджера тестирования? Дайте им характеристику.</font></p>
+			</li>
+			<li>
+			<p align="left"><font color="#000080">Какими методами может 
+			пользоваться объект
+		<span style="font-family: Times New Roman; letter-spacing: normal">
+			Объект <i><b>ТестируемоеПриложение</b></i> ? Назовите некоторые</span></font></p>
+			</li>
+			<li>
+			<p align="left"><span style="letter-spacing: normal">
+			<font color="#000080"><span style="font-family: Times New Roman">Чем 
+			внешняя обработка отличается от внутренней?</span></font></span></p>
+			</li>
+			<li>
+			<p align="left"><span style="letter-spacing: normal">
+			<font color="#000080"><span style="font-family: Times New Roman">Чем 
+			метод тестирования, определенный в первой части, отличается от 
+			метода второй части? Достоинства и недостатки обоих методов.</span></font></span></p></li>
+			<li>
+			<p align="left"><span style="letter-spacing: normal">
+			<font color="#000080"><span style="font-family: Times New Roman">Для 
+			чего используется журнал действий? В чем заключается его 
+			практическое применение?</span></font></span></p></li>
+		</ul>
+		<p align="left">&nbsp;</p>
+		<p>&nbsp;</td>
+	</tr>
+</table>
+
+</body>
+
+</html>

@@ -1,0 +1,701 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="ru">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Лабораторная работа №13</title>
+</head>
+
+<body background="../../Web_1C_8/Web_1C_82/Fon.jpg">
+
+<table border="3" cellpadding="0" cellspacing="0" width="1617" height="17541" bordercolor="#000080" background="fon.jpg">
+	<!-- MSTableType="layout" -->
+	<tr>
+		<td valign="top">
+		<!-- MSCellType="ContentHead" -->
+		&nbsp;<p align="center"><i><b><font size="5" color="#800080">
+		<a name="Лабораторная_работа_№13._Список_пользователей_и_их_роли_">Лабораторная работа №10. Список пользователей и их роли</a></font></b></i></td>
+		<td valign="top" height="72">
+		<!-- MSCellType="DecArea" -->
+		&nbsp;</td>
+	</tr>
+	<tr>
+		<td valign="top" width="1500">
+		<!-- MSCellType="ContentBody" -->
+		&nbsp;<p>&nbsp;&nbsp;&nbsp;<a href="#13.__Ответить_на_вопросы_и_подготовиться_к_сдаче_зачета_">К 
+		вопросам </a>&nbsp; <a href="Page_1.htm">В оглавление&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</a> </p>
+		<p> <u><b>&nbsp; Техническое задание.</b></u></p>
+		<ol>
+			<li>Создайте новые роли и новых пользователей</li>
+			<li>Выполните ограничения доступа к данным для различных 
+			пользователей:<ul>
+				<li>Администратор&nbsp;&nbsp; -&nbsp; предоставляются все права</li>
+				<li>Менеджер по продажам- предоставляется возможность работы с&nbsp; 
+				документами, связанными с поступлением и реализацией товара</li>
+				<li>Товаровед -&nbsp; предоставляется возможность работы с&nbsp; 
+				документами, связанными с поступлением товара</li>
+				<li>ИнспекторОК - предоставляется возможность работы с кадровыми 
+				документами</li>
+				<li>Бухгалтер&nbsp; -&nbsp; предоставляются возможность работать с 
+				документацией, связанной с денежными и товарными поступлениями&nbsp; </li>
+			</ul>
+			</li>
+			<li>Выполните настройку командного интерфейса</li>
+		</ol>
+			<blockquote>
+				<div style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+&nbsp;&nbsp; <b><font color="#FF0000">&nbsp;ПРИМЕЧАНИЕ. Все работы по настройке 
+					и созданию ролей и пользователей выполняются в режиме 
+					Администратор. Проверка выполненной работы осуществляется 
+					под&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; созданным пользователем.</font></b></div>
+		</blockquote>
+			<div class="preview-text" style="box-sizing: border-box; color: rgb(51, 51, 51); padding: 12px 0px; line-height: 1.5em; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+				<font face="Times New Roman">
+				<strong style="box-sizing: border-box; font-weight: 700;">&nbsp;&nbsp;&nbsp; 
+				Начиная с платформы 8.0 системы 1С Предприятие, существует 
+				возможность ограничивать права доступа пользователей на уровне 
+				записей. Для этого используется механизм RLS (Record Level 
+				Security).&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Такая 
+				«тонкая» настройка может быть полезна для ограничения доступа по 
+				организациям, клиентам, номенклатуре и др.</strong></font></div>
+		<div class="detail-text" style="box-sizing: border-box; color: rgb(51, 51, 51); line-height: 1.5em; overflow: hidden; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;">
+			<div style="box-sizing: border-box;">
+				<div style="box-sizing: border-box;">
+					<div style="box-sizing: border-box;">
+						<p style="box-sizing: border-box; margin: 0px 0px 10px;">
+						<font face="Times New Roman">
+						<strong style="box-sizing: border-box; font-weight: 700;">
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						RLS&nbsp;</strong>– это возможность разработчика задать 
+						условие на таблицы базы данных для тех или иных 
+						пользователей (групп пользователей) и не дать им увидеть 
+						лишнего. Условие имеет булевый тип. Если значение 
+						условия&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; принимает значение «истина», то доступ 
+						предоставляется, в противном случае – запрещается.</p>
+						<p style="box-sizing: border-box; margin: 0px 0px 10px;">
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						RLS используется одновременно с настройкой обычных прав 
+						доступа. Поэтому прежде чем приступить к настройке RLS, 
+						необходимо раздать обычные права на объекты 
+						конфигурации.</p>
+						<p style="box-sizing: border-box; margin: 0px 0px 10px;">
+						&nbsp;&nbsp;&nbsp;&nbsp;
+						RLS применяется для следующих видов прав доступа:</p>
+						<ul style="box-sizing: border-box; margin-top: 0px; margin-bottom: 10px;">
+							<li style="box-sizing: border-box;">Чтение</li>
+							<li style="box-sizing: border-box;">Добавление</li>
+							<li style="box-sizing: border-box;">Изменение</li>
+							<li style="box-sizing: border-box;">Удаление</font></li>
+						</ul>
+						<p style="box-sizing: border-box; margin: 0px 0px 10px;">
+						<strong><span style="font-weight: 700">&nbsp; </span>
+						</strong>
+						<span style="font-size: 12.0pt; font-family: inherit,serif; color: #993300; border: 1.0pt none windowtext; padding: 0cm">
+						Для операций чтения</span><span style="font-size: 12.0pt; font-family: Roboto,serif; color: #333333">&nbsp;и 
+						удаления объект, находящийся в базе данных, должен 
+						соответствовать ограничению доступа к данным. </span>
+						<span style="font-size: 12.0pt; font-family: inherit,serif; color: #993300; border: 1.0pt none windowtext; padding: 0cm">&nbsp;&nbsp; 
+						Для операции добавления</span><span style="font-size: 12.0pt; font-family: Roboto,serif; color: #333333">&nbsp;ограничению 
+						доступа к данным должен соответствовать объект, который 
+						планируется записать в базу данных. </span>
+						<span style="font-size: 12.0pt; font-family: inherit,serif; color: #993300; border: 1.0pt none windowtext; padding: 0cm">&nbsp;&nbsp; 
+						Для операции изменения</span><span style="font-size: 12.0pt; font-family: Roboto,serif; color: #333333">&nbsp;ограничению 
+						доступа к данным должен соответствовать объект как до 
+						изменения (чтобы объект был прочитан), так и после 
+						изменения (чтобы объект был записан). </span>
+						<span style="font-size: 12.0pt; line-height: 107%; font-family: Roboto,serif; color: #333333">&nbsp;&nbsp; 
+						Для всех остальных прав такой возможности нет</span></div>
+				</div>
+			</div>
+		</div>
+			<p align="center">&nbsp;</p>
+		<p align="center"><u><b>Рекомендации к выполнению задания</b></u></p>
+		<p>&nbsp;&nbsp;&nbsp;&nbsp; 1.&nbsp; Откройте ветвь&nbsp; <i><b>Общие</b></i>&nbsp; 
+		и создайте роль <i><b>&nbsp;Администратор</b></i>.&nbsp; При создании роли&nbsp; 
+		установите для нее все права, рисунок 1.&nbsp; Установить все права можно 
+		последовательностью&nbsp; Действия - Установить все права</p>
+		<p align="center">
+		<img border="0" src="Lab_894.jpg"></p>
+		<p align="center">Рисунок 1 - Создание роли&nbsp; Администратор</p>
+		<p align="left">&nbsp;&nbsp;&nbsp;&nbsp; 2.&nbsp;&nbsp; Создайте роль 
+		<b>МенеджерПоПродажам</b>. Так как на предприятии работает несколько 
+		менеджеров, все они будут пользоваться одной и той же ролью. Для этой 
+		роли определите следующие требования: каждый менеджер может работать 
+		только с определенными контрагентами поэтому создайте несколько 
+		пользователей, рисунок 2. Пользователей <b>ИвановаОльга </b>и<b> ТекущийПользователь&nbsp;</b> свяжите с ролью
+		<b>МенеджерПоПродажам.</b></p>
+		<p align="center"><img border="0" src="Lab_898.jpg"></p>
+		<p align="center">Рисунок 2 - Создание пользователей</p>
+		<div style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+			<p align="left">&nbsp;&nbsp;&nbsp; <font color="#800080"><b>
+			Примечания к рисунку 2:</b></font></p>
+			<p align="left"><font color="#800080">&nbsp;&nbsp;&nbsp;&nbsp; 1)&nbsp; 
+			У этого пользователя задан пароль (реальная длина установленного 
+			пароля не совпадает с числом звездочек в этих полях). Пользователь 
+			защищенный паролем отмечается пиктограммой с&quot;замочком&quot;.</font></p>
+			<p align="left"><font color="#800080">&nbsp;&nbsp;&nbsp;&nbsp; 2)&nbsp; 
+			Установленный &quot;флажок&quot; свидетельствует о том, что при загрузке 
+			платформы с подключенной вашей базой будет открываться выпадающий 
+			список, в котором будет виден пользователь <b>Иванова Ольга</b></font></p>
+			<p align="left"><font color="#800080">&nbsp;&nbsp;&nbsp;&nbsp; 3)&nbsp; 
+			К пользователю <b>Иванова Ольга </b>&nbsp;подключена роль <b>
+			Менеджер по продажам</b></font></p>
+		</div>
+		<p align="left">&nbsp;&nbsp;&nbsp;&nbsp; 3. Создайте справочник<b> 
+		Пользователь</b> с единственным реквизитом<b> ИдентификаторПользователяИБ,</b> 
+		кроме стандартных, рисунок 3. Этот справочник потребуется для хранения в 
+		нем уникальных идентификаторов по каждому пользователю. Зайдите в режим 
+		Пользователя под администратором и введите в справочник <b>Пользователи</b> 
+		двух пользователей, рисунок 3а.</p>
+		<p align="center"><img border="0" src="Lab_865.jpg"></p>
+		<p align="center">Рисунок 3 - Создание справочника</p>
+		<p align="center"><img border="0" src="Lab_911.jpg"></p>
+		<p align="center">Рисунок 3а - Внесение информации в справочник 
+		Пользователи (идентификатор Пользователя формируется программно) </p>
+		<p align="left">&nbsp;&nbsp; 4. Откройте ветвь <b>Общие</b> и создайте в 
+		ней объект <b>Параметры сеанса</b>&nbsp; с именем <b>ТекущийПользователь</b> 
+		и с ссылочным типом <b>СправочникСсылка.Пользователи,</b> рисунок 4.</p>
+		<p align="center"><img border="0" src="Lab_912.jpg"></p>
+		<p align="center">Рисунок 4 - Создание объекта Параметры сеанса</p>
+		<p align="left">&nbsp;&nbsp; 5. Теперь необходимо связать объект 
+		<b>ПараметрыСеанса</b> с объектами, содержащими в своем составе информацию по 
+		Контрагентам. Откройте справочник Контрагенты и введите в его состав 
+		дополнительный реквизит Пользователь, рисунок 5. Отредактируйте форму 
+		элемента и форму списка справочника Контрагенты, чтобы вновь введенный 
+		реквизит был виден в обеих формах.</p>
+		<p align="center"><img border="0" src="Lab_868.jpg"></p>
+		<p align="center">Рисунок 5 - Добавление в состав справочника 
+		дополнительного реквизита</p>
+		<p align="left">&nbsp; 6. Откройте права роли<b> МенеджерПоПродажам</b> 
+		и введите для справочника <b>Контрагенты</b> ограничение для функции 
+		чтения из него информации, рисунок 6. В состав ограничения входит 
+		величина <b>ТекущийПользователь,</b> которая связывает реквизит<b> 
+		Пользователь</b> в справочнике <b>Контрагенты</b> с Параметром сеанса <b>
+		ТекущийПользователь</b>. Информация в этот параметр попадает из 
+		справочника <b>Пользователи</b>, реквизит <b>ИдентификаторПользователяИБ.</b></p>
+		<p align="center"><img border="0" src="Lab_869.jpg"><img border="0" src="Lab_870.jpg"></p>
+		<p align="center">Рисунок 6 - Формирование ограничения для справочника 
+		Контрагенты на функцию Чтение</p>
+		<p align="left">&nbsp;&nbsp; 7. Откройте модуль сеанса и создайте 
+		предопределенную процедуру <b>УстановкаПараметровСеанса</b>, рисунок 7.&nbsp; 
+		Процедура <b>УстановкаПараметровСеанса </b>обращается к процедурам <b>УстановкаПараметровСеанса1 </b>
+		и процедуре <b>ОпределитьТекущегоПользователя, </b>расположенной в общем 
+		модуле <b>Пользователи</b>, рисунок 7а.</p>
+		<p align="center"><img border="0" src="Lab_871.jpg"></p>
+		<p align="center"><img border="0" src="Lab_895.jpg"></p>
+		<p align="center">Рисунок 7 - Процедура УстановкаПараметровСеанса</p>
+		<p align="left">&nbsp;&nbsp; <b>Описание процедуры 
+		<span style="background-color: #FFFFFF">УстановкаПараметровСеанса()</span></b></p>
+		<p align="left"><b>&nbsp; </b>&nbsp;Процедура содержит параметр<b> 
+		ИменаПараметровСеанса, </b>который представляет собой массив содержащий 
+		информацию об идентификаторах параметров сеанса. Так как справочник 
+		ПОЛЬЗОВАТЕЛИ заполняется программно, то при первоначальном запуске или 
+		при запуске под новым пользователем происходит формирование записи 
+		справочника Пользователи, куда заносится помимо имени пользователя, но и 
+		его идентификатор. Затем этот идентификатор передается в параметры 
+		сеанса, в переменную<b> ТекущийПользователь</b>. Системный объект <b>
+		ПользователиИнформационнойБазы</b> используется для управления списком 
+		пользователей информационной базы, с его помощью функцией <b>
+		ТекущийПользователь()</b> выбирается имя текущего пользователя и 
+		заносится в переменную &quot;Пользователь&quot;, а затем выбирается его 
+		универсальный идентификатор в переменную <b>ИдентификаторПользователяИБ. </b>
+		Затем управление передается процедуре<b> УстановкаПараметорвСеанса1()</b>&nbsp; 
+		или процедуре общего модуля <b>ОпределитьТекущегоПользователя()&nbsp;
+		</b></p>
+		<p align="left"><b>Описание процедуры УстановкаПараметровСеанса1()</b></p>
+		<p align="left">Определяется имя текущего пользователя и его Уникальный 
+		идентификатор. По Уникальному идентификатору происходит поиск нужной 
+		строки в справочнике ПОЛЬЗОВАТЕЛИ по идентификатору пользователя. Если 
+		поиск ничего не дал, то происходит формирование новой строки справочника 
+		ПОЛЬЗОВАТЕЛИ.</p>
+		<p align="left">&nbsp;</p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><img border="0" src="Lab_896.jpg"></p>
+		<p align="center">Рисунок 7а - Процедура общего модуля</p>
+		<p align="left">Описание процедуры общего модуля <b>
+		ОпределитьТекущегоПользователя()</b></p>
+		<p align="left"><b>&nbsp; </b>С помощью запроса из справочника<b> 
+		Пользователи </b>выбирается первая запись. Если результат пустой, тогда 
+		формируется новая запись в справочнике<b> Пользователи. </b>Если запись 
+		существует, то ее процедура выбирает и записывает в параметры сеанса как 
+		текущую запись.</p>
+		<p align="left"><b>&nbsp; </b>&nbsp;8. Сохраните все изменения и зайдите 
+		в режим пользователя под именем ТекущийПользователь, откройте справочник 
+		Контрагенты, в нем будут отображаться записи, в которых пользователем 
+		является текущий пользователь, рисунок 8.</p>
+		<p align="center"><img border="0" src="Lab_8219.jpg"></p>
+		<p align="center">Рисунок 8 - Справочник Контрагенты с наложенными 
+		ограничениями</p>
+		<p align="left">&nbsp;&nbsp; 9.&nbsp; Откройте форму списка любого 
+		документа, связанного со справочником Контрагенты где можно увидеть в 
+		колонке Контрагенты <b>Объект не найден.</b> Это происходит потому, что 
+		для этого документа не наложено ограничений на использование, рисунок 9.</p>
+		<p align="center">&nbsp; <img border="0" src="Lab_8220.jpg"></p>
+		<p align="center">Рисунок 9 - В форме списка&nbsp; отражаются только те 
+		документы, которые привязаны к конкретному пользователю</p>
+		<p align="left">&nbsp;&nbsp; 10.&nbsp; Откройте конфигуратор и для 
+		документа Приходная Накладная, реквизит Контрагенты наложите 
+		ограничение, рисунок 10. Переход в режим пользователя покажет, что 
+		контрагент отражается в форме списка, рисунок 11.</p>
+		<p align="center"><img border="0" src="Lab_8212.gif"></p>
+		<p align="center">Рисунок 10 - Наложение ограничения на реквизит 
+		Контрагент</p>
+		<p align="center"><img border="0" src="Lab_8221.jpg"></p>
+		<p align="center">Рисунок 11 - Форма списка после наложенного 
+		ограничения</p>
+		<p align="left">&nbsp; <b>САМОСТОЯТЕЛЬНО</b>. На все документы, 
+		связанные со справочником Контрагенты наложите подобные ограничения.</p>
+		<p align="left">&nbsp;</p>
+		<p align="left">&nbsp; <b><font size="5">Часть 2</font></b></p>
+		<p align="left">&nbsp;&nbsp; Эти же самые действия можно выполнить 
+		немного другим способом, который заключается в использовании общего 
+		модуля. Чтобы использовать оба метода, создается процедура <b>
+		УстановкаПараметровСеанса()</b>, в которой происходит разделение по 
+		именам пользователей. Если пользователь <b>Админ</b> или<b> ТекущийПользователь</b>, 
+		то тогда управление передается на прежний алгоритм, прежнюю процедуру <b>
+		УстановкаПараметровСеанса(), </b>с немного измененным именем, <b>
+		УстановкаПараметровСеанса1()</b>. Если имя 
+		пользователя другое, то управление передается в общий модуль <b>
+		Пользователи.ОпределитьТекущегоПользователя().</b><br>
+&nbsp;</p>
+		<p align="left">1.&nbsp; Войдите в режим конфигуратора, откройте модуль 
+		сеанса и внесите в его состав корректировку, рисунок 12. </p>
+		<p align="center"><img border="0" src="Lab_873.jpg"></p>
+		<p align="center">Рисунок 12 - Корректировка модуля сеанса</p>
+		<p align="left">&nbsp;&nbsp; 2.&nbsp; Создайте общий модуль с именем <b>
+		Пользователи</b> и создайте в нем процедуру, рисунок 13. Для создания 
+		запроса внесите в текст процедуры <img border="0" src="Lab_823.gif">&nbsp;&nbsp;&nbsp; 
+		Установите курсор между кавычками, откройте контекстное меню, где 
+		выберите функцию<b> Конструктор запроса </b>и выберите из справочника <b>
+		Пользователи</b> информацию, рисунок&nbsp; 14.<br>
+&nbsp;</p>
+		<p align="center"><img border="0" src="Lab_824.gif"></p>
+		<p align="center">Рисунок 13 - Процедура общего модуля</p>
+		<p align="left">&nbsp;&nbsp; Описание&nbsp; процедуры<b> 
+		ОпределитьТекущегоПользователя()</b></p>
+		<p align="left">&nbsp;&nbsp; Условие ВЫБРАТЬ ПЕРВЫЕ 1 нужно для того, 
+		чтобы выбиралась единственная найденная&nbsp; первая запись. Выбираются 
+		реквизиты из справочника Пользователи, а после ключевого слова ГДЕ 
+		указывается реквизит, значение которого сравнивается со значением 
+		переменной, определенной в процедуре выше
+		<img border="0" src="Lab_822.gif">&nbsp; После выполнения запроса 
+		выполняется проверка выбрана ли запись или нет, если нужной записи нет, 
+		то в справочнике Пользователи создается новая запись. Если нужная запись 
+		найдена, то выбирается первая запись <img border="0" src="Lab_825.gif"> </p>
+		<p align="left">&nbsp;</p>
+		<p align="center"><img border="0" src="Lab_874.jpg"><img border="0" src="Lab_875.jpg"></p>
+		<p align="center">Рисунок 14 - Создание запроса</p>
+		<p align="left">&nbsp;&nbsp; 3.&nbsp; Войдите в режим пользователя&nbsp; 
+		(ИвановаОльга) и откройте справочник <b>Контрагенты</b>. Он будет 
+		пустым, потому что пользователя<b> Менеджер</b> ни в одном элементе 
+		этого справочника нет. Создайте новый элемент, рисунок 15. Обратите 
+		внимание, новый элемент вы сможете создать только в корне справочника, 
+		потому что групповые элементы содержат в себе записи с различными 
+		пользователями.</p>
+		<p align="center"><img border="0" src="Lab_876.jpg"></p>
+		<p align="center">Рисунок 15 - Создание нового элемента справочника 
+		Контрагенты</p>
+		<p align="left">&nbsp;&nbsp; 4.&nbsp; Войдите в режим Пользователя (админ) 
+		и в справочнике Контрагенты в некоторых записях поменяйте имя 
+		пользователя на Менеджер, рисунок 16. Затем войдите в режим пользователя 
+		(ИвановаОльга) и вновь откройте справочник Контрагенты, в нем отразятся 
+		только три записи справочника: две из папки Покупатели и одна из корня. 
+		Если этого не случится, то потребуется настройка справочника (Все 
+		действия - Режим просмотра - Список), рисунок 17.</p>
+		<p align="center"><img border="0" src="Lab_877.jpg"></p>
+		<p align="center">Рисунок 16 - Смена пользователя в справочнике 
+		Контрагенты</p>
+		<p align="center"><img border="0" src="Lab_878.jpg"></p>
+		<p align="center">Рисунок 17 - Настройка списка</p>
+		<p align="left">&nbsp; <b>САМОСТОЯТЕЛЬНО.&nbsp;&nbsp; 1)&nbsp; </b>Все документы, связанные 
+		со справочником Контрагенты для пользователя (ИвановаОльга) настройте, 
+		чтобы в этих формах Контрагенты отображались верно.</p>
+		<p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		2)&nbsp; Для процедур, рисунок 12, напишите комментарии. Чтобы 
+		комментарии сворачивались необходимо перед началом процедуры поместить 
+		курсор в нужном месте (обычно комментарии помещают перед процедурой), 
+		через контекстное меню выбрать функцию <b>Шаблоны текста - Шаблоны 
+		текста, </b>выбрать в шаблонах, группа <b>Управляющие - процедура (с 
+		заголовком).</b> Перетащить ее на лист, задать имя процедуры, если Вы 
+		создаете процедуру. Если Вам нужен только комментарий, то нажмите на 
+		кнопку ПРОПУСТИТЬ и у вас откроется сворачивающееся поле с 
+		комментариями, которое можно заполнять, расширять, комментировать, 
+		рисунок 18.&nbsp; Запишите комментарии к указанным процедурам.</p>
+		<p align="center"><img border="0" src="Lab_879.jpg"></p>
+		<p align="center">Рисунок 18 - Работа с шаблонами текста</p>
+		<p align="left">&nbsp;</p>
+		<p align="left">&nbsp;&nbsp;&nbsp; 5.&nbsp; Создайте роль&nbsp; 
+		<b>Товаровед</b>.&nbsp; Для этой роли следует установить ряд ограничений:</p>
+		<blockquote>
+			<blockquote>
+				<p align="left">а)&nbsp;&nbsp; Документ <b>Приходная Накладная</b>. 
+				Установите для него ограничение - выборка записей, в которых 
+				количество <span lang="en-us">&lt;</span>100 или сумма
+				<span lang="en-us">&gt;</span>10000. Товаровед эти записи может 
+				редактировать и затем записывать, рисунок 19.</p>
+				<p align="center"><img border="0" src="Lab_880.jpg"></p>
+				<p align="center">Рисунок 19 - Настройка прав для документа 
+				Приходная накладная</p>
+				<p align="left">б) Войдите в режим пользователя под 
+				администратором, откройте форму списка документа Приходная 
+				накладная и в некоторых записях поменяйте количество, чтобы оно 
+				превышало 100. Перепроведите эти документы, рисунок 20.</p>
+				<p align="center"><img border="0" src="Lab_881.jpg"></p>
+				<p align="center">Рисунок 20 - Перепроведенные документы в 
+				режиме администратора</p>
+				<p align="left">&nbsp;</p>
+				<p align="left">в) Войдите в режим пользователя как <b>Товаровед</b> 
+				и откройте форму списка документа <b>Приходная накладная, </b>
+				рисунок 21. В одной из позиций не найден Контрагент. Это говорит 
+				о том, что в этой строке Контрагент содержит другого 
+				пользователя.</p>
+				<p align="center"><img border="0" src="Lab_882.jpg"></p>
+				<p align="center">Рисунок 21 - Отображаются объекты, отвечающие 
+				заданному условию</p>
+				<p align="left">г) В Режиме Конфигуратор внесите изменения в 
+				ограничения для документа Приходная накладная, которое 
+				заключается в добавлении дополнительного требования на 
+				сопоставление с текущим именем Пользователя, рисунок 22. 
+				Внесенные изменения дадут желаемый результат, в режиме Товаровед 
+				будут отражаться только те документы, которые отвечают заданным 
+				условиям, рисунок 23.</p>
+				<p align="center"><img border="0" src="Lab_883.jpg"></p>
+				<p align="center">Рисунок 22 - Внесение изменений в ограничение 
+				доступа</p>
+				<p align="center"><img border="0" src="Lab_884.jpg"></p>
+				<p align="center">Рисунок 23 - Полученный результат</p>
+				<div style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+					<p align="left"><font color="#FF0000" size="4"><b>Эти 
+					действия не приведут к желаемому результату, потому что 
+					документ Приходная накладная связан с многими справочниками 
+					и с одной константой. Для всех этих справочников установите 
+					права Чтение и Просмотр и только после этого получите нужный 
+					результат.</b></font></p></div>
+				<p align="left">6.&nbsp; Откройте командный интерфейс основного 
+				раздела (Корень конфигурации -Командный интерфейс основного 
+				раздела) и выполните его настройку, рисунок 24, и включите в его 
+				состав все объекты, которые вы настраивали.</p>
+				<p align="center"><img border="0" src="Lab_885.jpg"></p>
+				<p align="center">Рисунок 24 - Настройка командного интерфейса</p>
+				<p align="left">7.&nbsp; Зайдите в&nbsp; режим пользователя как 
+				Товаровед и проверьте его настройку, рисунок 25.</p>
+				<p align="center"><img border="0" src="Lab_886.jpg"></p>
+				<p align="center">Рисунок 25 - Рабочий стол пользователя 
+				Товаровед</p>
+				<p align="left"><b>САМОСТОЯТЕЛЬНО</b>. Выполните окончательную 
+				настройку рабочей области пользователя. Откройте все ссылки и 
+				проверьте, чтобы все объекты открывались верно. Добавьте в 
+				рабочую область несколько отчетов, которые могут потребоваться 
+				Товароведу в процессе его работы. Добавьте в рабочую область 
+				регистр Цены поставщиков и настройте его.</p>
+			</blockquote>
+		</blockquote>
+		<blockquote>
+			<p align="left">
+			<b><font size="5">Часть 3</font></b></p>
+			<p align="left">
+			1.&nbsp; Для настройки документа <b>Расходная накладная</b> под 
+			товароведа выполним его доработку, которая будет заключаться в том, 
+			чтобы в форме документа отображалась сумма всего документа с учетом 
+			данных из таблицы &quot;Товары&quot; и таблицы &quot;Услуги&quot;:</p>
+			<p align="left">
+			а) добавьте в документ дополнительный реквизит <b>СуммаДокумента</b>, 
+			рисунок 26 и расположите его под табличными частями.</p>
+			<p align="center">
+			<img border="0" src="Lab_887.jpg"></p>
+			<p align="center">
+			Рисунок 26 - Добавление реквизита в форму</p>
+			<p align="left">
+			б)&nbsp; откройте модуль формы и откорректируйте имеющиеся там 
+			процедуры, рисунок 27.</p>
+			<p align="center">
+			<img border="0" src="Lab_827.gif"></p>
+			<p align="center">
+			Рисунок 27 - Внесение изменений в процедуры, работающие с таблицей 
+			&quot;Услуга&quot;</p>
+			<p align="left">
+			в)&nbsp; Создайте в справочнике <b>СтавкиНДС</b> еще один 
+			предопределенный элемент, рисунок 28.</p>
+			<p align="center">
+			<img border="0" src="Lab_888.jpg"></p>
+			<p align="center">
+			Рисунок 28 - Добавление предопределенного реквизита</p>
+			<p align="left">
+			г)&nbsp; Откройте форму элемента справочника <b>Номенклатура</b> и 
+			отредактируйте процедуру <b>ПриОткрытии()</b>.&nbsp; Эта процедура 
+			управляет видимостью групп, в которых содержатся элементы не нужные 
+			для формировании записей по услугам. Откройте справочник <b>
+			Номенклатура</b> в режиме пользователя и откорректируйте записи 
+			справочника <b>Номенклатура</b> в группе &quot;Услуга&quot;, рисунки 29-29а.</p>
+			<p align="center">
+			<img border="0" src="Lab_889.jpg"><img border="0" src="Lab_890.jpg"></p>
+			<p align="center">
+			Рисунок 29 - Откорректированная процедура&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			Рисунок 29а - Откорректированные записи справочника</p>
+			<p align="left">
+			д)&nbsp; В документе <b>Расходная накладная</b> выделите таблицу 
+			&quot;Товары&quot; и закрепите за ней процедуру, поддерживающую событие <b>При 
+			изменении</b>. Аналогичную работу проделайте с таблицей &quot;Услуги&quot;, 
+			рисунок 30. Эти процедуры подсчитывают итоговое значение&nbsp; по 
+			обеим таблицам и заносят результат в окно &quot;Сумма документа&quot;. Имея 
+			это значение можно для пользователя <b>Товаровед</b> внести 
+			ограничение по сумме документа.</p>
+			<p align="center">
+			<img border="0" src="Lab_829.gif"></p>
+			<p align="center">
+			Рисунок 30 - Добавление процедур</p>
+			<p align="left">
+			2. Откройте роль <b>Товаровед</b> и для документа <b>Расходная 
+			накладная</b> введите ограничение для&nbsp; отражения документов, 
+			сумма которых превышает 50000 рублей и имя пользователя 
+			соответствует текущему, рисунок 31.</p>
+			<p align="center">
+			<img border="0" src="Lab_891.jpg"></p>
+			<p align="center">
+			Рисунок 31 - Ограничения для документа Расходная накладная</p>
+			<p align="left">
+			3. Отредактируйте командный интерфейс основного раздела, чтобы в 
+			панели навигации Важное отражались документы Приходная и Расходная 
+			накладная. Войдите в режиме пользователя под администратором и 
+			создайте несколько документов под различными пользователями и с 
+			различной суммой документа, рисунок 32.</p>
+			<p align="left">
+			<img border="0" src="Lab_892.jpg" width="983" height="175"><img border="0" src="Lab_8222.jpg" width="408" height="238"></p>
+			<p align="center">
+			Рисунок 32 - Ввод различных данных для тестирования выполненной 
+			работы</p>
+			<p align="left">
+			4. Войдите в режим пользователя под товароведом и откройте форму 
+			списка документа Расходная накладная, она должна иметь вид, рисунок 
+			33.</p>
+			<p align="center">
+			<img border="0" src="Lab_893.jpg"></p>
+			<p align="center">
+			Рисунок 33 - Документ Расходная накладная в режиме Товаровед</p>
+			<p align="left">
+			&nbsp;</p>
+		</blockquote>
+		<blockquote>
+			<p align="left">
+			<a href="#Лабораторная_работа_№13._Список_пользователей_и_их_роли_">В начало</a>&nbsp;&nbsp; 
+			<a href="Page_1.htm">В оглавление</a></p>
+			<p align="left"><b><font size="4">
+			<a name="13.__Ответить_на_вопросы_и_подготовиться_к_сдаче_зачета_">Ответить на вопросы и подготовиться к сдаче зачета</a></font></b></p>
+			<ol>
+				<li>
+				<p align="left">Для каких целей создается Роль?</p></li>
+				<li>
+				<p align="left">Какие действия должен выполнить проектировщик 
+				перед созданием ролей и прав?</p></li>
+				<li>
+				<p align="left">Расскажите последовательность создания 
+				пользователей.</p></li>
+				<li>
+				<p align="left">Почему на рисунке 33 отображена только одна 
+				строка?</p></li>
+				<li>
+				<p align="left">Какими возможностями обладает пользователь, для 
+				которого установлено право&nbsp; <i><b>Тонкий&nbsp; клиент?</b></i></p>
+				</li>
+				<li>
+				<p align="left">Какими возможностями обладает пользователь, для 
+				которого установлено право&nbsp; <i><b>Толстый&nbsp; клиент?</b></i></p>
+				</li>
+				<li>
+				<p align="left">Каким образом можно отрегулировать видимость 
+				подсистем для пользователей?</p></li>
+				<li>
+				<p align="left">Расскажите о структуре ограничений доступа и для 
+				каких целей введены<span style="background-color: #FFFFEC"> эти ограничения?</span></p>
+				</li>
+				<li>
+				<p align="left">Как настроить панель навигации на рабочем столе 
+				под конкретного пользователя?</p></li>
+				<li>
+				<p align="left">Расскажите принцип настройки рабочего стола. Для 
+				каких целей выполняют настройку рабочего стола?</p></li>
+				<li>
+				<p align="left">Какую форму следует размещать на рабочем столе и 
+				почему?</p></li>
+				<li>
+				<p align="left">Объясните, в чем заключается тестирование 
+				выполненной вами работы?</p></li>
+			</ol>
+		</blockquote></td>
+		<td valign="top" height="17463" width="180" bordercolor="#000080">
+		<!-- MSCellType="NavBody" -->
+		&nbsp;<p align="justify">&nbsp;<font color="#800080">Для ограничения доступа пользователей к 
+		выполнению определенных действий с объектами базы данных используются 
+		объекты конфигурации&nbsp; <i><b>Роль.</b></i> С помощью <i><b>Роли</b></i> разработчик получает 
+		возможность описать набор прав на выполнение тех или иных действий над 
+		тем или иным объектом конфигурации.</font><p align="justify">&nbsp;<p align="justify">&nbsp;<p align="justify">&nbsp;<p align="justify">&nbsp;<p align="justify">&nbsp;<p align="justify">&nbsp;<p align="justify">&nbsp;<p align="justify">&nbsp;<p align="justify">&nbsp;<p align="justify">
+		<font color="#800080">Перед созданием ролей и интерфейсов необходимо 
+		выполнить планирование структуры интерфейса и методов доступа для 
+		каждого пользователя.</font><p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;Термин <b>Интерактивное </b>означает выполнение работ программным 
+		путем. В нашем случае мы программным путем добавляем в справочник <b>
+		Номенклатура</b> фото товара<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		К общему модулю можно обращаться двумя способами:<p align="justify">
+		1) в свойствах общего модуля установлен флажок СЕРВЕР. В этом случае для 
+		обращения из обычной процедуры к процедуре общего модуля необходимо 
+		указать имя общего модуля, а затем вызываемую процедуру <b>
+		Пользователи.ОпределитьТекущегоПользователя() </b>смотри рисунок<p align="justify">
+		2) в свойствах общего модуля установлен флажок СЕРВЕР и флажок 
+		ГЛОБАЛЬНЫЙ. В этом случае к процедуре общего модуля можно обращаться 
+		немного иначе <b>ОпределитьТекущегоПользователя() </b>смотри рисунок<p align="justify">
+		<img border="0" src="Lab_897.jpg"><p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		&nbsp;<p align="justify">
+		<font color="#800080">Рабочий стол предназначен для размещения наиболее 
+		часто используемых документов, отчетов, справочников. Поэтому на рабочий 
+		стол пользователя требуется поместить те объекты, с которыми 
+		пользователь работает ежедневно.</font><p align="justify">
+		<font color="#800080">При запуске 1С:Предприятие рабочий стол становится 
+		активным по умолчанию и нужные формы сразу открываются в рабочей области 
+		приложения.</font><p align="justify">
+		<i><b><font color="#FF0000" size="4">На рабочем столе могут отображаться 
+		только те формы, которые были созданы явно.</font></b></i></td>
+	</tr>
+</table>
+
+</body>
+
+</html>

@@ -1,0 +1,620 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="ru">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Язык запросов</title>
+</head>
+
+<body>
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-style: solid; border-width: 2px; padding: 15px" background="Fon.jpg" bordercolor="#0000FF" width="1375" height="670">
+	<!-- MSTableType="layout" -->
+	<tr>
+		<td valign="top" style="border-style: solid; border-width: 2px; padding: 15px">
+		<!-- MSCellType="DecArea" -->
+		&nbsp;</td>
+		<td valign="top" style="border-style: solid; border-width: 2px; padding: 15px" height="91">
+		<!-- MSCellType="ContentHead" -->
+		<p align="center"><font size="6" color="#800080"><b><i>
+		<a name="Язык_запросов_">Язык запросов</a></i></b></font></td>
+	</tr>
+	<tr>
+		<td valign="top" width="226" style="border-style: solid; border-width: 2px; padding: 15px">
+		<!-- MSCellType="NavBody" -->
+		<a href="#Определение_и_использование_источников">Определение и 
+		использование источников</a><p><a href="#Проектирование_отчетов">
+		Проектирование отчетов</a></p>
+		<p><a href="coedinenia_v_zaprosax.htm">Соединения в запросах</a></p>
+		<p><a href="#Контрольные_вопросы">Контрольные вопросы</a></p>
+		<p>&nbsp;</td>
+		<td valign="top" height="575" width="1085">
+		<!-- MSCellType="ContentBody" -->
+		<p align="justify"><a href="../Page1.htm">В оглавление</a></p>
+		<p align="justify">Любая автоматизация должна иметь в своем составе не 
+		только средства обработки информации, но и получения сводных данных в 
+		удобном для просмотра виде. Для решения этой задачи в состав 
+		конфигурации входят отчеты. Каждый объект этого типа может содержать 
+		алгоритм формирования выходных форм. В состав алгоритма включается текст 
+		запроса, определяющий что и в каком виде нужно выбрать из базы данных. 
+		Текст запроса пишется на специальном языке (языке обращений к базе 
+		данных, <span lang="en-us">SQL</span>). Этот язык русифицированный, но 
+		имеется возможность использовать и английский вариант.
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Но обязательно нужно учитывать, что те прикладные объекты конфигурации и 
+		реквизиты (не стандартные), которые мы создаем при описании модели 
+		прикладного решения на русском языке, в тексте запроса будут также на 
+		русском языке (а в таком случае, согласитесь, не очень красивым 
+		получается запрос в русско-английском исполнении). </span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Хотя язык запросов в системе 1С:Предприятие 8 и основан на SQL, но при 
+		этом содержит значительное количество расширений, ориентированных на 
+		отражение специфики финансово-экономических задач и на максимальное 
+		сокращение усилий по разработке прикладных решений. Например одним из 
+		таких расширений является </span><b>
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		обращение к полям через точку</span></b><b><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">&nbsp;(&quot;.&quot;)</span></b><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">&nbsp;- 
+		если поля какой-либо таблицы имеют ссылочный тип (хранят ссылки на 
+		объекты другой таблицы), разработчик может в тексте запроса ссылаться на 
+		них через &quot;.&quot;, как во встроенном языке (для упрощения запроса), при этом 
+		количество уровней вложенности таких ссылок система не ограничивает.</span></p>
+		<p align="justify"><span style="font-family: 'Times New Roman',serif">В 
+		состав системы входит специальный конструктор, позволяющий с его помощью 
+		построить запрос. </span>
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Текст запроса состоит из нескольких частей, или секций. Каждая секция 
+		предваряется соответствующим ключевым словом. При построении запроса не 
+		обязательно использовать все секции, некоторые из них являются 
+		необязательными, но&nbsp; наличие полей выборки является обязательным 
+		условием любого запроса.</span></p>
+		<p class="MsoNormal" style="text-indent: 0cm; line-height: normal; margin-left: 36.0pt; margin-right: 0cm; margin-top: 6.0pt; margin-bottom: 6.0pt">
+		1) Секция <b>ВЫБРАТЬ</b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Текст запроса всегда начинается с обязательного ключевого слова&nbsp;<b>ВЫБРАТЬ</b>. 
+		Данное ключевое слово позволяет указать список полей для выборки&nbsp;&nbsp;&nbsp; 
+		Список полей выборки указывается поименно, через запятую, или с 
+		использованием символа звездочка (*), что соответствует требованию 
+		выбрать все поля. В качестве полей могут использоваться:</span></p>
+		<ul>
+			<li>
+			<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+			&nbsp;<b>вычисляемые выражения</b>, например, параметры запроса, 
+			арифметические, логические, строковые выражения и выражения с 
+			оператором выбора;</span></li>
+			<li>
+			<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+			<b>вложенные таблицы;</b></span></li>
+			<li>
+			<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+			<b>
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+			Виртуальные поля. </span></b>
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+			Виртуальные поля&nbsp;–&nbsp;это поля, которые не хранятся в базе данных, а 
+			генерируются системой &quot;на лету&quot;, например, поле &quot;Представление&quot; для 
+			таблицы справочника и документа, или поле &quot;МоментВремени&quot; для 
+			документа.</span></li>
+		</ul>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		При описании полей выборки можно присваивать им различные имена для 
+		использования в запросе. Такие имена называются псевдонимами. Псевдонимы 
+		полей задаются в соответствии с правилами назначения идентификаторов 
+		переменных. Псевдонимы в запросе не могут совпадать. Назначение 
+		псевдонимов полям само по себе никак не влияет на выборку данных в 
+		запросе. Псевдонимы можно задавать полям и таблицам.</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Псевдонимы полей выборки присваиваются с помощью (необязательного) 
+		ключевого слова&nbsp;<b>КАК,</b>&nbsp;либо в конструкторе на закладке &quot;Объединения 
+		и Псевдонимы&quot;. </span>
+		<span style="font-size: 12.0pt; line-height: 115%; font-family: 'Times New Roman',serif; color: black">
+		Если полю выборки назначить псевдоним, то в дальнейшем к этому полю 
+		можно будет обращаться, используя его псевдоним в результатах запроса.
+		</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		2) Секция <b>ИЗ</b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		В языке запросов источники данных можно определять двумя способами:</span></p>
+		<ul>
+			<li>
+			<p class="MsoNormal" style="text-align: justify; text-indent: 0cm; line-height: normal; margin-left: 49.5pt; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+			<b>
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+			Упрощенный вариант</span></b><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">&nbsp;- 
+			в имени поля выборки (применяется при запросах с одним источником и 
+			небольшим количеством выбираемых полей 1-2). Например, ВЫБРАТЬ 
+			Константы.НашаФирма</span></li>
+			<li>
+			<p class="MsoNormal" style="text-align: justify; text-indent: 0cm; line-height: normal; margin-left: 49.5pt; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+			<b>
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+			Стандартный вариант</span></b><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">–&nbsp;используется 
+			конструкция&nbsp;<b>ИЗ</b>&nbsp;&lt;Список источников&gt;. Описание источников может 
+			быть опущено только в том случае, если они полностью определены в 
+			списке полей выборки. Например,&nbsp;&nbsp; <b>ВЫБРАТЬ 
+			Константы.НашаФирма</b></span></p>
+			<p class="MsoNormal" style="text-align: justify; text-indent: 0cm; line-height: normal; margin-left: 49.5pt; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+			<span style="font-family: 'Times New Roman',serif; font-weight: 700">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			ИЗ Константы КАК Константы</span></p>
+			<p class="MsoNormal" style="text-align: justify; text-indent: 0cm; line-height: normal; margin-left: 49.5pt; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">&nbsp;</p>
+			<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+			В конструкции&nbsp;<b>ИЗ</b>&nbsp;можно определять несколько таблиц (что 
+			является основной задачей исходя из назначения табличной модели). 
+			Например:</span></p>
+			<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+			<span style="font-family: 'Times New Roman',serif; font-weight: 700">
+			ВЫБРАТЬ ПриходТовара.Поставщик</span></p>
+			<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+			<span style="font-family: 'Times New Roman',serif; font-weight: 700">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			РасходТовара.Покупатель</span></p>
+			<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+			<span style="font-family: 'Times New Roman',serif; font-weight: 700">
+			ИЗ&nbsp; Документ.ПриходТовара&nbsp; КАК ПриходТовара</span></p>
+			<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+			<span style="font-family: 'Times New Roman',serif; font-weight: 700">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			Документ РасходТовара&nbsp;&nbsp; КАК РасходТовара</span></li>
+		</ul>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 0cm; line-height: normal; margin-left: 49.5pt; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-family: 'Times New Roman',serif">3) Секция <b>ГДЕ</b>. 
+		Задает </span>
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		условие на выбор конкретных записей. </span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 0cm; line-height: normal; margin-left: 49.5pt; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Задается&nbsp; с помощью конструкции&nbsp;<b>ГДЕ</b>&nbsp;&lt;Условие отбора&gt;. В 
+		конструкторе запроса условие определяется на закладке &quot;Условия&quot;, рисунок 
+		1.</span></p>
+		<p class="MsoNormal" style="text-align: center; text-indent: 0cm; line-height: normal; margin-left: 49.5pt; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<img border="0" src="Zapros1.jpg"></p>
+		<p class="MsoNormal" style="text-align: center; text-indent: 0cm; line-height: normal; margin-left: 49.5pt; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		Рисунок 1 - Использование секции ГДЕ</p>
+		<p class="MsoNormal" style="text-align: left; text-indent: 0cm; line-height: normal; margin-left: 49.5pt; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">&nbsp;</p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		В результат попадают только те записи, для которых указанное условие 
+		оказывается истинным. Условие, определяемое после ключевого слова ГДЕ, 
+		действует после того, как из исходной таблицы&nbsp;–&nbsp;источника выбраны все 
+		записи. Как видно из рисунка 1, поля условия можно не указывать в полях 
+		выборки, а задействовать только в условиях.</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		В условиях можно использовать логические операторы <b>И, ИЛИ, НЕ</b>, а 
+		так же операторные скобки, при помощи которых можно задавать более 
+		сложные условия отбора. Приоритеты выполнения операторов: НЕ, потом И, 
+		потом ИЛИ. В состав запроса можно включать произвольное условие, оно&nbsp; 
+		отмечаются флажком в колонке &quot;П..&quot;(Произвольное), рисунок 2.</span></p>
+		<p class="MsoNormal" style="text-align: center; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<img border="0" src="Zapros2.jpg"></p>
+		<p class="MsoNormal" style="text-align: center; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		Рисунок 2 - Произвольное условие</p>
+		<p class="MsoNormal" style="text-align: left; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">&nbsp;</p>
+		<p class="MsoNormal" style="text-align: left; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		4)&nbsp; Секция <b>СГРУППИРОВАТЬ ПО</b> позволяет выполнить группировку 
+		выбранных записей<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">.
+		</span></p>
+		<p class="MsoNormal" style="text-align: left; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Конструкция&nbsp;<b>СГРУППИРОВАТЬ ПО&nbsp;</b>&lt;Поля группировки&gt; в конструкторе 
+		запроса&nbsp; отображается на закладке &quot;Группировка&quot;, рисунок 3.</span></p>
+		<p class="MsoNormal" style="text-align: center; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<img border="0" src="Zapros3.jpg"></p>
+		<p class="MsoNormal" style="text-align: center; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		Рисунок 3 - Использование секции СГРУППИРОВАТЬ</p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Важно помнить, что в большинстве случаев все поля выборки запроса должны 
+		делиться на две группы:</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 0cm; line-height: normal; margin-left: 49.5pt; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 10.0pt; font-family: Symbol; color: black">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span></span>
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		агрегатные функции&nbsp;(конструктор предлагает быстрый выбор допустимых 
+		агрегатных функций), рисунок 4а;</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 0cm; line-height: normal; margin-left: 49.5pt; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 10.0pt; font-family: Symbol; color: black">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span></span>
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		поля, по которым ведется группировка, рисунок 4б.</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 0cm; line-height: normal; margin-left: 49.5pt; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">&nbsp;</p>
+		<p class="MsoNormal" style="text-align: left; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<img border="0" src="Zapros4.jpg"><img border="0" src="Zapros5.jpg"></p>
+		<p class="MsoNormal" style="text-align: left; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		Рисунок 4а - Агрегатные функции&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Рисунок 4б - Поля группировки</p>
+		<p class="MsoNormal" style="text-align: left; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">&nbsp;</p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		5)&nbsp; Секция&nbsp; <b>ИМЕЮЩИЕ.</b>&nbsp;
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Позволяет накладывать условия на значения агрегатных функций и 
+		результаты группировок. В других конструкциях языка запросов, например,&nbsp;<u>в 
+		предложении ГДЕ, использовать агрегатные функции в условиях нельзя</u>, 
+		рисунок 5.&nbsp; </span>
+		<span style="font-size: 12.0pt; line-height: 115%; font-family: 'Times New Roman',serif; color: black">
+		Настройка данного условия в конструкторе запроса осуществляется на 
+		закладке Условия (как и в случае с конструкцией ГДЕ). </span></p>
+		<p class="MsoNormal" style="text-align: center; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<img border="0" src="Zapros6.jpg"></p>
+		<p class="MsoNormal" style="text-align: center; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		Рисунок 5 - Использование конструкции ИМЕЮЩИЕ</p>
+		<p class="MsoNormal" style="text-align: left; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">&nbsp;</p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		6)&nbsp; Секция&nbsp; <b>ДЛЯ&nbsp; ИЗМЕНЕНИЯ</b>.
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Предназначена для указания необходимости блокировки считываемых в 
+		транзакции данных. В конструкторе запроса данная настройка 
+		осуществляется на закладке &quot;Дополнительно&quot;:</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 0cm; line-height: normal; margin-left: 36.0pt; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 10.0pt; font-family: Arial,sans-serif; color: black">
+		1.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span></span>
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		с установкой флажка &quot;Блокировать получаемые данные для последующего 
+		изменения&quot; появится конструкция &quot;ДЛЯ ИЗМЕНЕНИЯ&quot;;</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 0cm; line-height: normal; margin-left: 36.0pt; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 10.0pt; font-family: Arial,sans-serif; color: black">
+		2.<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span></span>
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		в область &quot;Таблицы для изменения&quot; переносим необходимые для блокировки 
+		таблицы из области &quot;Таблицы&quot;, рисунок 6.</span></p>
+		<p class="MsoNormal" style="text-align: center; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<img border="0" src="Zapros7.jpg"></p>
+		<p class="MsoNormal" style="text-align: center; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		Рисунок 6 - Использование секции ДЛЯ&nbsp; ИЗМЕНЕНИЯ</p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-family: 'Times New Roman',serif">
+		<a href="#Язык_запросов_">В начало</a></span></p>
+		<p class="MsoNormal" style="text-align: left; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		7) Секция <b>УПОРЯДОЧИТЬ&nbsp; ПО</b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Как правило, данные, полученные с помощью запроса, нуждаются в 
+		какой-либо сортировке, либо по алфавиту, либо по числовому полю. Данная 
+		возможность реализуется с помощью ключевого слова УПОРЯДОЧИТЬ ПО. Список 
+		полей упорядочивания может состоять из одного или нескольких имен полей, 
+		разделенных запятыми. Настройка упорядочивания в конструкторе запроса 
+		производится на закладке &quot;Порядок&quot;. </span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Условие упорядочивания в общем случае может представлять собой некоторое 
+		выражение. Строки результата запроса будут упорядочены по значениям 
+		этого выражения, рассчитанным для каждой строки. Пример упорядочивания 
+		приведен в соответствии с рисунком 7.</span></p>
+		<p class="MsoNormal" style="text-align: center; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<img border="0" src="Zapros8.jpg"></p>
+		<p class="MsoNormal" style="text-align: center; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		Рисунок 7 - Пример упорядочивания</p>
+		<p class="MsoNormal" style="text-align: left; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">&nbsp;</p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Существует несколько вариантов упорядочивания:</span></p>
+		<ul>
+			<li>
+			<p class="MsoNormal" style="text-align: justify; text-indent: 0cm; line-height: normal; margin-left: 49.5pt; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+			<b>
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+			Возрастание</span></b><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">&nbsp;- 
+			упорядочивание по указанному полю в порядке возрастания значений. 
+			Является вариантом по умолчанию. Если в запросе не указан способ, но 
+			можно указать явно&nbsp;–&nbsp;&quot;ВОЗР&quot;.&nbsp; (Например, для случаев программной 
+			модификации текста запроса Возрастание/Убывание)</span></li>
+			<li>
+			<p class="MsoNormal" style="text-align: justify; text-indent: 0cm; line-height: normal; margin-left: 49.5pt; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+			<b>
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+			Убывание</span></b><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">&nbsp;- 
+			упорядочивание по указанному полю в порядке убывания значений 
+			(указание в тексте запроса требует явного указания&nbsp;–&nbsp;&quot;УБЫВ&quot;)</span></li>
+			<li>
+			<p class="MsoNormal" style="text-align: justify; text-indent: 0cm; line-height: normal; margin-left: 49.5pt; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+			<span style="font-family: 'Times New Roman',serif"><b>Иерархия</b> -
+			</span>
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+			упорядочивание по иерархии имеет смысл задавать в том случае, если в 
+			качестве источника определена именно таблица иерархического 
+			справочника (либо она является основной в случае использования 
+			нескольких источников), а не какая-либо другая таблица, содержащая 
+			только ссылку на справочник. Для использования иерархии в 
+			неиерархических таблицах необходимо их соединить&nbsp;с иерархической 
+			таблицей.</span></li>
+			<li>
+			<p class="MsoNormal" style="text-align: justify; text-indent: 0cm; line-height: normal; margin-left: 49.5pt; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+			<b>
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">&nbsp;Иерархия 
+			по убыванию</span></b><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">&nbsp;–&nbsp;добавляет 
+			в результат группы элементов. Выполняется сортировка элементов по 
+			убыванию.</span></li>
+		</ul>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">&nbsp;</p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 0cm; line-height: normal; margin-left: 49.5pt; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-family: 'Times New Roman',serif">8) Секция <b>ИТОГИ</b>
+		</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		С помощью ключевого слова ИТОГИ&nbsp;можно включить в результат запроса 
+		дополнительные записи, в которых содержатся данные об общих и 
+		промежуточных итогах по полям и группировкам, с использованием 
+		агрегатных функций.</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Существует несколько вариантов вывода итогов:</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 0cm; line-height: normal; margin-left: 49.5pt; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 10.0pt; font-family: Symbol; color: black">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span></span>
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Общие итоги;</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 0cm; line-height: normal; margin-left: 49.5pt; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 10.0pt; font-family: Symbol; color: black">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span></span>
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Итоги по группировкам;</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 0cm; line-height: normal; margin-left: 49.5pt; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 10.0pt; font-family: Symbol; color: black">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span></span>
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Итоги по иерархии;</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 0cm; line-height: normal; margin-left: 49.5pt; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 10.0pt; font-family: Symbol; color: black">·<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span></span>
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Комбинация вышеперечисленных вариантов;</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Настройка секции ИТОГИ в конструкторе запросе осуществляется на закладке 
+		&quot;Итоги&quot;:</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		В некоторых случаях закладки Итоги может не быть, это означает, что 
+		использовать итоги нельзя, например, при создании вложенного запроса.</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Таким образом, конструктор оберегает разработчика от неправильных 
+		действий при создании запросов, чего редактор текстов не делает при 
+		ручном создании текстов запроса.</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Итоги чем-то похожи на уже рассмотренные нами группировки в части 
+		отражения сгруппированных записей.</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Основное отличие ИТОГОВ от ГРУППИРОВОК на уровне конечного результата в 
+		том, что ГРУППИРОВКИ&nbsp;–&nbsp;превращают детальные записи в группировочные, а 
+		ИТОГИ&nbsp;–&nbsp;добавляют группировочные записи к детальным.</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">&nbsp;</p>
+		<p class="MsoListParagraph" style="text-indent: -20.25pt; line-height: normal; margin-left: 62.85pt; margin-right: 0cm; margin-top: 18.0pt; margin-bottom: 12.0pt">
+		<b>
+		<span style="font-size: 14.0pt; font-family: 'Times New Roman',serif; color: black">
+		<a name="Определение_и_использование_источников">Определение и 
+		использование источников</a></span></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Для получения сводной информации возможны способы&nbsp; одновременного 
+		использования нескольких источников информации..</span></p>
+		<p class="MsoNormal" style="text-indent: 0cm; line-height: normal; margin-left: 36.0pt; margin-right: 0cm; margin-top: 6.0pt; margin-bottom: 6.0pt">
+		<font size="2">
+		<span style="font-family: 'Times New Roman',serif; color: black">1)&nbsp;
+		</span></font>
+		<span style="font-size: 13.0pt; font-family: 'Times New Roman',serif; color: black">
+		<b>Вложенные таблицы</b>.&nbsp; </span>
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Система 1С:Предприятие 8 хранит данные табличных частей документов, 
+		справочников, планов счетов и прочих объектов во вложенных таблицах:</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-family: 'Times New Roman',serif">2) <b>Вложенные 
+		запросы</b>.&nbsp; </span>
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Бывают ситуации, когда для запроса необходимо определить в качестве 
+		источника данных результат другого запроса</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-family: 'Times New Roman',serif">3) <b>Временные 
+		таблицы и пакетные запросы</b>.&nbsp; </span>
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Создание временной таблицы с помощью конструктора запроса (в 
+		конструкторе запроса с обработкой результата не поддерживается) для 
+		получения данных из памяти компьютера и использования в обычном запросе.</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<span style="font-family: 'Times New Roman',serif">4) <b>Виртуальные 
+		таблицы</b>.&nbsp; </span>
+		<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: black">
+		Виртуальные таблицы, предоставляемые системой, позволяют получить 
+		практически готовые данные для большинства прикладных решений без 
+		необходимости составления сложных запросов. Например, такая виртуальная 
+		таблица может предоставить данные по остаткам товаров в разрезе периодов 
+		на какой-то момент времени. При этом виртуальные таблицы максимально 
+		используют хранимую информацию, например, ранее рассчитанные итоги и 
+		т.д.&nbsp; Свои виртуальные таблицы нельзя создавать. Можно обращаться 
+		только к тем, которые уже есть в системе. Увидеть весь перечень 
+		виртуальных таблиц можно в конструкторе запроса, рисунок 8.</span></p>
+		<p class="MsoNormal" style="text-align: center; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<img border="0" src="Zapros9.jpg"></p>
+		<p class="MsoNormal" style="text-align: center; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		Рисунок 8 - Виртуальные таблицы</p>
+		<p class="MsoNormal" style="text-align: left; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		<b><font size="4"><a name="Проектирование_отчетов">Проектирование 
+		отчетов</a></font></b></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		При разработке технической документации на программный продукт важное 
+		место в проекте занимает описание выходных форм документов. Выходная 
+		форма документа представляет собой таблицу с размещенными в ней 
+		итоговыми данными. Эта таблица может&nbsp; использоваться пользователем 
+		для контроля результатов его работы или передачи ее за пределы 
+		организации. В системе 1С эту роль выполняют отчеты. Если отчет 
+		предназначен для внутреннего использования, то&nbsp; требованием к его 
+		структуре является пожелание заказчика (будущего пользователя 
+		программы), если отчет предназначен для использования вне фирмы, то в 
+		этом случае должны быть выдержаны все требования, предъявляемые к 
+		структуре этого документа на государственном уровне. Вот почему так важно проектировщику тщательно 
+		спроектировать отчет.</p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		Чтобы проект отчета был исчерпывающим, он должен состоять из следующих 
+		частей:</p>
+		<ul>
+			<li>
+			<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+			макет формы отчета. Макет представляет собой рисунок формы отчета;</li>
+			<li>
+			<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+			структура запроса. Составляется в виде таблицы, где приводится 
+			перечень выбираемых реквизитов и требования к ним, таблица 1;</li>
+			<li>
+			<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+			описание алгоритма обработки выбираемой из БД информации по запросу. 
+			Алгоритм может быть описан любым из известных способов: блок-схема, 
+			словесное описание, <span lang="en-us">Flow</span> схема и пр.</li>
+		</ul>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+		Таблица 1 - Структура запроса</p>
+		<table border="1" width="95%">
+			<tr>
+				<td width="132">Объект</td>
+				<td width="183">Реквизит</td>
+				<td width="283">Условие выборки</td>
+				<td width="140">Функция</td>
+				<td width="116">Группировка</td>
+				<td>Сортировка</td>
+			</tr>
+			<tr>
+				<td width="132">Регистр ТОВАРЫ</td>
+				<td width="183">ДатаПоступления</td>
+				<td width="283">выбирать при формировании отчета</td>
+				<td width="140">&nbsp;</td>
+				<td width="116">&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td width="132" height="24">&nbsp;</td>
+				<td width="183" height="24">Контрагент</td>
+				<td width="283" height="24">&nbsp;</td>
+				<td width="140" height="24">&nbsp;</td>
+				<td width="116" height="24">ДА</td>
+				<td height="24">&nbsp;</td>
+			</tr>
+			<tr>
+				<td width="132">&nbsp;</td>
+				<td width="183">Склад</td>
+				<td width="283">&nbsp;</td>
+				<td width="140">&nbsp;</td>
+				<td width="116">ДА</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td width="132">&nbsp;</td>
+				<td width="183">Номенклатура</td>
+				<td width="283">&nbsp;</td>
+				<td width="140">&nbsp;</td>
+				<td width="116">&nbsp;</td>
+				<td>по возрастанию</td>
+			</tr>
+			<tr>
+				<td width="132">&nbsp;</td>
+				<td width="183">Количество</td>
+				<td width="283">&nbsp;</td>
+				<td width="140">&nbsp;</td>
+				<td width="116">&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr>
+				<td width="132">&nbsp;</td>
+				<td width="183">Цена</td>
+				<td width="283"><span lang="en-us">&gt;=</span>5000</td>
+				<td width="140">ИТОГО</td>
+				<td width="116">&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+		</table>
+		<blockquote>
+			<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+			<span style="font-family: 'Times New Roman',serif">
+			<a href="#Язык_запросов_">В начало</a></span></p>
+			<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+			<b><font size="4"><a name="Контрольные_вопросы">Контрольные вопросы</a></font></b></p>
+			<ol>
+				<li>
+				<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+				Чем язык запросов, реализованный в 1С 8, отличается от языка
+				<span lang="en-us">SQL</span>?</li>
+				<li>
+				<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+				Какая секция является основной в языке запросов и ее 
+				характеристики</li>
+				<li>
+				<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+				Назначение секции ИЗ</li>
+				<li>
+				<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+				Назначение секции ГДЕ</li>
+				<li>
+				<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+				С помощью какой конструкции можно сгруппировать выбранные 
+				элементы?</li>
+				<li>
+				<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+				Чем упорядочивание отличается от группировки?</li>
+				<li>
+				<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+				Какие варианты вывода итогов Вы знаете, их характеристики</li>
+				<li>
+				<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+				Какие источники информации могут быть использованы в запросах?</li>
+				<li>
+				<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">
+				Какие требования предъявляются при проектировании отчета?</li>
+			</ol>
+		</blockquote>
+		<p class="MsoNormal" align="center" style="text-align: center; line-height: normal; margin-bottom: 6.0pt">&nbsp;</p>
+		<p class="MsoListParagraphCxSpMiddle" align="center" style="text-align: left; line-height: 150%; margin-left: 21.3pt; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+		<span style="font-size: 12.0pt; line-height: 150%; font-family: 'Times New Roman',serif; text-transform: uppercase">
+		Список литературы</span></p>
+		<p class="MsoListParagraphCxSpMiddle" style="text-indent: -18.0pt; line-height: 150%; margin-left: 20.85pt; margin-right: 2.85pt; margin-top: 0cm; margin-bottom: .0001pt">
+		<span style="font-size: 12.0pt; line-height: 150%; font-family: 'Times New Roman',serif; color: black">
+		1)<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span>Алексеев, А. 1С:Предприятие 8.3 Руководство разработчика: части 
+		1-2 / А.Алексеев, Д.Бескоровайнов, А.Безбородов и др-3-е изд. – Москва: 
+		Фирма «1С», 2016.</span></p>
+		<p class="MsoListParagraphCxSpMiddle" style="text-indent: -18.0pt; line-height: 150%; margin-left: 20.85pt; margin-right: 2.85pt; margin-top: 0cm; margin-bottom: .0001pt">
+		<span style="font-size: 12.0pt; line-height: 150%; font-family: 'Times New Roman',serif; color: black">
+		2)<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span></span>
+		<span style="font-size: 12.0pt; line-height: 150%; font-family: 'Times New Roman',serif; color: black; background: white">
+		&nbsp;</span><span style="font-size: 12.0pt; line-height: 150%; font-family: 'Times New Roman',serif">Материалы 
+		курсов 1С -&nbsp;
+		<a style="color: blue; text-decoration: underline; text-underline: single" href="http://dist.edu.1c.ru/library.html#dbName=edu_prog_uz">
+		<span style="background: white">
+		http://dist.edu.1c.ru/library.html#dbName=edu_prog_uz</span></a></span></p>
+		<p class="MsoListParagraphCxSpMiddle" style="text-indent: -18.0pt; line-height: 150%; margin-left: 20.85pt; margin-right: 2.85pt; margin-top: 0cm; margin-bottom: .0001pt">
+		<span style="font-size: 12.0pt; line-height: 150%; font-family: 'Times New Roman',serif; color: black">
+		3)<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span>Радченко, М.Г. 1С:Предприятие 8.3. Практическое пособие 
+		разработчика: примеры и типовые приемы / М.Г. Радченко, Е.Ю. Хрусталева. 
+		– М.: ООО «1С-Паблишинг», 2016.</span></p>
+		<p class="MsoListParagraphCxSpMiddle" style="text-indent: -18.0pt; line-height: 150%; margin-left: 20.85pt; margin-right: 2.85pt; margin-top: 0cm; margin-bottom: .0001pt">
+		<span style="font-size: 12.0pt; line-height: 150%; font-family: 'Times New Roman',serif; color: black">
+		4)<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span>Радченко, М.Г. 1С:Программирование для начинающих. Детям и 
+		родителям. Разработка в системе «1С:Предприятие 8.3» / М.Г. Радченко. – 
+		М.: ООО «1С-Паблишинг»,2017.</span></p>
+		<p class="MsoListParagraphCxSpLast" style="text-indent: -18.0pt; line-height: 150%; margin-left: 20.85pt; margin-right: 2.85pt; margin-top: 0cm; margin-bottom: .0001pt">
+		<span style="font-size: 12.0pt; line-height: 150%; font-family: 'Times New Roman',serif; color: black">
+		5)<span style="font-style: normal; font-variant: normal; font-weight: normal; font-size: 7.0pt; font-family: Times New Roman">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</span>Рекомендации по встраиванию сертифицированных&nbsp; учебных курсов 
+		фирмы&nbsp; «1С» в образовательные программы: 4-е издание / под ред. А.Ю. 
+		Филипповича – М.: ООО «1С-Паблишинг», 2016.</span></p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">&nbsp;</p>
+		<p class="MsoNormal" style="text-align: left; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">&nbsp;</p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 0cm; line-height: normal; margin-left: 49.5pt; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">&nbsp;</p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: 35.25pt; line-height: normal; margin-left: 0cm; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">&nbsp;</p>
+		<p class="MsoNormal" style="text-align: justify; text-indent: -18.0pt; line-height: normal; margin-left: 99.0pt; margin-right: 0cm; margin-top: 3.0pt; margin-bottom: 6.0pt">&nbsp;</p>
+		<p align="justify">&nbsp;</td>
+	</tr>
+</table>
+
+</body>
+
+</html>

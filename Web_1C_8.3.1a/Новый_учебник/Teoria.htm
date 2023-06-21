@@ -1,0 +1,1913 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="ru">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Теория</title>
+<style>
+<!--
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	}
+h2
+	{margin-top:10.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Cambria","serif";
+	color:#4F81BD;
+	font-weight:bold}
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	}
+-->
+</style>
+</head>
+
+<body background="Fon.jpg">
+
+<table border="4" cellpadding="0" cellspacing="0" width="1455" height="816" bordercolor="#800080">
+	<!-- MSTableType="layout" -->
+	<tr>
+		<td valign="top" colspan="3" height="112">
+		<!-- MSCellType="ContentHead" -->
+		&nbsp;<p align="center"><font size="7"><b><i>Справочная информация</i></b></font></td>
+	</tr>
+	<tr>
+		<td valign="top">&nbsp;<p align="justify">
+		<a href="#Варианты_работы_системы_1С:ПредприятиеН">Варианты работы 
+		системы 1С:Предприятие</a></p>
+		<p align="justify"><a href="#_Виды_модулей">Виды модулей</a></p>
+		<p align="justify"><a href="#Виды_клиентов_">Виды клиентов</a></p>
+		<p align="justify"><a href="#Диаграмма__Ганта_">Диаграмма&nbsp; Ганта</a></p>
+		<p align="justify"><a href="#Директивы_компиляции_">Директивы компиляции</a></p>
+		<p align="justify"><a href="#Запросы_">Запросы</a></p>
+		<p align="justify">
+		<a href="#Как_понять_работу_кода,_написанного_на_встроенном_языке">
+		Как понять работу кода</a></p>
+		<p align="justify"><a href="#Контекст_модуля_формы">Контекст модуля формы</a></p>
+		<p align="justify">
+		<a href="#Макеты_печатных_форм_">Макеты печатных форм</a><p align="justify">
+		<a href="#Механизм_Кеширования_">Механизм Кеширования</a></p>
+		<p align="justify"><a href="#Обращение_к_свойствам_объектов_">Обращение 
+		к свойствам объектов</a></p>
+		<p align="justify"><a href="#__Общие_сведения_о_системе_1С:Предприятие_8.2">Общие 
+		сведения о системе 1С</a><p align="justify">
+		<a href="#Особенности_использования_ссылочных_данных_">Особенности 
+		использования ссылочных данных</a><p align="justify">
+		<a href="#Отчеты_и_обработки_">Отчеты и обработки</a><p align="justify">
+		<a href="#План_видов_характеристик_">План видов характеристик</a><p align="justify">
+		<a href="#План_видов__расчета_">План видов расчета</a><p align="justify">
+		<a href="#План_счетов_">План счетов</a><p align="justify">
+		<a href="#Планировщик__заданий">Планировщик заданий</a><p align="justify">
+		<a href="#Работа_с_коллекцией_">Работа с коллекцией</a><p align="justify">
+		<a href="#Регистры_">Регистры</a><p align="justify">
+		<a href="#Регистры_сведений_">Регистры сведений</a><p align="justify">
+		<a href="#Регистры_накопления_">Регистры накоплений</a><p align="justify">
+		<a href="#Регистры_бухгалтерии_">Регистры бухгалтерии</a><p align="justify">
+		<a href="#Регистры_расчета_">Регистры расчета</a><p align="justify">
+		<a href="#Регламентные_задания_">Регламентные задания</a></td>
+		<td valign="top">
+		<!-- MSCellType="ContentBody" -->
+		&nbsp;<p align="center"><font size="4">&nbsp;&nbsp;&nbsp; </font>
+		<a name="_Виды_модулей"><font style="font-size: 16pt">&nbsp;</font><b><font style="font-size: 16pt"><u>Виды 
+		модулей</u></font></b></a></p>
+		<p align="justify">В конфигурации существуют различные виды модулей. Они могут 
+		принадлежать некоторым объектам конфигурации, а могут существовать сами 
+		по себе., то есть принадлежать&nbsp; всей конфигурации в целом. Текст 
+		программы, содержащийся в модулях, будет использоваться платформой при 
+		возникновении определенного события. В 1С:Предприятии 8 существуют 
+		следующие виды модулей:</p>
+		<ol>
+			<li>
+			<p align="justify"><i><b>Модуль управляемого приложения </b></i>- выполняется при 
+			старте системы в режиме <a href="#Директивы_компиляции_">тонкого клиента и веб-клиента.&nbsp;</a> В модуле 
+			управляемого приложения можно объявлять переменные и создавать 
+			процедуры и функции, которые будут доступны в любом модуле 
+			конфигурации (кроме модуля внешнего соединения). К данному модулю 
+			имеют доступ и общие модули с установленным свойством &quot;Клиент&quot;. 
+			Модуль управляемого приложения открывается из контекстного меню 
+			открытого из корня конфигурации. 
+			</li>
+			<li>
+			<p align="justify"><i><b>Общие модули</b></i> - предназначены для хранения процедур 
+			и функций, которые вызываются из других модулей системы. Общие 
+			модули хранятся в ветви &quot;Общие&quot; дерева конфигурации. Сам по себе 
+			общий модуль не выполняется, выполняются его отдельные процедуры и 
+			функции путем их вызова из других модулей. 
+
+			</li>
+			<li>
+			<p align="justify"><i><b>Модули объектов</b></i> - это модуль дополняющий тот или 
+			иной объект конфигурации (например, модуль элемента справочника). 
+			Процедуры, сформированные различными обработчиками событий, 
+			располагаются также в модуле объекта. Открыть модель объекта можно 
+			из окна редактирования объекта последовательностью&nbsp; <i><b>Прочее - 
+			Модуль объекта.</b></i> 
+			</li>
+			<li>
+			<p align="justify"><i><b>Модули форм</b></i> - модуль, поддерживающий форму 
+			объекта. Чтобы открыть модуль формы нужно открыть форму объекта в 
+			режиме редактора форм и открыть закладку Модуль. 
+			</li>
+			<li>
+			<p align="justify"><i><b>Модуль сеанса</b></i> - модуль, который автоматически 
+			выполняется при старте системы 1С:Предприятие, в момент загрузки 
+			конфигурации, предназначен для инициализации параметров сеанса и для 
+			отработки действий, связанных с сеансом работы. Модуль сеанса может 
+			использовать только процедуры общих модулей конфигурации. Модуль 
+			сеанса открывается из контекстного меню открытого из корня дерева 
+			конфигурации. 
+			</li>
+			<li>
+			<p align="justify"><i><b>Модуль внешнего соединения </b></i>- предназначен для 
+			размещения в нем процедур и функций, которые будут использоваться&nbsp; 
+			во внешнем соединении. Модуль внешнего соединения открывается из 
+			контекстного меню открытого из корня дерева конфигурации. 
+			</li>
+			<li>
+			<p align="justify"><i><b>Модуль менеджеров</b></i> - модуль, создаваемый для 
+			конкретного прикладного объекта для управления этим объектом&nbsp; как 
+			объектом конфигурации.&nbsp; Для каждого прикладного объекта существует 
+			менеджер, предназначенный для управления этим объектом как объектом 
+			конфигурации. Данный модуль расширяет функциональность менеджеров, 
+			предоставляемых системой. Открыть модель менеджеров можно из окна 
+			редактирования объекта последовательностью&nbsp; <i><b>Прочее - Модуль 
+			менеджеров.</b></i> 
+			</li>
+			<li>
+			<p align="justify"><i><b>Модуль команды</b></i> - модуль, обрабатывающий команды и 
+			содержащий&nbsp; предопределенную процедуру <i><b>ОбработкаКоманды()</b></i>. 
+			Команда - это подчиненный объект конфигурации. Команда может быть 
+			подчинена некоторому объекту конфигурации. Открыть модуль команды 
+			можно из редактора объекта конфигурации, используя закладку 
+			&quot;Команды&quot;.
+			</p>
+			<p class="MsoNormal" style="line-height: normal">
+			<a name="ManagedApplicationModule"><b>
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Модуль управляемого приложения</span></b></a></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Модуль управляемого приложения располагается в корневом разделе 
+			конфигурации. В нем располагаются процедуры-обработчики событий, 
+			которые инициализируются при старте и окончании работы системы с 
+			установленном в&nbsp;значение &quot;Управляемое приложение&quot; свойства <b>
+			Основной режим запуска</b>. В модуле управляемого приложения 
+			возможно объявление переменных, а также объявление и описание 
+			процедур и функций, которые будут доступны в любом модуле 
+			конфигурации (кроме модуля внешнего соединения). Их доступность 
+			также обеспечивается для неглобальных общих модулей с установленным 
+			свойством <b><span style="color:blue">Клиент</span> (управляемое 
+			приложение)</b>.&nbsp;В контексте модуля управляемого приложения доступны 
+			экспортируемые процедуры и функции общих модулей. </span></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<a name="SessionModule"><b>
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Модуль сеанса</span></b></a></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Модулем сеанса называется модуль, который автоматически выполняется 
+			при старте системы 1С:Предприятие 8 в момент загрузки конфигурации.
+			</span></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Модуль сеанса предназначен для инициализации параметров сеанса и 
+			отработки действий, связанных с сеансом работы. Модуль сеанса всегда 
+			исполняется в привилегированном режиме в кластере серверов 
+			1С:Предприприятия 8.</span></p>
+			<p class="MsoNormal" style="line-height: normal"><b>
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Важно!</span></b><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif"> 
+			Модуль сеанса может содержать только определения процедур и функций.
+			</span></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Модуль сеанса не содержит экспортируемых процедур и функций и может 
+			использовать процедуры из общих модулей конфигурации.</span></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<a name="ExternalConnectionModule"><b>
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Модуль внешнего соединения</span></b></a></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Модуль внешнего соединения расположен в корневом разделе 
+			конфигурации. В нем располагаются процедуры-обработчики событий, 
+			которые инициализируются при старте и окончании работы системы в 
+			режиме внешнего соединения (СОМ-соединения). </span></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			В модуле внешнего соединения возможно объявление переменных, а также 
+			объявление и описание процедур и функций, которые будут доступны для 
+			внешнего приложения, а также для неглобальных общих модулей с 
+			установленным свойством <b>Внешнее соединение</b>. </span></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Объекты 1С:Предприятия, доступные извне через COM-соединение:</span><ul type="disc" style="margin-bottom: 0cm">
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				Экспортируемые переменные и процедуры/функции модуля внешнего 
+				соединения </span></li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				Экспортируемые переменные и процедуры/функции общих модулей
+				</span></li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				Включение и исключение модулей целиком с помощью установки 
+				свойств общих модулей </span></li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				Включение и исключение фрагментов общих модулей с помощью 
+				препроцессора </span></li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				Глобальный контекст 1С:Предприятия 8 </span></li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				За исключением объектов, жестко связанных с клиентским 
+				приложением (ТекстовыйДокумент, ТабличныйДокумент, ...)</span></li>
+			</ul>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Модуль присутствует только в сессии внешнего соединения.</span></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			В данном режиме характерно полное отсутствие пользовательского 
+			интерфейса.</span></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<a name="OrdinaryApplicationModule"><b>
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Модуль обычного приложения</span></b></a></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Модуль обычного приложения располагается в корневом разделе 
+			конфигурации. В нем располагаются процедуры-обработчики событий, 
+			которые инициализируются при старте и окончании работы системы с 
+			установленным в&nbsp;значение &quot;<b>Обычное приложение</b>&quot; свойством <b>
+			Основной режим запуска</b>. В модуле обычного приложения возможно 
+			объявление переменных, а также объявление и описание процедур и 
+			функций, которые будут доступны в любом модуле конфигурации (кроме 
+			модуля внешнего соединения). Их доступность также обеспечивается для 
+			неглобальных общих модулей с установленным свойством <b>
+			<span style="color:
+blue">Клиент</span> (обычное приложение)</b>.&nbsp;В контексте модуля обычного 
+			приложения доступны экспортируемые процедуры и функции общих 
+			модулей. </span></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<a name="CommonModules"><b>
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Общие модули</span></b></a></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Общие модули располагаются в отдельной ветке дерева метаданных. 
+			Основным назначением общих модулей является содержание общих 
+			алгоритмов конфигурации, доступных из разных модулей. В общих 
+			модулях отсутствует раздел определения переменных и раздел основной 
+			программы, то есть они содержат только раздел процедур и функций 
+			(см. раздел &quot;<a style="color: blue; text-decoration: underline; text-underline: single" href="v8help://SyntaxHelperCommonLanguage/source_format_struct.html"><span style="color:blue">Структура 
+			программного модуля</span></a>&quot;). </span></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			В любом общем модуле возможно объявление и описание процедур и 
+			функций, которые будут доступны в любом модуле конфигурации.</span></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Если используется <span style="color: blue; background: yellow">
+			клиент</span>–серверный вариант системы 1С:Предприятие 8, то с 
+			помощью свойств <b><span style="color:blue">Клиент</span> (обычное 
+			приложение)</b>, <b><span style="color:blue">Клиент</span> 
+			(управляемое приложение)</b> и <b>Сервер</b>, а также указаний 
+			препроцессору можно организовывать выполнение различных процедур и 
+			функций общих модулей на сервере приложения или на клиентском месте.</span></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Если установлено свойство <b><span style="color:blue">Клиент</span> 
+			(обычное приложение) </b>или <b><span style="color:blue">Клиент</span> 
+			(управляемое приложение)</b>, то все процедуры и функции общего 
+			модуля могут использоваться в клиентском приложении. <br>
+			В контексте неглобального общего модуля с установленным свойством <b>
+			<span style="color:blue">Клиент</span> (обычное приложение)&nbsp;</b>доступны 
+			экспортируемые переменные, процедуры и функции модуля обычного 
+			приложения. <br>
+			В контексте неглобального общего модуля с установленным свойством <b>
+			<span style="color:blue">Клиент</span> (управляемое приложение)</b>&nbsp;доступны 
+			экспортируемые переменные, процедуры и функции модуля управляемого 
+			приложения.</span></p>
+			<p class="MsoNormal" style="line-height: normal"><b>
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Важно! </span></b>
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Свойство <b><span style="color:blue">Клиент</span> (обычное 
+			приложение)</b>&nbsp;показывается, если в
+			<a style="color: blue; text-decoration: underline; text-underline: single" href="v8help://config/form_configeditforrunmode">
+			<span style="color:purple">настройках конфигурации</span></a> режима 
+			запуска установлен режим&nbsp;&quot;<b>Управляемое приложение и обычное 
+			приложение</b>&quot;.</span></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Если установлено свойство <b>Сервер</b>, то все процедуры и функции 
+			общего модуля могут использоваться в
+			<span style="color: blue; background: yellow">клиент</span>-серверном 
+			варианте.</span></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Если предполагается, что процедуры и функции общего модуля могут 
+			быть использованы во внешнем соединении, то следует установить 
+			свойство <b>Внешнее соединение</b>. <br>
+			В контексте неглобального общего модуля с установленным свойством <b>
+			Внешнее соединение </b>доступны экспортируемые переменные, процедуры 
+			и функции модуля внешнего соединения.</span></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Свойство <b>Вызов сервера</b> разрешает вызов сервера. Свойство 
+			доступно, если установлено свойство <b>Сервер</b>. Если не 
+			установлено, то процедуры и функции данного модуля доступны только 
+			на сервере. Если установлено, то процедуры и функции данного модуля 
+			доступны на <span style="color: blue; background: yellow">клиенте</span>.</span></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Свойство <b>Привилегированный</b> предназначено для установки полных 
+			прав доступа при выполнении действий с базой данных в процедурах и 
+			функциях общего модуля. При установленном свойстве выполнение 
+			производится только на сервере. </span></p>
+			<p class="MsoNormal" style="line-height: normal"><b>
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Повторное использование возвращаемых значений</span></b><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">. 
+			Свойство доступно, если общий модуль не является <b>Глобальным</b>. 
+			Это свойство может принимать следующие значения:</span><ul type="disc" style="margin-bottom: 0cm">
+				<li class="MsoNormal" style="line-height: normal"><b>
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				Не использовать</span></b><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif"> 
+				– повторное использование возвращаемых значений для функций 
+				этого общего модуля не используется; </span></li>
+				<li class="MsoNormal" style="line-height: normal"><b>
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				На время вызова</span></b><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif"> 
+				и <b>На время сеанса</b> – для общего&nbsp; модуля используется метод 
+				определения повторного использования данных. Суть этого метода 
+				заключается в том, что в ходе выполнения кода система запоминает 
+				параметры и результат работы функций после первого вызова 
+				функции. При повторном вызове функции с такими же параметрами, 
+				происходит возврат запомненного значения (из первого вызова) без 
+				выполнения самой функции. Если функция во время своего 
+				выполнения меняет значения параметров, то повторный вызов 
+				функции не будет это делать.</span></li>
+			</ul>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Можно выделить следующие особенности сохранения результатов вызова:</span><ul type="disc" style="margin-bottom: 0cm">
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				если функция выполняется на сервере и вызывается из серверного 
+				кода, то значения параметров и результат вызова запоминаются&nbsp; 
+				для текущего сеанса на стороне сервера; </span></li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				если функция выполняется на
+				<span style="color: blue; background: yellow">толстом</span> или 
+				тонком <span style="color: blue; background: yellow">клиенте</span>, 
+				то значения параметров и результатов вызова запоминается на 
+				стороне <span style="color: blue; background: yellow">клиента</span>;
+				</span></li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				если функция выполняется на стороне сервера, а вызывается из 
+				клиентского кода, то значения параметров вызова запоминаются и 
+				на стороне <span style="color: blue; background: yellow">клиента</span> 
+				и на стороне сервера.</span></li>
+			</ul>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Сохраненные значения удаляются:</span><ul type="disc" style="margin-bottom: 0cm">
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				если свойство установлено в значение <b>На время вызова</b>:
+				</span>
+				<ul type="circle" style="margin-bottom: 0cm">
+					<li class="MsoNormal" style="line-height: normal">
+					<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+					на стороне сервера – при возврате управления с сервера;
+					</span></li>
+					<li class="MsoNormal" style="line-height: normal">
+					<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+					на стороне <span style="color: blue; background: yellow">
+					клиента</span> – при завершении работы процедуры или функции 
+					встроенного языка&nbsp; верхнего уровня (вызванной системой из 
+					интерфейса, а не из другой процедуры или функции встроенного 
+					языка).</span></li>
+				</ul>
+				</li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				если свойство общего модуля установлено в значение На время 
+				сеанса: </span>
+				<ul type="circle" style="margin-bottom: 0cm">
+					<li class="MsoNormal" style="line-height: normal">
+					<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+					на стороне сервера – при окончании сеанса; </span></li>
+					<li class="MsoNormal" style="line-height: normal">
+					<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+					на стороне <span style="color: blue; background: yellow">
+					клиента</span> – при закрытии клиентского приложения.</span></li>
+				</ul>
+				</li>
+			</ul>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Сохраненные значения могут быть удалены:</span><ul type="disc" style="margin-bottom: 0cm">
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				после долгого неиспользования (более 5 минут); </span></li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				при нехватке оперативной памяти в рабочем процессе сервера;
+				</span></li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				при перезапуске рабочего процесса; </span></li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				при переключении <span style="color: blue; background: yellow">
+				клиента</span> на другой рабочий процесс.</span></li>
+			</ul>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			После удаления значений, вызов экспортной функции выполняется как 
+			при первом вызове.</span></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Свойство <b>Глобальный</b> определяет, являются ли экспортируемые 
+			методы общего модуля частью глобального контекста. <br>
+			Если свойство <b>Глобальный</b> установлено в значение <b>Истина</b>, 
+			то экспортируемые методы общего модуля доступны как методы 
+			глобального контекста.</span></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Если свойство <b>Глобальный</b> установлено в значение Ложь, то в 
+			глобальном контексте создается свойство с именем, соответствующим 
+			имени общего модуля в метаданных. Данное свойство доступно <b>ТОЛЬКО</b> 
+			для чтения. Значением данного свойства является объект <i>
+			ОбщийМодуль</i>. Через данный объект доступны экспортируемые методы 
+			данного общего модуля. Таким образом, обращение к методам 
+			неглобальных общих модулей выглядит как XXXXX.YYYYY, где XXXXX – это 
+			имя свойства общего модуля, а YYYYY – имя экспортируемого метода 
+			общего модуля.</span></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Если установлено свойство <b><span style="color:blue">Клиент</span> 
+			(обычное</b> <b>приложение)</b>, то модуль загружается в
+			<span style="color: blue; background: yellow">толстом</span>
+			<span style="color: blue; background: yellow">клиенте</span> в 
+			режиме обычного приложения. </span></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Если установлено свойство <b><span style="color:blue">Клиент</span> 
+			(управляемое приложение)</b>, то все процедуры и функции общего 
+			модуля могут использоваться в режиме Управляемое приложения, в 
+			тонком <span style="color: blue; background: yellow">клиенте</span>, 
+			в веб-<span style="color: blue; background: yellow">клиенте</span>.
+			</span></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Модули с&nbsp;установленным свойством <b><span style="color:blue">Клиент</span> 
+			(обычное</b> <b>приложение)</b>, проверяются для режимов запуска:</span><ul type="disc" style="margin-bottom: 0cm">
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: blue; background: yellow">
+				Толстый</span><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				<span style="color: blue; background: yellow">клиент</span> 
+				(обычное приложение); </span></li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: blue; background: yellow">
+				Толстый</span><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				<span style="color: blue; background: yellow">клиент</span> 
+				(обычное приложение) вариант
+				<span style="color: blue; background: yellow">клиент</span>-сервер.</span></li>
+			</ul>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Модули с&nbsp;установленным свойством <b><span style="color:blue">Клиент</span> 
+			(управляемое приложение)</b>, проверяются для режимов запуска:</span><ul type="disc" style="margin-bottom: 0cm">
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: blue; background: yellow">
+				Толстый</span><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				<span style="color: blue; background: yellow">клиент</span> 
+				(управляемое приложение); </span></li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif; color: blue; background: yellow">
+				Толстый</span><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				<span style="color: blue; background: yellow">клиент</span> 
+				(управляемое приложение) вариант
+				<span style="color: blue; background: yellow">клиент</span>-сервер;
+				</span></li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				Тонкий <span style="color: blue; background: yellow">клиент</span>;
+				</span></li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				Веб-<span style="color: blue; background: yellow">клиент</span>.</span></li>
+			</ul>
+			<p class="MsoNormal" style="line-height: normal">
+			<a name="CommonObjectsModules"><b>
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Модули общих объектов</span></b></a></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Некоторые&nbsp;общие объекты имеют собственные модули. К таким объектам 
+			относятся:</span><ul type="disc" style="margin-bottom: 0cm">
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				Команды; </span></li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				Web-сервисы. </span></li>
+			</ul>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Модули располагаются в ветках конфигурации, в которых содержатся 
+			сами объекты и являются свойствами объектов. Каждый объект имеет 
+			свой индивидуальный модуль. В этих модулях возможно объявление 
+			переменных, процедур и функций, которые будут доступны при работе с 
+			объектом извне во встроенном языке, дополняя контекст объекта.</span></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<a name="AppliedObjectsModules"><b>
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Модули прикладных</span></b></a><b><span style="font-size: 13.5pt; font-family: 'Times New Roman',serif"> 
+			объектов</span></b></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Набор прикладных объектов имеет собственные модули. К таким объектам 
+			относятся:</span><ul type="disc" style="margin-bottom: 0cm">
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				менеджеры значения константы; </span></li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				справочники; </span></li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				документы; </span></li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				отчеты (внешние отчеты); </span></li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				обработки (внешние обработки); </span></li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				планы видов характеристик; </span></li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				планы счетов; </span></li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				планы видов расчетов; </span></li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				бизнес-процессы; </span></li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				задачи; </span></li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				регистры.</span></li>
+			</ul>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Модули располагаются в ветках конфигурации, в которых содержатся 
+			сами объекты и являются свойствами объектов. Каждый объект имеет 
+			свой индивидуальный модуль. В этих модулях возможно объявление 
+			переменных, процедур и функций, которые будут доступны при работе с 
+			объектом извне во встроенном языке, дополняя контекст объекта.
+			</span></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			В контексте модуля прикладного объекта есть доступ к реквизитам и 
+			табличным частям объекта, а также его методам и событиям. </span>
+			</p>
+			<p class="MsoNormal" style="line-height: normal">
+			<a name="ManageAppliedObjectsModules"><b>
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Модули менеджеров</span></b></a><b><span style="font-size: 13.5pt; font-family: 'Times New Roman',serif"> 
+			прикладных объектов</span></b></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Каждый прикладной объект имеет менеджер, предназначенный для 
+			управления этим объектом, как объектом конфигурации. С помощью 
+			менеджера можно создавать объекты, работать с формами и макетами. 
+			Модуль менеджера позволяет расширить функциональность менеджеров за 
+			счет введения процедур и функций на встроенном языке. Фактически, 
+			это позволяет описать методы для объекта конфигурации (например, 
+			справочника), которые относятся не к конкретному экземпляру объекта 
+			базы данных, а к самому объекту конфигурации.<br>
+			Контекст модуля менеджера образуется из:</span><ul type="disc" style="margin-bottom: 0cm">
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				глобального контекста, в том числе экспортируемых функций общих 
+				модулей (если для модулей установлено&nbsp;свойство <b>
+				<span style="color:blue">Клиент</span> (обычное приложение)</b>,
+				<b><span style="color:blue">Клиент</span> (управляемое 
+				приложение)</b> или <b>Сервер</b>); </span></li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				экспортируемых переменных, процедур и функций модулей 
+				управляемого или обычного приложений; </span></li>
+				<li class="MsoNormal" style="line-height: normal">
+				<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+				локальных и экспортируемых функций самого модуля.</span></li>
+			</ul>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Модуль менеджера не может иметь переменных и тела модуля.</span></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Если функции или процедуры модуля менеджера объявлены как 
+			экспортируемые, к ним можно будет получить доступ через менеджер 
+			объекта.</span></p>
+			<p class="MsoNormal" style="line-height: normal"><b>
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Пример</span></b><span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">:<br>
+			Модуль менеджера:</span></p>
+			<table class="MsoNormalTable" border="0" cellpadding="0" width="100%" style="width: 100.0%; background: #F7F7F7">
+				<tr>
+					<td style="padding:.75pt .75pt .75pt .75pt">
+					<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span style="font-size: 12.0pt; font-family: Courier New; color: red">
+					Функция&nbsp;</span><span style="font-size: 12.0pt; font-family: Courier New; color: blue">ПолучитьСписокДебиторов</span><span style="font-size: 12.0pt; font-family: Courier New; color: red">()&nbsp;Экспорт<br>
+					</span>
+					<span style="font-size: 12.0pt; font-family: Courier New; color: blue">
+					…<br>
+					</span>
+					<span style="font-size: 12.0pt; font-family: Courier New; color: red">
+					КонецФункции</span></td>
+				</tr>
+			</table>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Вызов из прикладного кода:</span></p>
+			<table class="MsoNormalTable" border="0" cellpadding="0" width="100%" style="width: 100.0%; background: #F7F7F7">
+				<tr>
+					<td style="padding:.75pt .75pt .75pt .75pt">
+					<p class="MsoNormal" style="margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+  normal"><span style="font-size: 12.0pt; font-family: Courier New; color: blue">
+					Дебиторы&nbsp;</span><span style="font-size: 12.0pt; font-family: Courier New; color: red">=</span><span style="font-size: 12.0pt; font-family: Courier New; color: blue">&nbsp;Справочники</span><span style="font-size: 12.0pt; font-family: Courier New; color: red">.</span><span style="font-size: 12.0pt; font-family: Courier New; color: blue">Контрагент</span><span style="font-size: 12.0pt; font-family: Courier New; color: red">.</span><span style="font-size: 12.0pt; font-family: Courier New; color: blue">&nbsp;ПолучитьСписокДебиторов</span><span style="font-size: 12.0pt; font-family: Courier New; color: red">();</span></td>
+				</tr>
+			</table>
+			<p class="MsoNormal" style="line-height: normal">
+			<a name="CommandsModules"><b>
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Модули команд (модули общих команд)</span></b></a></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Для нестандартных команд требуется написать процедуру ее выполнения. 
+			Для этого служит модуль команды, в котором можно написать 
+			предопределенную процедуру ОбработатьКоманду(). Данная процедура 
+			должна предваряться
+			<a style="color: blue; text-decoration: underline; text-underline: single" href="v8help://SyntaxHelperLanguage/Pragma">
+			<span style="color:blue">директивой компиляции</span></a> <b>&amp;НаКлиенте</b>, 
+			так как выполнение команды происходит в клиентском приложении.</span></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<a name="ManagedFormsModules"><b>
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Модули управляемых форм</span></b></a><b><span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			</span></b></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Модуль состоит из набора процедур и функций. Переменные модуля и 
+			тело модуля не допускаются. </span></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<a name="FormsModules"><b>
+			<span style="font-size: 13.5pt; font-family: 'Times New Roman',serif">
+			Модули форм</span></b></a></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			Эти модули содержатся в формах конфигурации. Каждая форма имеет свой 
+			индивидуальный модуль. В этих модулях возможно объявление 
+			переменных, процедур и функций, которые будут доступны при работе с 
+			формой извне во встроенном языке, дополняя контекст формы.</span></p>
+			<p class="MsoNormal" style="line-height: normal">
+			<span style="font-size: 12.0pt; font-family: 'Times New Roman',serif">
+			В контексте модуля формы доступны реквизиты формы, а также ее 
+			свойства, методы и события. Если у формы назначен основной реквизит, 
+			то в модуле формы становятся доступны свойства и методы прикладного 
+			объекта, используемого в качестве основного реквизита.</span></p>
+			<p align="justify">&nbsp;</p>
+			<p align="center"><u><b><font style="font-size: 16pt">
+			<a name="Контекст_модуля_формы">Контекст модуля формы</a></font></b></u><font style="font-size: 16pt">
+			</font></p>
+			<p align="justify">Каждый модуль связан с остальной частью конфигурации, эта связь 
+			называется <i><b>контекстом модуля.</b></i> Контекст модуля 
+			определяет набор доступных доступных во время выполнения модуля 
+			объектов, переменных, процедур и функций. </p>
+			<p align="justify">Контекст модуля образуется:
+			<ol>
+				<li>
+				<p align="justify">Локальным контекстом самого модуля формы. Это переменные, 
+				процедуры и функции, объявленные в этом модуле. 
+				</li>
+				<li>
+				<p align="justify">Реквизитами формы, к которой принадлежит модуль. 
+				</li>
+				<li>
+				<p align="justify">Свойствами и методами объекта <i><b>УправляемаяФорма</b></i> 
+				встроенного языка. Все свойства и методы описаны в 
+				синтаксис-помощнике: <i><b>Интерфейс (управляемый) - 
+				УправляемаяФорма .....</b></i>. 
+				</li>
+				<li>
+				<p align="justify">Свойствами и методами расширения формы, определяемыми типом 
+				того объекта, которому принадлежит форма; 
+				</li>
+				<li>
+				<p align="justify">Глобальным контекстом, к которому относятся экспортируемые 
+				функции и процедуры глобальных и не глобальных общих модулей. 
+				</li>
+				<li>
+				<p align="justify">Экспортируемыми переменными, процедурами и функциями модуля 
+				управляемого приложения. Если модуль приложения имеет в своем 
+				составе процедуру, определенную как экспортная, то к ней можно 
+				обратиться из модуля формы по имени этой процедуры. </li>
+			</ol>
+			<p align="justify">&nbsp;</p>
+			<p align="center"><u><b><font style="font-size: 16pt">
+			<a name="Как_понять_работу_кода,_написанного_на_встроенном_языке">
+			Как понять работу кода, написанного на встроенном языке</a></font></b></u></p>
+			<blockquote>
+				<blockquote>
+					<ol>
+						<li>
+						<p align="justify">Выяснить, в каком контексте код исполняется. 
+						Например, в модуле формы, требуется определить что такое
+						<i><b>СтрокаТабличнойЧасти</b></i> 
+						</li>
+						<li>
+						<p align="justify">Определить объявлена ли в модуле формы такая 
+						переменная, если нет, следовательно это не переменная 
+						модуля формы 
+						</li>
+						<li>
+						<p align="justify">Проверить имеется в самой форме реквизит с таким 
+						именем 
+						</li>
+						<li>
+						<p align="justify">Имеется ли у объекта <i><b>УправляемаяФорма</b></i> 
+						свойство <i><b>СтрокаТабличнойЧасти</b></i>?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+						</li>
+						<li>
+						<p align="justify">Есть ли у глобального контекста свойство <i><b>
+						СтрокаТабличнойЧасти</b></i>? 
+
+						</li>
+						<li>
+						<p align="justify">После такого анализа можно сделать вывод, что&nbsp; 
+						переменная <i><b>СтрокаТабличнойЧасти </b></i>является 
+						локальной переменной, то есть видимой только внутри 
+						процедуры, где ее используют. 
+						</li>
+					</ol>
+				</blockquote>
+			</blockquote>
+			</li>
+		</ol>
+		<p align="justify">&nbsp;</p>
+		<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <b><font size="4">&nbsp;&nbsp;
+		</font><a name="Варианты_работы_системы_1С:ПредприятиеН"><font style="font-size: 16pt">&nbsp;</font></a><font style="font-size: 16pt"><a name="Варианты_работы_системы_1С:ПредприятиеН"><u>Варианты 
+		работы системы 1С:Предприятие</u></a></font></b></p>
+		<p align="justify">Система 1С:Предприятие поддерживает два варианта работы:&nbsp; файловый и 
+		клиент-серверный.</p>
+		<p align="justify"><i><b>Файловый вариант</b></i> работы рассчитан на 
+		персональную работу одного пользователя или небольшой группы 
+		пользователей в локальной сети. В этом варианте все данные 
+		информационной базы (конфигурация, БД, административная информация) 
+		располагаются в одном файле, рис.1.&nbsp; В файловом варианте можно 
+		вести реальную учетную работу, но система в этом случае не предоставляет 
+		всех возможностей какими обладает клиент-серверный вариант.</p>
+		<p align="center"><img border="0" src="Teoria1.gif"></p>
+		<p align="center">Рис. 1 Файловый вариант работы (двухуровневая 
+		архитектура)</p>
+		<p align="justify"><i><b>Клиент-серверный</b></i> <i><b>вариант</b></i> 
+		предназначен для использования в масштабе предприятия и реализован на 
+		основе трехуровневой архитектуры &quot;клиент-сервер&quot; - это основной вариант 
+		для&nbsp; работы&nbsp; в многопользовательской среде с большим объемом 
+		данных. Этот вариант требует больших усилий по установке и&nbsp; 
+		администрированию, рис. 2</p>
+		<p align="center"><img border="0" src="Teoria2.gif"></p>
+		<p align="center">Рис. 2&nbsp; Клиент-серверный вариант работы 
+		(трехуровневая архитектура)</p>
+		<p align="justify">Физически серверная и клиентская части могут располагаться на одном 
+		компьютере или на разных ПК, главное в том, что Пользователь не имеет 
+		непосредственного доступа к серверу баз данных, что обеспечивает 
+		безопасность информации.</p>
+		<p align="justify">Клиет-серверная архитектура&nbsp; разделяет всю работающую систему на три 
+		части, взаимодействующие между собой:</p>
+		<blockquote>
+			<blockquote>
+				<ul>
+					<li>
+					<p align="justify">Клиент (клиентское приложение) 
+					</li>
+					<li>
+					<p align="justify">Сервер 1С:Предприятие 
+					</li>
+					<li>
+					<p align="justify">Сервер баз данных </li>
+				</ul>
+				<p align="justify"><i><b>Клиентское приложение</b></i> - это программа, часть 
+				системы 1С:Предприятие. Основное ее назначение - организация 
+				пользовательского интерфейса, отображение данных с возможностью 
+				их изменения. Клиентское приложение может исполнять код на 
+				встроенном языке, но оперирует приложение с очень ограниченным 
+				пространством типов&nbsp; встроенного языка. Такой подход позволяет 
+				не требовать клиентскому приложению много ресурсов, 
+				&quot;путешествовать&quot; по Интернету и работать в&nbsp; среде&nbsp; веб-браузеров.&nbsp; 
+				Клиентских приложений два: <i><b>Тонкий клиент</b></i> и <i><b>
+				Веб-клиент.</b></i></p>
+				<p align="justify"><i><b>Сервер 1С:Предприятие </b></i>- это тоже программа, 
+				часть системы 1С:Предприятие. Основной задачей этой программы 
+				является передача запросов от клиентской части к серверу БД и 
+				возвращать обратно результаты этих запросов. Другой задачей 
+				сервера является исполнение большинства алгоритмов включающих в 
+				себе сложные вычисления, требующие непосредственную работу с 
+				данными. На сервере 1С:Предприятие доступны все&nbsp; типы 
+				встроенного языка за исключением интерфейсных типов, так как 
+				сервер 1С:Предприятие общается не с пользователями, а с другими 
+				программами: клиентской частью и с сервером баз данных.</p>
+				<p align="justify"><i><b>Сервер баз данных </b></i>- это программа, но она не 
+				является частью системы 1С:Предприятие. Она поставляется другими 
+				производителями. ЕЕ основное назначение - организация и ведение 
+				структурированных организованных наборов данных. В настоящее 
+				время 1С:Предприятие может работать со следующим серверами баз 
+				данных:</p>
+				<blockquote>
+					<blockquote>
+						<blockquote>
+							<ul>
+								<li>
+								<p align="justify"><span lang="en-us">Microsoft SQL Server</span> 
+								</li>
+								<li>
+								<p align="justify"><span lang="en-us">PostgreSQL</span> 
+								</li>
+								<li>
+								<p align="justify"><span lang="en-us">IBM DB2</span> 
+								</li>
+								<li>
+								<p align="justify"><span lang="en-us">Oracle Database</span> 
+								</li>
+							</ul>
+						</blockquote>
+					</blockquote>
+				</blockquote>
+				<p align="justify">Прикладные решения разрабатываются один раз и 
+				одинаково работают, что в одном,&nbsp; что в другом варианте, то 
+				есть переработки прикладных программ не требуется. Это 
+				достигается за счет того, что конфигурация всегда 
+				разрабатывается исходя из требований клиент-серверный 
+				архитектуры. При файловом варианте работы система имитирует 
+				наличие сервера на клиентском ПК.</p>
+				<blockquote>
+					<blockquote>
+						<blockquote>
+							<p align="center"><b><span style="font-size: 16pt">
+							<a name="Виды_клиентов_">Виды клиентов</a></span></b></p>
+						</blockquote>
+					</blockquote>
+				</blockquote>
+			</blockquote>
+			<p align="justify">Разрабатываемые прикладные решения могут работать 
+			в разных режимах:</p>
+			<blockquote>
+				<blockquote>
+					<blockquote>
+						<blockquote>
+							<ul>
+								<li>
+								<p align="justify"><i><b>
+								<a href="#Директивы_компиляции_">Тонкий клиент</a> 
+								(</b></i>Thin Client)&nbsp;&nbsp; 
+								и&nbsp; <i><b><a href="#Директивы_компиляции_">Веб-клиент</a></b></i> - клиентские 
+								приложения, разработанные на платформе 8.2, рис. 
+								3. 
+								</li>
+							</ul>
+						</blockquote>
+					</blockquote>
+				</blockquote>
+			</blockquote>
+			<p>«Тонким» клиент называется потому, что умеет исполнять 
+			<font color="#800000"><b>ограниченный набор функциональности встроенного языка.</b></font> В частности 
+			на тонком клиенте недоступны все прикладные типы данных. Вместо 
+			этого тонкий клиент оперирует ограниченным набором типов встроенного 
+			языка, предназначенным лишь для отображения и изменения данных в 
+			памяти. <i><b>Вся работа с базой данных, объектными данными, 
+			исполнение запросов</b></i> – выполняется на стороне сервера. Тонкий 
+			клиент только получает готовые данные, подготовленные для 
+			отображения.&nbsp;</p>
+			<p>Тонкий клиент обеспечивает работу только в пользовательском 
+			режиме 1С:Предприятие.&nbsp; Режим работы Конфигуратор тонким 
+			клиентом не поддерживается.</p>
+			<p align="justify">&nbsp;</p>
+		</blockquote>
+		<p align="center"><img border="0" src="Teoria1.jpg">а)<img border="0" src="Teoria2.jpg">б)</p>
+		<p align="center">Рис. 3 Клиентские приложения а)&nbsp; файловый вариант 
+		работы б) клиент-серверный вариант работы</p>
+		<p align="justify">Кроме привычного файлового доступа и подключения к 
+		серверу по локальной сети система позволяет подключаться к информационной 
+		базе по протоколу HTTP через специально настроенный веб-сервер. <i><b>Тонкий 
+		клиент и веб-клиент</b></i> обеспечивают работу пользователей в новом режиме –
+		<i><b>режиме управляемого приложения.</b></i></p>
+		<p><strong><i><font face="Times New Roman"><a name="Тонкий_клиент">Тонкий клиент</a></font></i><span style="font-family:&quot;Verdana&quot;,&quot;sans-serif&quot;">
+		</span></strong>устанавливается на компьютер пользователя. При этом он 
+		имеет значительно меньший объем дистрибутива, чем старое клиентское 
+		приложение, и использует меньше аппаратных ресурсов. Тонкий клиент 
+		поставляется как в составе полного дистрибутива платформы, так и 
+		отдельным дистрибутивом.&nbsp; <i><b>Тонкий</b></i> <i><b>клиент</b></i> 
+		-это файл <i><b><span lang="en-us">1cv8c.exe</span>,</b></i> его система 
+		запускает автоматически, когда начинается отладка. </p>
+		<p><i><b>Веб-клиент</b></i> не существует в виде файла, потому что он 
+		исполняется не в среде операционной системы, а в среде интернет-браузера 
+		(Microsoft Internet Explorer или Mozilla Firefox). Пользователю 
+		достаточно запустить свой браузер, ввести адрес веб-сервера, на котором 
+		опубликована информационная база, и веб-клиент скачается к нему на 
+		компьютер и начнет выполняться.</p>
+		<p><i><b>Тонкий клиент&nbsp; и&nbsp; веб-клиент</b></i> позволяют
+		<strong style="font-weight: 400">
+		<span style="font-family: Times New Roman">работать с информационной 
+		базой через Интернет</span></strong> в реальном режиме времени. 
+		Подключение осуществляется через специально настроенный веб-сервер (<i><b>Apache 
+		или IIS</b></i>). </p>
+		<font face="Times New Roman">
+		<span style="line-height: 115%">Если такое 
+		подключение осуществляется через низкоскоростное интернет-соединение 
+		(например, GPRS), то эти клиентские приложения могут быть запущены в 
+		специальном режиме – </span></font>
+		<span style="line-height: 115%; font-family: Calibri,sans-serif">
+		<strong><span style="font-family: Times New Roman">режиме низкой 
+		скорости соединения</span></strong></span><span style="line-height: 115%"><font face="Times New Roman">. 
+		При этом уменьшаются издержки за счет меньшего количества обращений к 
+		серверу: несколько запросов к серверу объединяются в один пакет, 
+		выполняется упреждающий сбор данных и т.д. В результате даже на 
+		низкоскоростных каналах связи платформа обеспечивает приемлемую скорость 
+		работы пользователей.</font></span><blockquote>
+			<p><font face="Times New Roman">Отличие в использовании этих 
+			клиентских приложений заключается в следующем:</font></p>
+			<ul type="disc" style="margin-bottom: 0cm">
+				<li class="MsoNormal" style="line-height: normal; margin-bottom: 2.25pt">
+				<span style="font-family: Times New Roman"><font size="3"><i><b>&nbsp;тонкий 
+				клиент </b></i>требует предварительной установки на компьютере 
+				пользователя,&nbsp; <i><b>веб-клиент</b></i> - не требует,
+				</font></span></li>
+				<li class="MsoNormal" style="line-height: normal; margin-bottom: 2.25pt">
+				<span style="font-family: Times New Roman"><font size="3">&nbsp;<i><b>тонкий 
+				клиент </b></i>обеспечивает полную функциональность, </font>
+				</span><b><span style="font-family: Times New Roman">
+				<font size="3">&nbsp;</font></span></b><span style="font-family: Times New Roman"><font size="3"><i><b>веб-клиент</b></i> 
+				не поддерживает некоторые возможности платформы, </font></span>
+				</li>
+				<li class="MsoNormal" style="line-height: normal; margin-bottom: 2.25pt">
+				<span style="font-family: Times New Roman"><font size="3"><i><b>&nbsp;тонкий 
+				клиент</b></i> работает только под управлением </font></span>
+				<font size="3"><span style="font-family: Times New Roman">
+				операционной системы <span lang="en-us">Windows</span>,<span lang="en-us">
+				</span>&nbsp;<i><b>веб-клиент</b></i> работает под управлением 
+				интернет-браузера, поэтому удаленный пользователь может 
+				работать: </span></font>
+				<ul type="circle" style="margin-bottom: 0cm">
+					<li class="MsoNormal" style="line-height: normal; margin-bottom: 2.25pt">
+					<span style="font-family: Times New Roman"><font size="3">на 
+					компьютере с </font></span><font size="3">
+					<span style="font-family: Times New Roman">операционной 
+					системой <span lang="en-us">Windows</span></span></font><a style="color: #C10000; font-weight: bold; text-decoration: none; text-underline: none; text-line-through: none" href="http://v8.1c.ru/overview/Term_000000664.htm#1"><b><span style="font-family: Times New Roman"><font size="3">
+					</font></span></b></a>
+					<span style="font-family: Times New Roman"><font size="3">(в 
+					браузере&nbsp;<b><span lang="en-us"> Windows Internet Explorer,&nbsp; 
+					Mozilla Firefox</span></b> &nbsp;или </font></span><b>
+					<span style="font-family: Times New Roman"><font size="3">
+					<span lang="en-us">Google Chrome</span></font></span></b><span style="font-family: Times New Roman"><font size="3">),
+					</font></span></li>
+					<li class="MsoNormal" style="line-height: normal; margin-bottom: 2.25pt">
+					<span style="font-family: Times New Roman"><font size="3">на 
+					компьютере c&nbsp;</font></span><font size="3"><span style="font-family: Times New Roman">операционной 
+					системой <span lang="en-us">Linux</span></span></font><a style="color: #C10000; font-weight: bold; text-decoration: none; text-underline: none; text-line-through: none" href="http://v8.1c.ru/overview/Term_000000665.htm#1"><b><span style="font-family: Times New Roman"><font size="3">
+					</font></span></b></a>
+					<span style="font-family: Times New Roman"><font size="3">&nbsp;(в 
+					браузере </font></span><b>
+					<span style="font-family: Times New Roman"><font size="3">
+					<span lang="en-us">&nbsp;Mozilla Firefox </span></font>
+					</span></b><span style="font-family: Times New Roman">
+					<font size="3">), </font></span></li>
+					<li class="MsoNormal" style="line-height: normal; margin-bottom: 2.25pt">
+					<span style="font-family: Times New Roman"><font size="3">на 
+					компьютере с </font></span><font size="3">
+					<span style="font-family: Times New Roman">операционной 
+					системой <span lang="en-us">Mac OS X</span></span></font><span style="font-family: Times New Roman"><font size="3">&nbsp; 
+					(в браузере <b>&nbsp;<span lang="en-us">Safari</span></b> ),</font></span></li>
+				</ul>
+				</li>
+				<li class="MsoNormal" style="line-height: normal; margin-bottom: 2.25pt">
+				<span style="font-family: Times New Roman"><font size="3">
+				существуют некоторые отличия в эргономике работы в тонком и 
+				веб-клиенте..</font></span></li>
+			</ul>
+			<p><font face="Times New Roman">Подключение клиентских приложений 
+			может выполняться как по протоколу<i><b><span lang="en-us"> http</span></b></i>, 
+			так и по протоколу <b><span lang="en-us">&nbsp;<i> https</i></span></b><i>,</i> 
+			поддерживающему шифрование передаваемых данных, рис. 4.</font></p>
+			<p align="center"><img border="0" src="Teoria3.jpg"></p>
+			<p align="center">Рис. 4&nbsp; Виды подключения клиентских 
+			приложений</p>
+			<blockquote>
+				<ul>
+					<li>
+					<p align="justify"><i><b>Толстый клиент</b></i> 
+								и <i><b>Внешнее соединение</b></i> - 
+									клиентские приложения прежней версии 
+									платформы, которые существуют для 
+									совместимости с прежними прикладными 
+									решениями.</li>
+				</ul>
+			</blockquote>
+			<p align="justify">&nbsp;</p>
+		</blockquote>
+		<p align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<b><font size="6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<a name="__Общие_сведения_о_системе_1С:Предприятие_8.2">&nbsp;</a></font><a name="__Общие_сведения_о_системе_1С:Предприятие_8.2"><font style="font-size: 16pt; text-decoration: underline"> 
+		Общие сведения о системе 1С:Предприятие 8.2</font></a></b></p>
+		<blockquote>
+		<p align="justify">1С:Предприятие является универсальной системой&nbsp; автоматизации 
+		экономической и организационной деятельности предприятия. В состав 
+		1С:Предприятие входят&nbsp; различные программные инструменты, с 
+		которыми работают разработчики и пользователи. Вся система может быть 
+		рассмотрена как совокупность конфигурации и платформы, управляющей 
+		работой конфигурации.&nbsp; Платформа является единой для любых 
+		разработок, а различаются они только конфигурацией.</p>
+		<p align="justify">Разработчик системы 1С выпускает много типовых конфигураций, которые 
+		пригодны для использования на предприятии, но их универсальность 
+		приводит к тому, что возможности прикладного решения на предприятии 
+		могут быть использованы не все и не полностью.</p>
+		<p align="justify">Для построения интерфейса основным элементом является подсистема. 
+		Подсистема - это объект конфигурации, объединяющий в себе группу задач, 
+		предназначенных для решения одной проблемы в рамках предприятия. 
+		Например, расчет зарплаты, планирование, материально-техническое 
+		снабжение, бухгалтерия и пр. Поэтому первым этапом проектирования 
+		является выделение подсистем и определение состава задач в них входящих.</p>
+		</blockquote>
+		<p align="justify">&nbsp;</p>
+		<p align="center"><b><span style="font-size: 16pt">
+		<a name="Работа_с_коллекцией_">Работа с коллекцией</a></span></b></p>
+		<blockquote>
+			<p align="justify">При формировании результатных записей в 
+			программном коде часто приходится работать с объектом встроенного 
+			языка - Коллекцией. Например, табличная часть, состоящая из 
+			нескольких строк является коллекцией, которую следует обработать 
+			методом перебора ее строк. Для перебора строк во встроенном языке 
+			имеется конструкция <i><b>Для Каждого .....&nbsp; Из .....&nbsp;&nbsp; 
+			Цикл ...</b></i> <i><b>КонецЦикла&nbsp; </b></i>с помощью которой можно последовательно перебрать 
+			все строки коллекции.&nbsp;Этот метод используется, когда известно 
+			общее количество строк, подлежащих перебору. </p>
+			<p align="justify">Кроме того, имеется возможность 
+			обратиться напрямую к конкретной строке коллекции.</p>
+			<p align="justify"><u>Во встроенном языке бывают:</u></p>
+			<ol>
+				<li>
+				<p align="justify">именованные коллекции, где каждый элемент 
+				имеет свое имя и по этому имени можно к нему обратиться</p></li>
+				<li>
+				<p align="justify">неименованные коллекции, тогда обращение к 
+				элементу коллекции осуществляется по индексу (номеру), нумерация 
+				начинается с &quot;0&quot;</p></li>
+				<li>
+				<p align="justify">коллекции, в которых можно обращаться к 
+				элементам как по имени, так и по индексу</p></li>
+			</ol>
+		</blockquote>
+		<p align="center"><b><span style="font-size: 16pt">
+		<a name="Макеты_печатных_форм_">Макеты печатных форм</a></span></b></p>
+		<blockquote>
+			<p align="justify">Объект конфигурации &quot;Макет&quot; предназначен для 
+			хранения шаблона печатной формы, который программным путем будет 
+			заполняться информацией, выбранной из одного или нескольких объектов 
+			БД. Макет может содержать шаблон табличного или текстового 
+			документа, <span lang="en-us">HTML</span> документ или
+			<span lang="en-us">Active Document</span>, графическую или 
+			географическую схему, схему компоновки данных и пр.</p>
+			<p align="justify">Макеты могут существовать сами по себе или 
+			входить в состав объекта конфигурации. Создание макета можно 
+			выполнять с помощью конструктора.</p>
+			<p align="center"><b><font style="font-size: 16pt">
+			<a name="Регистры_">Регистры</a></font></b></p>
+			<p align="justify">Регистры предприятия предназначены для обработки 
+			и хранения различной информации, отражающей хозяйственную 
+			деятельность предприятия. В регистрах хранится информация об 
+			изменениях состояний объектов или прочая информация, не отражающая 
+			состояния объектов.&nbsp; Единицей хранения информации в регистре 
+			является <i><b>запись.</b></i></p>
+			<p align="justify">Регистр&nbsp; представляет собой многомерный 
+			массив данных. Информация, хранящаяся в массиве используется для 
+			реализации функции, которая может выдавать информацию по 
+			определенному набору аргументов. Аргументы функции называются <i><b>
+			измерениями</b></i>, а результат решения функции называют <i><b>
+			ресурсами</b></i>. В состав регистра могут входить и <i><b>реквизиты</b></i>, 
+			они играют второстепенную роль и могут содержать различную 
+			уточняющую информацию. На значения ресурсной части регистра 
+			реквизиты не влияют. Регистр может иметь форму для визуального 
+			отображения его содержания. </p>
+			<p align="justify">В состав стандартной конфигурации входят четыре 
+			типа регистров</p>
+			<blockquote>
+				<blockquote>
+					<ul>
+						<li>
+						<p align="justify">регистры сведений</p></li>
+						<li>
+						<p align="justify">регистры накоплений</p></li>
+						<li>
+						<p align="justify">регистры бухгалтерии</p></li>
+						<li>
+						<p align="justify">регистры расчета</p></li>
+					</ul>
+					<p align="center"><b><font style="font-size: 16pt">
+					<a name="Регистры_сведений_">Регистры сведений</a></font></b></p>
+				</blockquote>
+			</blockquote>
+			<p align="justify">Основной задачей <i><b>регистра сведений</b></i> 
+			является хранение информации, состав которой может быть развернут по 
+			определенной комбинации значений или по времени.&nbsp;&nbsp; 
+			Регистр, информация которого привязана ко времени, называется <i><b>
+			периодическим</b></i>. Особенностью периодического регистра является 
+			то, что&nbsp; в нем хранится история изменений его ресурсной части 
+			по датам.</p>
+			<p align="justify">Для регистра сведений <u>можно не создавать 
+			измерения</u>, в этом случае регистр будет объектом, содержащим 
+			периодические данные. <i><b>Запись регистра</b></i> <i><b>сведений</b></i> 
+			содержит в себе информацию о значениях ресурсов для конкретных 
+			значений измерений и конкретного периода, если регистр 
+			периодический.&nbsp; В регистр сведений информация может заноситься 
+			вручную или с помощью документов. Если запись в регистр вносится с 
+			помощью документа, то такой документ по отношению к данному регистру 
+			будет называться<i><b> регистратором</b></i>. </p>
+			<p align="center"><b><font style="font-size: 16pt"><a name="Регистры_накопления_">
+			Регистры накопления</a></font></b></p>
+			<p align="justify"><i><b>Регистр накопления</b></i>&nbsp; - это
+			<span lang="en-us">n</span>-мерная система координат, в узлах 
+			которой хранятся данные <i>(ресурсы</i>). Оси регистра накопления 
+			называют <i><b>измерениями</b></i>. Регистры накопления используются 
+			для накопления информации о движениях и наличии каких-либо величин 
+			на предприятии. Информацию в регистр накопления можно заносить с 
+			помощью программного кода, входящего в состав модуля документа. 
+			Регистр может иметь форму для визуального отображения его 
+			содержания, но в визуальной форме отображаются только его движения, 
+			итоговые значения не видны. Для получения итоговых результатов 
+			используют<i><b> отчеты.</b></i></p>
+			<p align="justify">Регистры накоплений могут иметь разновидность:</p>
+			<blockquote>
+				<blockquote>
+					<blockquote>
+						<blockquote>
+							<blockquote>
+								<blockquote>
+									<ul>
+										<li>
+										<p align="justify">регистр остатков</p>
+										</li>
+										<li>
+										<p align="justify">регистр оборотов</p>
+										</li>
+									</ul>
+								</blockquote>
+							</blockquote>
+						</blockquote>
+					</blockquote>
+				</blockquote>
+			</blockquote>
+			<p align="justify">В <i><b>регистре остатков</b></i> можно получить 
+			результаты по остаткам на данный момент времени в разрезе конкретных 
+			измерений или по всем измерениям. При создании регистра остатков 
+			измерениями должны быть такие показатели, по которым можно учесть 
+			как поступление, так и выбытие.</p>
+			<p align="justify"><i><b>Регистры оборотов</b></i> предназначены для 
+			хранения информации об оборотах (поступлению, убытию) за конкретный 
+			период времени.</p>
+			<p align="justify">При создании регистра оборотов нет особых 
+			требований в определении измерений регистра, так как из этого 
+			регистра потребуются сведения такого характера как: </p>
+			<blockquote>
+				<blockquote>
+					<blockquote>
+						<blockquote>
+							<ul>
+								<li>
+								<p align="justify">перечень оказанных услуг</p>
+								</li>
+								<li>
+								<p align="justify">какому клиенту оказывались 
+								услуги</p></li>
+								<li>
+								<p align="justify">какой мастер предоставлял 
+								услуги</p></li>
+							</ul>
+						</blockquote>
+					</blockquote>
+				</blockquote>
+			</blockquote>
+			<p align="center"><span style="font-size: 16pt; font-weight: 700">
+			<a name="Отчеты_и_обработки_">Отчеты и обработки</a></span></p>
+			<p align="justify">Отчет - это объект конфигурации, подразумевающий 
+			получение сложной выборки данных, сгруппированных и отсортированных 
+			определенным образом. Данные как правило, выбираются из БД с помощью 
+			языка запросов, входящего в состав системы 1С. Система 8 
+			поддерживает два способа&nbsp; доступа к данным, хранящимся в БД:</p>
+			<blockquote>
+				<blockquote>
+					<blockquote>
+						<ul>
+							<li>
+							<p align="justify"><i><b>Объектный способ</b></i>. 
+							Реализован для объектов с помощью встроенного языка. 
+							Особенностью объектного способа доступа к данным 
+							является то, что можно обращаться к некоторой 
+							совокупности данных как к единому целому.</p></li>
+							<li>
+							<p align="justify"><i><b>Табличный способ</b></i>. 
+							Использует язык запросов. Табличная техника 
+							приспособлена для получения большого объема сложной 
+							информации, с которой из программного кода можно 
+							оперировать с отдельными полями выбранных таблиц.</p>
+							</li>
+						</ul>
+					</blockquote>
+				</blockquote>
+			</blockquote>
+			<p align="center">&nbsp;</p>
+			<p align="center"><b><font style="font-size: 16pt"><a name="Директивы_компиляции_">
+			Директивы компиляции</a></font></b></p>
+			<p align="left">Форма, входящая в любой объект конфигурации, может 
+			поддерживаться процедурами и функциями, которые называют 
+			обработчиками событий. При создании обработчиков событий, в 
+			свойствах имеется возможность указать на какой стороне будет 
+			выполняться обработчик события:</p>
+			<blockquote>
+				<blockquote>
+					<blockquote>
+						<blockquote>
+							<ul>
+								<li>
+								<p align="left">на стороне клиента</p></li>
+								<li>
+								<p align="left">на стороне сервера</p></li>
+							</ul>
+						</blockquote>
+					</blockquote>
+				</blockquote>
+			</blockquote>
+			<p align="left">Форма, в состав которой входит обработчик, 
+			существует и на сервере и на клиенте одновременно, поэтому при 
+			создании процедуры необходимо указать контекст ее и выполнения в 
+			виде директив:</p>
+			<blockquote>
+				<blockquote>
+					<blockquote>
+						<blockquote>
+							<blockquote>
+								<blockquote>
+									<ul>
+										<li>
+										<p align="left"><span lang="en-us">&amp;</span>НаКлиенте</p>
+										</li>
+										<li>
+										<p align="left"><span lang="en-us">&amp;</span>НаСервере</p>
+										</li>
+										<li>
+										<p align="left"><span lang="en-us">&amp;</span>НаСервереБезКонтекста</p>
+										</li>
+										<li>
+										<p align="left">
+										<strong style="font-weight: 400">&amp;НаКлиентеНаСервереБезКонтекста</strong></p>
+										</li>
+										<li>
+										<p align="left">
+										<strong style="font-weight: 400">&amp;НаКлиентеНаСервере</strong> </p>
+										</li>
+									</ul>
+								</blockquote>
+							</blockquote>
+						</blockquote>
+					</blockquote>
+				</blockquote>
+			</blockquote>
+			<p align="left">Таким образом, происходит отделение клиентской части 
+			кода от серверной. Это говорит о том, что разработчик в явном виде 
+			программирует клиентскую и серверную части своего приложения. Кроме 
+			того, из клиентской части модуля можно вызывать процедуры или 
+			функции общего модуля, которые также могут выполняться как на 
+			стороне Клиента, так и на стороне Сервера.</p>
+			<p align="left">Выполнение процедуры или функции клиентского 
+			приложения выполняется по следующему алгоритму: поиск процедуры 
+			выполняется на Клиенте, если нужной процедуры нет, то поиск 
+			осуществляется со стороны сервера. Если нужная процедура найдена, то 
+			ее выполнение произойдет на стороне сервера, затем управление будет 
+			передано обратно клиенту.</p>
+			<div class="V8SH_textarea" valign="bottom">
+				Каждая процедура и функция модуля формы, модуля команды и общего 
+				модуля управляемого приложения предваряется
+				директивой компиляции, определяющей среду
+				исполнения данной процедуры.
+				Директива предваряется символом &quot;<strong>&amp;</strong>&quot;. 
+				Допустимые
+				директивы:<ul>
+					<li><strong>&amp;НаКлиенте</strong> (<strong>&amp;AtClient</strong>) 
+					— определяет клиентскую процедуру (функцию); 
+					</li>
+					<li><strong>&amp;НаСервере</strong> (<strong>&amp;AtServer</strong>) 
+					— определяет серверную процедуру (функцию); 
+					</li>
+					<li><strong>&amp;НаСервереБезКонтекста</strong> (<strong>&amp;AtServerNoContext</strong>) 
+					— определяет серверную процедуру (функцию), исполняемую на 
+					сервере вне контекста формы. Переменные не могут быть 
+					внеконтекстными. В таких методах недоступен контекст формы 
+					(включая данные формы). Допустимыми являются вызовы только 
+					других внеконтекстных методов. При вызове этих методов не 
+					выполняется передача данных формы на сервер и обратно. 
+					Применение внеконтекстных методов позволяет существенно 
+					уменьшить объем передаваемых данных при вызове серверной 
+					процедуры из среды клиентского приложения; 
+					</li>
+					<li><strong>&amp;НаКлиентеНаСервереБезКонтекста</strong> (<strong>&amp;AtClientAtServerNoContext</strong>) 
+					— определяет процедуру (функцию), исполняемую в модуле формы 
+					на клиенте и на сервере, не имеющую доступа к контексту 
+					формы, данным формы, переменным, но имеющую доступ к 
+					процедурам и функциям общих модулей – серверных, не 
+					глобальных и серверных и клиентских одновременно. Сама 
+					процедура (функция) доступна для клиентский, серверных 
+					контекстных и неконтекстных процедур и функций модуля формы. 
+					Из серверных внеконтекстных методов формы допускается вызов 
+					серверных методов общих модулей; 
+					</li>
+					<li><strong>&amp;НаКлиентеНаСервере</strong> (<strong>&amp;AtClientAtServer</strong>) 
+					— определяет процедуру (функцию), исполняемую в модуле 
+					команды, выполняемую на клиенте и на сервере, имеющую доступ 
+					к процедурам и функциям общих модулей – серверных, не 
+					глобальных и серверных и клиентских одновременно, не имеющую 
+					доступ к переменным, не имеющую доступа к переменным. Сама 
+					процедура (функция) доступна для клиентских серверных 
+					процедур и функций модуля команды.</li>
+				</ul>
+			</div>
+			<div class="V8SH_textarea" valign="bottom">
+				Отсутствие
+				директивы компиляции перед процедурой (функцией) означает 
+				использование
+				директивы по умолчанию.
+				Директивой по умолчанию является <strong>&amp;НаСервере</strong>. 
+				Не допускается использование нескольких
+				директив 
+				компиляции перед одной процедурой (функцией). Не допускается 
+				наличие одноименных процедур (функций), отличающихся только
+				директивами компиляции.<p><a name="111">В модуле 
+				управляемой формы</a> допускается использование
+				<a href="v8help://SyntaxHelperLanguage/Instructions">инструкций 
+				препроцессору</a>. Рекомендуется использовать инструкции 
+				препроцессора только внутри процедур (функций). Для понимания 
+				результата при &quot;пересечении&quot; инструкциями препроцессора границ 
+				процедур (функций) следует учитывать, что обработка инструкций 
+				препроцессора выполняется до обработки
+				директив 
+				компиляции. </p>
+				<p>В модуле команды предопределенная процедура-обработчик 
+				<i><b>ОбработатьКоманду</b></i> должна предваряться
+				директивой <strong>&amp;НаКлиенте</strong>, так как 
+				выполнение команды происходит в клиентском приложении.</p>
+				<p><strong>Модуль формы<br>
+				</strong>&nbsp;&nbsp;В модуле формы доступны
+				директивы компиляции – <strong>&amp;НаКлиенте</strong>,
+				<strong>&amp;НаСервере</strong>, <strong>&amp;НаСервереБезКонтекста, &amp;НаКлиентеНаСервереБезКонтекста</strong>.<br>
+				<strong>&nbsp;Модуль команды</strong><br>
+				&nbsp;&nbsp;В модуле команды доступны
+				директивы компиляции – <strong>&amp;НаКлиенте</strong>,
+				<strong>&amp;НаСервере, &amp;НаКлиентеНаСервере</strong>.<br>
+				&nbsp;<strong>Общий модуль</strong><br>
+				&nbsp;&nbsp;В общем модуле доступны
+				директивы компиляции – <strong>&amp;НаКлиенте</strong>,
+				<strong>&amp;НаСервере</strong>.</div>
+			<p align="left">&nbsp;</p>
+			<p align="center"><b><font style="font-size: 16pt">
+			<a name="Обращение_к_свойствам_объектов_">Обращение к свойствам 
+			объектов</a></font></b></p>
+			<div id="V8TextArea" valign="bottom">
+				Помимо основного обращения через точку, в языке 1С:Предприятия 
+				предусмотрен механизм обращения к свойствам объектов по строке с 
+				именем свойства с помощью оператора [] (квадратные скобки).<h4>
+				Синтаксис:<em>&nbsp;&nbsp;&nbsp; <span style="font-weight: 400">
+				&lt;Объект&gt;[&lt;Имя свойства&gt;]</span></em></h4>
+				<h4>Параметры:</h4>
+				<p><em>&lt;Объект&gt;</em></p>
+				<blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+					<p>Объект, к свойству которого идет обращение. </p>
+				</blockquote>
+				<p><em>&lt;Имя свойства&gt;</em></p>
+				<blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
+					<p>Тип: <strong>Строка</strong>. Имя свойства, к которому 
+					необходимо обратиться.</p>
+				</blockquote>
+				<h4>Описание:&nbsp; <span style="font-weight: 400">Такая 
+				конструкция позволяет обращаться к свойствам объектов так же, 
+				как это делается через точку с указанием имени свойства.</span></h4>
+				<h4>Пример:</h4>
+				<img border="0" src="Teoria3.gif"><font face="Courier New"><br>
+&nbsp;</font><p align="center"><b>
+				<font face="Times New Roman" style="font-size: 16pt">
+				<a name="Особенности_использования_ссылочных_данных_">
+				Особенности использования ссылочных данных</a></font></b></p>
+				<p><font face="Times New Roman">В модели 1С:Предприятие 8 
+				существует данные, являющиеся объектными сущностями и данные,&nbsp; 
+				являющиеся необъектными сущностями. </font></p>
+				<p><font face="Times New Roman">Объектными сущностями могут 
+				справочники, перечисления, документы, планы счетов, планы видов 
+				характеристик и пр. При удалении из БД объектной сущности не 
+				возможно вернуться к исходному состоянию БД даже если удаленный 
+				объект ввести в состав БД вновь. Это будет уже совершенно новое 
+				состояние БД потому что каждый объект имеет внутренний 
+				идентификатор. Этот идентификатор хранится в специальном поле <i>
+				<b>Ссылка.</b></i></font></p>
+				<p><font face="Times New Roman">Необъектными сущностями являются 
+				регистры сведений, регистры накоплений и пр. Необъектные данные 
+				хранятся в виде записей и определяются не ссылками, а значениями 
+				полей. Удалив какую-нибудь запись, а потом восстановив ее с теми 
+				же значениями можно получить то же самое состояние БД.</font></p>
+				<p><font face="Times New Roman">При использовании в программном 
+				коде ссылочных данных возникает проблема скорости обработки 
+				информации, так как при очередном обращении к ссылочному 
+				значению происходит обращение к БД, что значительно удлиняет 
+				время обработки информации.</font></p>
+				<p><font face="Times New Roman">Отсюда видно, что если алгоритм 
+				обработки информации, обрабатывает данные объекта, которые в нем 
+				присутствуют, то достаточно использовать конструктор движений. 
+				Если же обрабатываемая информация является ссылкой, то в этом 
+				случае следует использовать запросы к БД. По запросу из БД 
+				выбирается нужная информация в ОП и с ней уже работает алгоритм 
+				программы, то есть обращение к БД происходит однократно.</font></div>
+			<p align="left">&nbsp;</p>
+			<p align="center"><b><span style="font-size: 16pt">
+			<a name="Запросы_">Запросы</a></span></b></p>
+			<p align="left">Запрос используется для выборки из БД информации из 
+			различных объектов, которые компонуются в виртуальную таблицу и 
+			размещаются в оперативной памяти.&nbsp; Виртуальные таблицы обладают 
+			следующими особенностями:</p>
+			<blockquote>
+				<ul>
+					<li>
+					<p align="left">таблицы параметризированы, то есть 
+					разработчику предоставляется некоторая возможность задать 
+					параметры при построении запроса. В зависимости от типа 
+					параметра система сформирует тот или иной запрос.</p></li>
+					<li>
+					<p align="left">с помощью запроса разработчику 
+					предоставляются конкретные данные, отвечающие заданным 
+					условиям</p></li>
+				</ul>
+			</blockquote>
+			<p align="left">На рисунке показана структура двойного запроса, с 
+			помощью которого производится выборка информации из трех объектов.</p>
+			<p align="center"><img border="0" src="Teoria6.gif"></p>
+			<p align="center">Рис. 5. Структура двойного запроса</p>
+			<p align="center">&nbsp;<p align="center"><b>
+			<span style="font-size: 16pt"><a name="Механизм_Кеширования_">Механизм Кеширования</a></span></b><p align="justify">&nbsp;<p align="justify">
+			Система 1С редакции 8 при считывании информации из БД в оперативную 
+			память использует механизм кеширования. Кеш объектов состоит из двух 
+			частей:<blockquote>
+				<blockquote>
+					<ul>
+						<li>
+						<p align="justify">обычный кеш используется, если 
+						происходит обычное обращение к БД</li>
+						<li>
+						<p align="justify">транзакционный кеш используется, если 
+						обращение к БД происходит в рамках транзакции</li>
+					</ul>
+				</blockquote>
+			</blockquote>
+			<p align="justify">Все данные, хранящиеся в кеше, предназначены 
+			только для чтения. Это говорит о том, что чтение любых данных, 
+			выполняемых через ссылку, происходит через кеш, а запись данных в БД 
+			- через механизмы самих программных объектов.</p>
+			<p align="justify">1. <i><b>Обычный кеш</b></i>. Если при обращении к обычному 
+			кешу требуемых данных в нем нет, то то выполняется чтение этих 
+			данных из БД и размещение их в кеше.&nbsp; Уникальным идентификатором для кеша является 
+			ссылка на объект БД. Поэтому данные, хранимые в кеше, могут 
+			существовать либо в виде всех <i><b>данных объекта</b></i>, либо в&nbsp; виде 
+			<i><b>представления.</b></i> Значит, если программа обратилась к кешу за 
+			представлением, и в кеше есть информация для требуемой ссылки, то 
+			данные будут взяты из кеша. Если в кеше нет информации для требуемой 
+			ссылки, то происходит обращение к БД и оттуда будут выбраны только 
+			те поля, которые необходимы для формирования представления объекта.</p>
+			<p align="justify">Считанные данные находятся в кеше до тех пор, 
+			пока не произойдет одно из событий:</p>
+			<blockquote>
+				<blockquote>
+					<ol>
+						<li>
+						<p align="justify">когда произойдет переполнение кеша и 
+						считанные не вытеснят старые;</p></li>
+						<li>
+						<p align="justify">при очередном обращении к кешу 
+						выяснится, что считанные данные были изменены в БД;</p>
+						</li>
+						<li>
+						<p align="justify">когда закончится интервал в 20 минут.</p>
+						</li>
+					</ol>
+				</blockquote>
+			</blockquote>
+			<p align="justify">Например, при выполнении операторов:</p>
+			<blockquote>
+				<blockquote>
+					<blockquote>
+						<blockquote>
+							<blockquote>
+								<blockquote>
+									<blockquote>
+										<blockquote>
+											<p align="justify"><i><b>
+											<font color="#0000FF">А =&nbsp; 
+											Номенклатура.Наименование;</font></b></i></p>
+											<p align="justify"><i><b>
+											<font color="#0000FF">В = 
+											Номенклатура.ВидНоменклатуры;</font></b></i></p>
+										</blockquote>
+									</blockquote>
+								</blockquote>
+							</blockquote>
+						</blockquote>
+					</blockquote>
+				</blockquote>
+			</blockquote>
+			<p align="justify">В первом случае будет вестись обращение к БД, а 
+			во втором случае к кешу. </p>
+			<p align="justify">2.&nbsp;&nbsp; <i><b>Транзакционный кеш.</b></i> 
+			Если обращение к данным ведется в рамках транзакции, то оно будет 
+			переадресовано транзакционному кешу. В рамках транзакции выполняются 
+			все операции, приводящие к изменению данных&nbsp; БД. Транзакционный 
+			кеш построен по аналогии с обычным кешем, разница заключается в том, 
+			что данные в транзакционном кеше&nbsp; являются гарантированно 
+			актуальными (валидными). В то время как в обычном кеше данные могут 
+			быть и устаревшими.</p>
+			<p align="justify">Если транзакция завершена успешно, то данные, 
+			хранящиеся в транзакционном кеше переносятся в обычный кеш, а 
+			транзакционный кеш очищается.</p>
+			<p align="justify">&nbsp;</p>
+			<p align="center"><span style="font-size: 16pt; font-weight: 700">
+			<a name="План_видов_характеристик_">План видов характеристик</a></span></p>
+			<p align="justify">Объект конфигурации &quot;План видов характеристик&quot;&nbsp; 
+			предназначен для описания&nbsp; структуры хранения информации о 
+			характеристиках, создаваемых пользователем. На базе этого объекта 
+			система создает набор таблиц для хранения характеристик 
+			определенного показателя. Например, кабель электрический можно 
+			охарактеризовать как: цвет, сечение провода, страна-изготовитель; 
+			трансформатор характеризуется уже другими показателями: марка, 
+			мощность, среда использования, срок гарантии и т.д. Это говорит о 
+			том, что такие объекты как номенклатура каждый может иметь 
+			совершенно различные характеристики, которые нужно каким-то образом 
+			закрепить за конкретной единицей номенклатуры и эти характеристики 
+			заранее разработчику не известны. Такую возможность описания 
+			характеристик предоставляет объект конфигурации <i><b>
+			ПланВидовХарактеристик</b></i>.&nbsp; План видов характеристик во 
+			многом напоминает справочник, но имеет более узкую специализацию, 
+			т.е. хранит в себе не всю информацию, а только характеристики. План 
+			видов характеристик обладает&nbsp; составным свойством <i><b>
+			ТипЗначенияХарактеристик</b></i>, которое позволяет заранее задать 
+			свойствам, которые будет вводить пользовать различные типы: <i><b>
+			число, строка, дата, булево, ссылка.&nbsp; </b></i></p>
+			<p align="justify">.В <a name="бухгалтерском_учете">бухгалтерском 
+			учете</a> также используется план видов характеристик, он 
+			используется для описания видов <i><b>субконто</b></i>, то есть для 
+			ведения <i><b>аналитического учета.</b></i> Для обозначения 
+			конкретных объектов аналитического учета используется термин <i><b>
+			субконто</b></i>. 
+			<p align="justify">&nbsp;<p align="center">
+			<span style="font-size: 16pt; font-weight: 700">
+			<a name="План_счетов_">План счетов</a></span><p align="left">Объект 
+			конфигурации ПланСчетов - это своеобразный справочник, используемый 
+			только в бухгалтерском учете для формирования бухгалтерских записей. 
+			Бухгалтерские записи предназначены для фиксирования хозяйственной 
+			деятельности предприятия. В плане счетов могут быть использованы 
+			субсчета. С&nbsp; помощью субсчетов можно организовать иерархию 
+			счетов и подчиненных им субсчетов.&nbsp; По каждому счету или 
+			субсчету может вестись аналитический учет, который использует 
+			субконто, описанные в плане видов характеристик. Для каждого счета 
+			можно задать несколько видов учета:<blockquote>
+				<blockquote>
+					<ul>
+						<li>
+						<p align="left">количественный учет</li>
+						<li>
+						<p align="left">валютный учет </li>
+						<li>
+						<p align="left">суммовой</li>
+					</ul>
+					<p align="left">&nbsp;</p>
+					<p align="center"><b><span style="font-size: 16pt">
+					<a name="Регистры_бухгалтерии_">Регистры бухгалтерии</a></span></b></p>
+				</blockquote>
+			</blockquote>
+			<p align="justify">Регистр бухгалтерии предназначен для описания 
+			структуры накопления данных, учет которых ведется с использованием 
+			плана счетов.&nbsp; Измерения регистра бухгалтерии позволяют 
+			разделять ведение учета, например, разделить учет по организациям. 
+			Реквизиты служат для введения признаков в состав сформированной 
+			бухгалтерской записи. Например, номер журнала, этот реквизит 
+			позволит рассортировать бухгалтерские записи (проводки) и облегчить 
+			поиск нужной информации. Все записи регистра бухгалтерии жестко 
+			связаны с планом счетов (с конкретным его счетом или субсчетом).</p>
+			<p align="justify">При формировании регистровой записи (проводки) 
+			система создает два поля по каждому ресурсу (по дебету и по 
+			кредиту):</p>
+			<blockquote>
+				<blockquote>
+					<ul>
+						<li>
+						<p align="justify">Количество Кт и Количество Дт</li>
+						<li>
+						<p align="justify">СубконтоДт&nbsp; и&nbsp; СубконтоКт</li>
+					</ul>
+				</blockquote>
+			</blockquote>
+			<p align="justify">Важным отличием регистра бухгалтерии от регистра 
+			накопления является то, что регистр бухгалтерии имеет жесткую связь 
+			с планом счетов. Поэтому каждая запись регистра бухгалтерии содержит 
+			дополнительные поля, определяемые настройкой плана счетов</blockquote>
+		<p align="justify">
+		&nbsp;<p align="center">
+		<span style="font-size: 16pt; font-weight: 700">
+		<a name="План_видов__расчета_">План видов&nbsp; расчета</a></span><p align="justify">
+		&nbsp;<p align="justify">&nbsp;При расчете заработной платы&nbsp; 
+		период, за который предстоит выполнить расчет&nbsp; программист 
+		сталкивается с проблемой выполнения периодических расчетов.&nbsp; В 
+		обыщем случае алгоритм расчета опирается на две категории&nbsp; 
+		параметров: 
+		<ul>
+			<li>
+			<p align="justify">период, за который предстоит выполнить расчет 
+			</li>
+			<li>
+			<p align="justify">набор некоторых исходных данных, используемых при 
+			расчете</li>
+		</ul>
+		<p align="justify">&nbsp; Объект конфигурации План видов&nbsp; расчета&nbsp; 
+		предназначен для описания структуры хранения информации о возможных 
+		видах расчетов. План видов расчетов является основой для создания&nbsp; 
+		в БД таблицы для хранения информации какие приняты виды рачетов и какие 
+		существуют между ними связи.&nbsp; Особенностью плана видов расчета 
+		является то, что пользователь в процессе&nbsp; работы может в план видов 
+		расчета добавлять новые&nbsp; виды расчета, что позволяет выполнять 
+		периодические расчеты по более гибкому алгоритму. План видов расчета 
+		обладает свойствами, рис. 6:&nbsp; 
+		<ul>
+			<li>
+			<p align="justify">Использует Период Действия (по этому свойству 
+			определяется будут ли в этом плане находиться виды расчета,&nbsp; 
+			которые будут&nbsp; вытеснены по истечении периода их действия)</li>
+			<li>
+			<p align="justify">Зависимость от базы</li>
+			<li>
+			<p align="justify">Создание предопределенных видов расчета и 
+			описания из взаимного влияния<blockquote>
+				<blockquote>
+					<blockquote>
+						<ul>
+							<li>
+							<p align="justify">Базовая категория видов расчета</li>
+							<li>
+							<p align="justify">Ведущая категория видов расчета</li>
+							<li>
+							<p align="justify">Вытесняющая категория видов 
+							расчета</li>
+						</ul>
+						<p align="center"><img border="0" src="Teoria7.jpg"></p>
+						<p align="center">Рис. 6. Свойства предопределенных 
+						элементов плана видов расчета</p>
+						<p align="center"><b><font style="font-size: 16pt">
+						<a name="Регистры_расчета_">Регистры расчета</a></font></b></p>
+					</blockquote>
+				</blockquote>
+			</blockquote>
+			</li>
+		</ul>
+		<p align="justify"><i><b>Регистр расчета</b></i> - это объект 
+		конфигурации,&nbsp; предназначенный для учета результатов вычислений, 
+		выполненных расчетами, указанными&nbsp; в <i><b>плане видов расчетов</b></i>.&nbsp; Регистр расчета предназначен для 
+		описания структуры накопляемых в БД результатных данных,&nbsp; 
+		позволяет, например, реализовать регистрацию начислений в пользу 
+		физического лица в виде различного вида оплат (оклад, отпуск, больничный 
+		лист и т.п.).&nbsp; Учетные записи&nbsp; регистра расчета могут влиять 
+		на состояние других записей&nbsp; регистра.&nbsp; Различают два вида 
+		взаимного влияния учетных записей регистра расчета:</p>
+		<blockquote>
+			<blockquote>
+				<blockquote>
+					<ul>
+						<li>
+						<p align="justify">конкуренция за период действия;</p>
+						</li>
+						<li>
+						<p align="justify">зависимость по базовому периоду.</p>
+						</li>
+					</ul>
+				</blockquote>
+			</blockquote>
+		</blockquote>
+		<p align="justify">&nbsp; 
+		Содержимое регистра расчета должно формироваться при помощи алгоритма. 
+		Особенностью регистра&nbsp; расчета является&nbsp; его периодичность, то 
+		есть возможность вытеснения новыми данными старой информации. Период 
+		вытеснения&nbsp; зависит от базового периода&nbsp; и плана видов 
+		расчета.</p>
+		<p align="justify">Периодичность регистра определяет промежуток времени, 
+		по истечении которого новая запись будет вытеснять старую. Периодичность 
+		может быть равна одному из значений:</p>
+		<ul>
+			<li>
+			<p align="justify">День</p></li>
+			<li>
+			<p align="justify">Месяц</p></li>
+			<li>
+			<p align="justify">Квартал</p></li>
+			<li>
+			<p align="justify">Год.</p></li>
+		</ul>
+		<p align="justify">Для указания факта принадлежности записи какому-либо 
+		периоду регистр имеет служебный реквизит&nbsp; <i><b>ПериодРегистрации</b></i> типа 
+		Дата.</p>
+		<p align="justify">Регистр расчета может поддерживать два вида 
+		зависимости от базы:</p>
+		<blockquote>
+			<ul>
+				<li>
+				<p align="justify">зависимость по периоду действий</p></li>
+				<li>
+				<p align="justify">зависимость по периоду регистрации</p></li>
+			</ul>
+		</blockquote>
+		<p align="justify">У регистра расчета могут существовать подчиненные 
+		объекты&nbsp; <i><b>Перерасчет.</b></i>&nbsp; Они предназначены для 
+		регистрации записей, влияющих на на результат расчета уже существующих 
+		записей регистра, см. рисунок 7.</p>
+		<blockquote>
+			<p align="center"><img border="0" src="Teoria4.jpg"></p>
+			<p align="center">Рис. 7. Подчиненный объект <i><b>Перерасчет</b></i></p>
+		</blockquote>
+		<p align="justify">У объекта&nbsp; Перерасчет может быть несколько 
+		измерений и каждое измерение устанавливает связь с измерениями основного 
+		регистра, см. рисунок 8</p>
+		<p align="center"><img border="0" src="Teoria5.jpg"></p>
+		<p align="center">Рис. 8. Установка&nbsp;&nbsp; связи регистра расчета с 
+		объектом <i><b>Перерасчет</b></i></p>
+		<p align="left">Это позволяет хранить информацию, какие записи регистра 
+		нуждаются в перерасчете.</p>
+		<p align="left">Регистр расчета можно также связать с графиком времени,&nbsp; 
+		представляющий собой<i><b> Регистр сведений</b></i>, в котором 
+		содержится временная схема исходных данных, участвующих в расчетах, см. 
+		рисунок 9.</p>
+		<p align="center"><img border="0" src="Teoria6.jpg"></p>
+		<p align="center">Рис. 9.&nbsp; Связь регистра расчета с регистром 
+		сведений <i><b>ГрафикиРаботы</b></i></p>
+		<p align="left">Это позволяет связать регистр расчета&nbsp; с конкретным 
+		графиком работы. </p>
+		<p align="left">&nbsp; Регистр расчета может использовать несколько 
+		механизмов&nbsp; зависимостей:</p>
+		<blockquote>
+			<ol>
+				<li>
+				<p align="left">Регистр расчета может использовать <u><b><i>
+				механизм вытеснения одной записи другими по периоду действия</i></b></u>. 
+				Для каждой записи регистр формирует свой период действия, 
+				который является совокупностью нескольких периодов, входящих в 
+				состав основного периода действия, определенного при создании 
+				регистра,&nbsp; рис. 10. </li>
+			</ol>
+		</blockquote>
+		<p align="center"><img border="0" src="Teoria7.gif"></p>
+		<p align="center">Рис. 10. Запись регистра расчета<i><b> Невыход</b></i>&nbsp; 
+		вытесняет запись регистра расчета&nbsp; <b><i>Оклад </i></b>по периоду 
+		действия</p>
+		<blockquote>
+			<ol start="2">
+				<li>
+				<p align="left">&nbsp; Вторым механизмом, который поддерживает 
+				регистр расчета является <i><b>зависимость записей по базовому 
+				периоду</b></i>. Таких зависимостей может быть два вида:</li>
+			</ol>
+			<blockquote>
+				<ol class="MsoNormal" type="A">
+					<li>
+					<p align="left"><i><b>Зависимость по периоду действия</b></i>.&nbsp; 
+					При анализе базовых записей будут выбираться только те, для 
+					которых найдено пересечение фактического периода действия и&nbsp; 
+					базового периода. Например, базовый период - месяц, а в 
+					течение этого периода был невыход на работу.</li>
+					<li>
+					<p align="left"><i><b>Зависимость по периоду регистрации</b></i>. 
+					При анализе базовых записей&nbsp; будут выбираться те, 
+					которые попадают в указанный базовый период значением поля
+					<b><i>ПериодРегистрации . </i></b>Например, расчет размера 
+					штрафа, который будет рассчитываться с учетом количества 
+					прогулянных дней.</li>
+				</ol>
+			</blockquote>
+			<ol start="3">
+				<li>
+				<p align="left">Третьей особенностью регистра является его связь 
+				с <i><b><a href="#План_видов__расчета_">планом видов расчета</a></b></i>. 
+				Именно эта связь позволяет использовать механизмы вытеснения по 
+				периоду действия и зависимости по базовому периоду.</li>
+			</ol>
+		</blockquote>
+		<p align="left">&nbsp;&nbsp; При создании регистра система формирует 
+		несколько взаимозависимых объектов, рис . 11</p>
+		<blockquote>
+			<blockquote>
+				<p align="center"><img border="0" src="Teoria8.gif"></p>
+				<p align="center">Рис. 11.&nbsp; Регистры расчета, созданные на 
+				основании регистра <i><b>Начисления</b></i></p>
+			</blockquote>
+			<p align="left">&nbsp;</p>
+			<p align="center"><b><font style="font-size: 16pt">
+			<a name="Диаграмма__Ганта_">Диаграмма&nbsp; Ганта</a></font></b></p>
+			<p align="left">Диаграмма&nbsp; представляет собой отчет,&nbsp;&nbsp; 
+			где выбранная из БД информация, отображается в графическом виде.&nbsp; 
+			Диаграмма&nbsp; Ганта&nbsp; представляет собой диаграмму интервалов 
+			на шкале времени и&nbsp; отражает использование объектами (точками) 
+			ресурсов (серий), рис. 12.</p>
+			<p align="center"><img border="0" src="Teoria8.jpg"></p>
+			<p align="center">Рис. 12.&nbsp; Диаграмма Ганта</p>
+			<p align="left">Диаграмма отражает для каждого сотрудника 
+			фактический период действия по каждому из видов расчета, имеющих 
+			место для каждого сотрудника.&nbsp; Значение диаграммы&nbsp; Ганта - 
+			это специальный объект, который автоматически формируется&nbsp; 
+			системой на основании того,&nbsp; какие точки&nbsp; и какие серии 
+			определены для данной диаграммы.</p>
+			<p align="left">В качестве исходных данных для построения Диаграммы&nbsp; 
+			Ганта может быть использован регистр расчета. Каждая запись этого 
+			регистра&nbsp; уже содержит все необходимое для построения 
+			диаграммы.</p>
+			<p align="left">&nbsp;</p>
+			<p align="center"><font style="font-size: 16pt; font-weight: 700">
+			<a name="Регламентные_задания_">Регламентные задания</a></font></p>
+			<p><i><b>Регламентные задания</b></i> располагаются в дереве 
+			конфигурации, в ветке <i><b>Общие</b></i>. Каждое регламентное 
+			задание содержит два основных свойства: <i><b>ИмяМетода&nbsp; и&nbsp; 
+			Расписание</b></i>. </p>
+			<p>Свойство<i><b> ИмяМетода</b></i> связывает регламентное задание с 
+			некоторой процедурой или функцией общего модуля, описывающая все 
+			операции для выполнения.&nbsp; </p>
+			<p>Свойство<i><b> Расписание</b></i> задает периодичность выполнения 
+			этой процедуры. </p>
+			<p>Дополнительные свойства регламентного задания могут задавать <b>
+			<i>ИнтервалПовтора</i></b>&nbsp;&nbsp;&nbsp; и <i><b>&nbsp;КоличествоПовторов</b></i> 
+			при аварийном завершении&nbsp; процедуры.</p>
+			<p align="left">&nbsp;</p>
+			<p align="center"><span style="font-size: 16pt; font-weight: 700">
+			<a name="Планировщик__заданий">Планировщик&nbsp; заданий</a></span></p>
+			<p align="left">При файловом варианте работы для автоматического 
+			выполнения заданий требуется создать клиентское соединение с 
+			информационной базой, которое будет заниматься запуском заданий по 
+			расписанию. Такое соединение называют Планировщиком заданий.</p>
+			<p align="left">&nbsp;</p>
+			<p align="left">&nbsp;</p>
+			<p align="left">&nbsp;</p>
+			<p align="left">&nbsp;</p>
+			<p align="left">&nbsp;</p>
+		</blockquote>
+		<p align="left">&nbsp;</p>
+		<p align="left">&nbsp;</p>
+		<p align="left">&nbsp;</p>
+		<p align="left">&nbsp;</p>
+		<p align="left">&nbsp;</p>
+		<p align="left">&nbsp;</p>
+		<p align="left">&nbsp;</td>
+		<td height="630">&nbsp;</td>
+	</tr>
+	<tr>
+		<td width="199">&nbsp;</td>
+		<td width="1143">&nbsp;</td>
+		<td height="74" width="100">&nbsp;</td>
+	</tr>
+</table>
+
+</body>
+
+</html>

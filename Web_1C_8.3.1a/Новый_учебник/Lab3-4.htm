@@ -1,0 +1,193 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Лабораторная работа №3 Создание</title>
+</head>
+
+<body>
+
+<table border="2" cellpadding="0" cellspacing="0" width="1375" height="800" bgcolor="#000080" background="Fon.jpg" bordercolor="#000080">
+	<!-- MSTableType="layout" -->
+	<tr>
+		<td valign="top" background="Fon.jpg" bordercolor="#000080" colspan="2">
+		<!-- MSCellType="ContentHead" -->
+		&nbsp;<p align="center"><i><b><font size="5" color="#000080">
+<a name="Лабораторная_работа_№3_Создание_форм_(часть_1)_">Лабораторная 
+		работа №3 Создание форм (часть <span lang="ru">5</span>)</a></font></b></i></td>
+		<td height="92">&nbsp;</td>
+	</tr>
+	<tr>
+		<td valign="top" width="159">
+		<!-- MSCellType="NavBody" -->
+		&nbsp;</td>
+		<td valign="top" style="text-align: justify; text-indent: 20; margin-left: 40; margin-right: 20; margin-top: 4" width="1083">
+		<!-- MSCellType="ContentBody" -->
+		&nbsp;<p>&nbsp;&nbsp;&nbsp; <a href="../Page1.htm">В оглавление</a></p>
+		<p><span lang="ru"><a href="#Контрольные_вопросы">Контрольные вопросы</a></span></p>
+		<p><b>Техническое задание</b></p>
+		<p>Требуется <span lang="ru">в форму элемента справочника НОМЕНКЛАТУРА 
+		добавить рисунок товара.</span></p>
+		<p><b>Рекомендации к решению</b></p>
+		<p><span lang="ru">1. Добавьте в дерево конфигурации справочник ФАЙЛЫ. 
+		Включите в его состав реквизит Файл с типом <b>ХранилищеЗначения.</b> 
+		Этот справочник ни в какую подсистему не включайте, рисунок 1.</span></p>
+		<p style="text-align: center"><img border="0" src="Lab3-41.jpg"></p>
+		<p style="text-align: center"><span lang="ru">Рисунок 1 - Создание 
+		справочника ФАЙЛЫ</span></p>
+		<p><span lang="ru">2. Включите в состав формы элемента реквизит <b>Фото
+		</b>с типом строка неограниченной длины. Откройте свойства реквизита 
+		Фото и укажите свойство как <b>Поле картинки</b>, Рисунок 2.</span></p>
+		<p style="text-align: center"><img border="0" src="Lab3-42.jpg"></p>
+		<p style="text-align: center"><span lang="ru">Рисунок 2 - Создание 
+		реквизита ФОТО</span></p>
+		<p style="text-align: left"><span lang="ru">2а. Включите в состав 
+		справочника реквизит <b>Картинка</b>, который свяжите со справочником <b>
+		Файлы</b>, но этот реквизит в форме не размещайте, рисунок 2а.</span></p>
+		<p style="text-align: center"><img border="0" src="Lab3-48.jpg"></p>
+		<p style="text-align: center"><span lang="ru">Рисунок 2а - Создание 
+		реквизита Картинка</span></p>
+		<p><span lang="ru">3. Включите в состав формы кнопку <b>ДобавитьФото</b> 
+		и подключите к кнопке процедуру<b> ДобавитьФото</b>, рисунок 3.</span></p>
+		<p style="text-align: center"><img border="0" src="Lab3-46.gif"></p>
+		<p style="text-align: center"><span lang="ru">Рисунок 3 - Процедура <b>
+		ДобавитьФото</b></span></p>
+		<p><span lang="ru">4. Создайте серверную процедуру <b>УстановитьКартинку</b>, 
+		рисунок 4.</span></p>
+		<p style="text-align: center"><img border="0" src="Lab3-47.gif"></p>
+		<p style="text-align: center"><span lang="ru">Рисунок 4 - Процедура 
+		УстановитьКартинку</span></p>
+		<p><span lang="ru">5. Откройте свойства<b> Формы</b> и создайте 
+		предопределенную процедуру <b>ПриСозданииНаСервере</b>, рисунок 5.</span></p>
+		<p style="text-align: center"><img border="0" src="Lab3-45.jpg"></p>
+		<p style="text-align: center"><span lang="ru">Рисунок 5 - Создание 
+		предопределенной процедуры</span></p>
+		<p style="text-align: left"><b><span lang="ru">Описание процедуры №1, &quot;ДобавитьФото&quot;</span></b></p>
+		<p><span lang="ru">Создаются две строковые переменные <b>ИмяФайла</b> и
+		<b>ПутьФайла</b> для сохранения в них введенных данных. Вызывается 
+		системная процедура </span><b>ПоместитьФайл</b>(&lt;Адрес&gt;, &lt;НачальноеИмяФайла&gt;, 
+		&lt;ВыбранноеИмяФайла&gt;, &lt;Интерактивно&gt;, &lt;УникальныйИдентификаторФормы&gt;)
+		<span lang="ru">предназначенная для работы с файлом. Процедура открывает 
+		диалог выбора файла </span>из локальной файловой системы<span lang="ru"> 
+		и помещает выбранный файл во временное хранилище. </span></p>
+		<ul>
+			<li>
+			<p style="text-align: left"><span lang="ru">переменная <b>ПутьФайла</b> 
+			задается для размещения в ней адреса выбранного файла;</span></p>
+			</li>
+			<li>
+			<p style="text-align: left"><span lang="ru">переменная <b>ИмяФайла</b> 
+			задается для размещения в ней имени выбранного файла;</span></p>
+			</li>
+			<li>
+			<p style="text-align: left"><span lang="ru">параметр ИСТИНА требует 
+			отражения диалогового окна выбора файла.</span></p></li>
+		</ul>
+		<p style="text-align: left"><span lang="ru">Эта процедура помещает 
+		выбранный файл во временное хранилище. Если файл выбран и размещен в 
+		хранилище, то адрес файла сохраняется в переменной<b> Фото</b> затем 
+		вызывается серверная процедура<b> УстановитьКартинку.</b></span></p>
+		<p style="text-align: left"><b><span lang="ru">Описание процедуры №2, &quot;УстановитьКартинку&quot;</span></b></p>
+		<p style="text-align: left"><span lang="ru">Происходит обращение к 
+		справочнику <b>Файлы</b> и в нем создается новый элемент, ссылка на этот 
+		элемент размещается в переменной НовыйФайлКартинки. Создается хранилище 
+		значений, куда из временного хранилища сохраняется адрес выбранного 
+		файла и затем этот адрес записывается в элемент справочника Файлы. Затем 
+		в реквизит справочника <b>Картинка</b> размещаем ссылку на выбранный 
+		рисунок.</span></p>
+		<p style="text-align: left"><b><span lang="ru">Описание процедуры №3, &quot;ПриСозданииНаСервере&quot;</span></b></p>
+		<p style="text-align: left"><span lang="ru">Процедура является 
+		предопределенной и предназначена для отображения&nbsp; картинки в 
+		созданном ранее элементе. В процедуре используется системная функция 
+		ПолучитьНавигационнуюСсылку. ссылка выбирается из реквизита Картинка. 
+		Строка</span></p>
+		<p style="text-align: left"><b><span lang="ru">&nbsp;Элементы.Фото.РазмерКартинки 
+		= РазмерКартинки.АвтоРазмер</span></b></p>
+		<p style="text-align: left"><span lang="ru">предназначена для размещения 
+		картинки по размеру выделенной&nbsp; области.</span></p>
+		<p style="text-align: left"><span lang="ru">6. Сфотографируйте стул, 
+		перенесите созданную фотографию в папку с вашей БД. Войдите в режим 
+		пользователя и создайте новый элемент в справочнике <b>Номенклатура</b> 
+		Стул &quot;Аида&quot;, рисунок 6. (Рисунок должен иметь расширение .</span>jpq<span lang="ru">)</span></p>
+		<p style="text-align: center"><img border="0" src="Lab3-49.jpg"></p>
+		<p style="text-align: center"><span lang="ru">Рисунок 6 - Создание 
+		элемента справочника с рисунком</span></p>
+		<p style="text-align: left"><span lang="ru">7. Сохраните и закройте 
+		созданную запись. Вновь ее откройте, рисунок стула должен сохраниться, 
+		это говорит о том, в области картинки сохраняется ссылка на сохраненную 
+		фотографию. При каждом открытии файла картинка будет восстанавливаться, 
+		используя ссылку на картинку из хранилища значения, которое вы создали в 
+		справочнике ФАЙЛЫ и закрепили эту ссылку в созданном элементе 
+		справочника, в реквизите <b>Картинка.</b></span></p>
+		<p style="text-align: left"><span lang="ru"><b>Самостоятельно.&nbsp; </b>
+		1) Добавьте в форму элемента справочника &quot;Сотрудники&quot; фотографию.</span></p>
+		<p style="text-align: left"><span lang="ru">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		2) Добавьте в форму элемента справочника &quot;Номенклатура&quot; реквизит &quot;<b>ЕдиницаИзмерения</b>&quot;, 
+		который свяжите с одноименным справочником. При открытии формы этот 
+		реквизит должен заполняться предопределенным значением<b> Килограмм</b>, 
+		а реквизит ВЕСОВОЙ устанавливаться в значение ИСТИНА (подсказка. 
+		Процедура &quot;ПриОткрытии&quot;), рисунок 7.</span></p>
+		<p style="text-align: center"><img border="0" src="Lab3-50.jpg"></p>
+		<p style="text-align: center"><span lang="ru">Рисунок 7 - Элемент 
+		справочника &quot;Номенклатура&quot;</span></p>
+		<p style="text-align: left"><span lang="ru">8. В справочнике 
+		Номенклатура создайте две группы ТОВАР и УСЛУГА. Все, созданные Вами 
+		элементы переместите в эти группы, рисунок 8.</span></p>
+		<p style="text-align: center"><img border="0" src="Lab3-410.jpg"></p>
+		<p style="text-align: center"><span lang="ru">Рисунок 8 - Перенос 
+		элемента в группу</span></p>
+		<p style="text-align: left"><span lang="ru">&nbsp;Наименование группы 
+		отображается в реквизите &quot;Родитель&quot;. Преобразуйте форму элемента 
+		следующим образом, если родитель УСЛУГА, то в форме становятся 
+		невидимыми реквизиты: ЕдИзмерения, Весовой, ПроисхождениеНоменклатуры, 
+		КачествоНоменклатуры, Фото и кнопка &quot;Добавить фото&quot;. Свяжите реквизит 
+		&quot;Родитель&quot; с процедурой, рисунок 9-10. Алгоритм процедуры разберите 
+		самостоятельно.</span></p>
+		<p style="text-align: center"><img border="0" src="Lab3-411.gif"></p>
+		<p style="text-align: center"><span lang="ru">Рисунок 9 - Текст 
+		процедуры РодительПриИзменении</span></p>
+		<p style="text-align: center"><img border="0" src="Lab3-412.jpg"></p>
+		<p style="text-align: center"><span lang="ru">Рисунок 10 - Форма 
+		элемента группы УСЛУГА</span></p>
+		<p style="text-align: left">&nbsp;<a href="../Page1.htm">В оглавление</a></p>
+		<p><b><span lang="ru"><font size="4"><a name="Контрольные_вопросы">
+		Контрольные вопросы</a></font></span></b></p>
+		<ol>
+			<li><span lang="ru">Для каких целей был создан справочник ФАЙЛЫ?</span></li>
+			<li><span lang="ru">Как можно поле для картинки разместить в поле 
+			элемента</span></li>
+			<li><span lang="ru">Для чего в состав справочника включили реквизит
+			<b>Картинка</b>?</span></li>
+			<li><span lang="ru">С помощью какой функции можно открыть окно 
+			выбора файла?</span></li>
+			<li><span lang="ru">Куда размещается выбранный файл?</span></li>
+			<li><span lang="ru">Какая информация размещается в элементе 
+			справочника ФАЙЛЫ?</span></li>
+			<li><span lang="ru">Для каких целей создается процедура <b>
+			ПриСозданииНаСервере</b>?</span></li>
+			<li><span lang="ru">Какое расширение должен иметь рисунок, 
+			включаемый в состав элемента справочника?</span></li>
+			<li><span lang="ru">Каким образом можно убрать видимость элементов 
+			формы?</span></li>
+			<li><span lang="ru">Для каких целей была использована функция 
+			СТРОКА?</span></li>
+		</ol>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</td>
+		<td valign="top" height="648">
+		<!-- MSCellType="NavBody2" -->
+		&nbsp;</td>
+	</tr>
+	<tr>
+		<td valign="top" colspan="2">
+		<!-- MSCellType="ContentFoot" -->
+		&nbsp;</td>
+		<td height="60" width="133">&nbsp;</td>
+	</tr>
+</table>
+
+</body>
+
+</html>

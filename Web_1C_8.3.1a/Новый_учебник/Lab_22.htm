@@ -1,0 +1,247 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="ru">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Лабораторная работа №20-2 Двухфа</title>
+<style>
+<!--
+ li.MsoNormal
+	{mso-style-parent:"";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	font-size:10.0pt;
+	font-family:"Arial","sans-serif";
+	}
+-->
+</style>
+</head>
+
+<body>
+
+<table border="3" cellpadding="0" cellspacing="0" style="text-align: justify; word-spacing: 6; line-height: 150%; text-indent: 40; font-size: 10px; margin-left: 30; margin-right: 20; margin-top: 10; margin-bottom: 10" bgcolor="#000080" background="Fon.jpg" bordercolor="#000080" width="1375" height="672" align="left">
+	<!-- MSTableType="layout" --><tr>
+		<td valign="top"><!-- MSCellType="DecArea" -->&nbsp;</td>
+		<td valign="top" height="91" style="text-indent: 40; word-spacing: 6; line-height: 150%; text-align: justify; margin-left: 30; margin-right: 20; margin-top: 10; margin-bottom: 10">
+		<!-- MSCellType="ContentHead" -->&nbsp;<p style="text-align: center">
+		<font face="Times New Roman"><i><b><font color="#800000" size="5">Лабораторная работа №22 
+		</font></b></i><font color="#800000" size="5"><b><i>Двухфакторная 
+			аутентификация</i></b></font></font></td>
+	</tr>
+	<tr>
+		<td valign="top" width="235"><!-- MSCellType="NavBody" -->&nbsp;</td>
+		<td valign="top" height="575" width="1130" style="text-align: center; text-indent: 50; line-height: 200%; word-spacing: 8; margin: 10 30">
+		<!-- MSCellType="ContentBody" -->&nbsp;<p class="MsoNormal" style="line-height: normal; text-align: left; margin-bottom: 7.5pt">
+		<span style="font-size: 12pt; font-family: Times New Roman; color: #800000">Двухфакторная аутентификация – один из самых надежных способов 
+			защиты информации. Чтобы пройти проверку личности,&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			пользователю нужны два из трех типов данных, например:</span></p>
+		<ul type="disc" style="margin-bottom: 0cm">
+			<li class="MsoNormal" style="color: #333333; line-height: normal">
+			<p style="text-align: left"><font color="#800000">
+			<span style="font-size: 12pt; font-family: Times New Roman">логин / пароль;</span></font></li>
+			<li class="MsoNormal" style="color: #333333; line-height: normal">
+			<p style="text-align: left"><font color="#800000">
+			<span style="font-size: 12pt; font-family: Times New Roman">мобильный телефон;</span></font></li>
+			<li class="MsoNormal" style="color: #333333; line-height: normal">
+			<p style="text-align: left"><font color="#800000">
+			<span style="font-size: 12pt; font-family: Times New Roman">отпечаток пальца.</span></font></li>
+		</ul>
+		<p class="MsoNormal" style="line-height: normal; text-align: left; margin-bottom: 7.5pt">
+		<span style="font-size: 12pt; font-family: Times New Roman; color: #800000">Например, мы вводим логин и пароль, а затем входим по отпечатку 
+			пальца. Либо вводим присланный на мобильный телефон код.</span></p>
+		<p class="MsoNormal" style="line-height: normal; text-align: left; margin-bottom: 7.5pt">
+		<span style="font-size: 12pt; font-family: Times New Roman; color: #800000">Платформа «1С» проверит первый фактор &nbsp;самостоятельно, а для второго 
+			ей потребуется помощник – провайдер.</span></p>
+		<p class="MsoNormal" style="line-height: normal; text-align: left; margin-bottom: 7.5pt">
+		<span style="font-family: Times New Roman; font-size: 12pt; color: #800000">В нашем случае смоделировать связь через провайдера не получится, 
+			поэтому следует разработать эмуляцию формирования кода входа.</span></p>
+		<p class="MsoNormal" style="line-height: normal; margin-bottom: 7.5pt">&nbsp;</p>
+		<p class="MsoNormal" style="line-height: normal; text-align: center; margin-bottom: 7.5pt">
+		<font face="Times New Roman" style="font-size: 14pt; font-weight: 700" color="#800000">Техническое задание</font></p>
+		<p class="MsoNormal" style="line-height: normal; text-align: left; margin-bottom: 7.5pt">
+		<font face="Times New Roman" style="font-size: 12pt" color="#800000">1) Разработать возможность входа в систему через эмуляцию аппарата 
+			двухфакторной аутентификации</font></p>
+		<p class="MsoNormal" style="line-height: normal; text-align: left; margin-bottom: 7.5pt">
+		<font face="Times New Roman" style="font-size: 12pt" color="#800000">2) Предусмотреть возможность регистрации нового пользователя в 
+			системе. </font></p>
+		<p class="MsoNormal" style="line-height: normal; text-align: left; margin-bottom: 7.5pt">
+		<font face="Times New Roman" style="font-size: 12pt" color="#800000">Краткое описание алгоритма. Новый пользователь входит в систему с 
+			именем &quot;ТекущийПользователь&quot; без пароля. В этом случае нового 
+			пользователя система перенаправляет на форму регистрации </font></p>
+		<p class="MsoNormal" style="line-height: normal; text-align: center; margin-bottom: 7.5pt">
+		<font face="Times New Roman" style="font-size: 14pt; font-weight: 700" color="#800000">Рекомендации для выполнения 
+		</font></p>
+		<p class="MsoNormal" style="line-height: normal; text-align: left; margin-bottom: 7.5pt">
+		<font face="Times New Roman" style="font-size: 12pt" color="#800000">1)Создайте в конфигураторе две общие формы. Первая форма содержит в 
+			своем составе реквизиты &quot;КодАвторизации&quot; и &quot;Пользователь&quot;, кнопку &quot;ОК&quot; 
+			и рисунок флага РФ, рисунок 1. (рисунок флага Росси можно взять в 
+			корне электронного учебника).</font></p>
+		<p class="MsoNormal" style="line-height: normal; margin-bottom: 7.5pt">
+		<font color="#800000" size="3" face="Times New Roman">
+		<img border="0" src="Lab_204.jpg"></font></p>
+		<p class="MsoNormal" style="line-height: normal; margin-bottom: 7.5pt">
+		<font size="3" face="Times New Roman" color="#800000">Рисунок 1 - 
+			Внешний вид формы</font></p>
+		<p class="MsoNormal" style="line-height: normal; text-align: justify; margin-bottom: 7.5pt">
+		<font face="Times New Roman" size="3" color="#800000">2) Закрепите 
+			за формой процедуры, рисунок 2.<span lang="en-us"> </span>Процедура 
+			&quot;ПриОткрытии&quot; активизируется при открытии формы, она загружает 
+			процедуру &quot;ПриОткрытииНаСервере&quot;. Эта процедура обращается к 
+			справочнику &quot;Клиенты&quot;, где ищет запись с именем пользователя, 
+			выбранного при входе в систему. Из найденной записи выбирается 
+			телефон пользователя и с помощью генератора случайного числа 
+			формируется код входа. Исходной информацией для генератора 
+			случайного числа является интервал <span lang="en-us">[</span>111,999<span lang="en-us">]</span>. 
+			Это говорит о том, что случайное число будет формироваться из чисел 
+			заданного интервала. Эта информация размещается в массиве. Ссылка на 
+			массив возвращается в процедуру &quot;ПриОткрытии&quot;. Информация из массива 
+			выбирается&nbsp; для формирования текста сообщения о коде 
+			авторизации и номере телефона пользователя.</font></p>
+		<p class="MsoNormal" style="line-height: normal; text-align: justify; margin-bottom: 7.5pt">
+		<font face="Times New Roman" size="3" color="#800000">Процедура &quot;ОК&quot; 
+			привязана к одноименной кнопке и проверяет заполнение окна &quot;КодАвторизации&quot;.</font></p>
+		<p class="MsoNormal" style="line-height: normal; margin-bottom: 7.5pt">
+		<font color="#800000" size="3" face="Times New Roman">
+		<img border="0" src="Lab_212.gif"></font></p>
+		<p class="MsoNormal" style="line-height: normal; margin-bottom: 7.5pt">
+		<font face="Times New Roman" size="3" color="#800000">Рисунок 2 - 
+			Процедуры, поддерживающие форму</font></p>
+		<p class="MsoNormal" style="line-height: normal; text-align: left; margin-bottom: 7.5pt">
+		<font face="Times New Roman" size="3" color="#800000">Для правильной 
+			работы этих процедур необходимо создать процедуру в модуле 
+			управляемого приложения<span lang="en-us"> (</span>Корень 
+		конфигурации - Модуль&nbsp; приложения), рисунок 3. В составе 
+			этого модуля находится переменная &quot;Пользователь&quot; в экспортном 
+			исполнении. Это говорит о том, данную переменную можно использовать 
+			в других модулях. Процедура &quot;ПриНачалеРаботыСистемы&quot; выполнена также 
+			в экспортном исполнении для того чтобы результаты работы этой 
+			процедуры были доступны в других модулях.</font></p>
+		<p class="MsoNormal" style="line-height: normal; text-align: left; margin-bottom: 7.5pt">
+		<font face="Times New Roman" size="3"><u><b>Примечание</b></u>. 1) Чтобы 
+		приложение было управляемым необходимо в параметрах установить 
+		переключатель &quot;Управляемое приложение&quot;. В этом случае эта же информация 
+		будет отражаться и в свойствах конфигурации, рисунок 2а.</font></p>
+		<p class="MsoNormal" style="line-height: normal; text-align: left; margin-bottom: 7.5pt">
+		<font face="Times New Roman" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		2) Если используется приложение более ранних версий, например версия 
+		8.3.13, в дереве корня конфигурации ссылка на модуль приложения записана 
+		как &quot;Модуль управляемого приложения&quot; </font></p>
+		<p class="MsoNormal" style="line-height: normal; margin-bottom: 7.5pt">
+		<img border="0" src="Lab_222.jpg"></p>
+		<p class="MsoNormal" style="line-height: normal; margin-bottom: 7.5pt">
+		<font size="3" color="#800000">Рисунок 2а - Установка переключателя в 
+		режим &quot;Управляемое приложение&quot;</font></p>
+		<p class="MsoNormal" style="line-height: normal; text-align: left; margin-bottom: 7.5pt">
+		<font face="Times New Roman" size="3" color="#800000">В модулях&nbsp; приложения можно использовать системную функцию &quot;ПользователиИнформационнойБазы&quot;, 
+			которая поставляет в модуль имя текущего пользователя, которое и 
+			требуется передать в форму авторизации.&nbsp; Строка 
+			Форма.Пользователь=Пользователь.Имя и выполняет эту работу.<br>&nbsp;</font></p>
+		<p class="MsoNormal" style="line-height: normal; margin-bottom: 7.5pt">
+		<img border="0" src="Lab_221.jpg"></p>
+		<p class="MsoNormal" style="line-height: normal; margin-bottom: 7.5pt">
+		<font size="3" face="Times New Roman" color="#800000">Рисунок 3 - 
+		Процедура модуля&nbsp; приложения</font></p>
+		<p class="MsoNormal" style="line-height: normal; text-align: left; margin-bottom: 7.5pt">&nbsp;</p>
+		<p class="MsoNormal" style="line-height: normal; text-align: left; margin-bottom: 7.5pt">
+		<font face="Times New Roman" size="3" color="#800000">
+		<span lang="en-us">3) </span>Создайте вторую форму для регистрации и 
+			авторизации нового пользователя, рисунок 4</font></p>
+		<p class="MsoNormal" style="line-height: normal; margin-bottom: 7.5pt">
+		<font color="#800000" size="3" face="Times New Roman">
+		<img border="0" src="Lab_205.jpg"></font></p>
+		<p class="MsoNormal" style="line-height: normal; margin-bottom: 7.5pt">
+		<font size="3" color="#800000" face="Times New Roman">Рисунок 4 - 
+			Форма для авторизации нового пользователя</font></p>
+		<p class="MsoNormal" style="line-height: normal; text-align: left; margin-bottom: 7.5pt">
+		<font size="3" color="#800000" face="Times New Roman">4) Закрепите 
+			за формой процедуры. Поля&nbsp; &quot;Пароль&quot; и &quot;Повторите пароль&quot;, 
+			рисунок 5. В полях &quot;Пароль1а&quot; и &quot;Пароль2а&quot; сохраняется не 
+			преобразованное значение введенного пароля, они потребуются в 
+			дальнейшем для проверки верно ли введен второй пароль. Процедуры, 
+			приведенные на рисунке 6, предназначены для размещения фотографии 
+			клиента на диалоговом окне и в справочнике &quot;Клиенты&quot; (эти процедуры 
+			описаны в лабораторной&nbsp; работе 3, часть 5).</font><font size="3"></p>
+		<p class="MsoNormal" style="line-height: normal; margin-bottom: 7.5pt">
+		</font><font size="3" color="#800000" face="Times New Roman">
+		<img border="0" src="Lab_214.gif"><img border="0" src="Lab_215.gif"></font></p>
+		<p class="MsoNormal" style="line-height: normal; margin-bottom: 7.5pt">
+		<font size="3" color="#800000" face="Times New Roman">Рисунок 5 - 
+			Процедуры преобразующие&nbsp; введенный пароль</font></p>
+		<p class="MsoNormal" style="line-height: normal; margin-bottom: 7.5pt">
+		<font color="#800000" size="3" face="Times New Roman">
+		<img border="0" src="Lab_216.gif"></font></p>
+		<p class="MsoNormal" style="line-height: normal; margin-bottom: 7.5pt">
+		<font size="3"><font color="#800000" face="Times New Roman">Рисунок 
+			6 - Процедуры для размещения картинки в поле формы</font></p>
+		<p class="MsoNormal" style="line-height: normal; text-align: left; margin-bottom: 7.5pt">
+		<font color="#800000" face="Times New Roman">5) За кнопкой 
+			&quot;Сгенерировать пароль&quot; закрепите процедуру, рисунок 7. Чтобы 
+			сформировать кнопку в виде ссылки, необходимо указать в свойствах 
+			кнопки, что это гиперссылка.</font></p>
+		<p class="MsoNormal" style="line-height: normal; margin-bottom: 7.5pt">
+		<font color="#800000" face="Times New Roman">
+		<img border="0" src="Lab_217.gif"><img border="0" src="Lab_211.jpg"></font></p>
+		<p class="MsoNormal" style="line-height: normal; margin-bottom: 7.5pt">
+		<font color="#800000" face="Times New Roman">Рисунок 7 - Процедура 
+			&quot;Сгенерировать пароль&quot;</font></p>
+		<p class="MsoNormal" style="line-height: normal; text-align: left; margin-bottom: 7.5pt">
+		<font color="#800000" face="Times New Roman">6) За кнопкой 
+			&quot;Сохранить пользователя&quot; закрепите две процедуры, одна под клиентом, 
+			рисунок 8. Эта процедура проверяет совпадение паролей. Если пароли 
+			совпадают, то формируется массив с информацией о новом пользователе 
+			и управление передается на функцию &quot;ПовторитеПарольПриИзмененииНаСервере&quot;. 
+			Если пароли не совпадают, то выводится соответствующее сообщение. 
+			Если пароли совпадают, но КодВозврата=Ложь, тогда выводится 
+			соответствующее сообщение <img border="0" src="Lab_2011.gif">, форма 
+			закрывается и открывается форма авторизации существующего клиента. 
+			Если в справочнике &quot;Клиенты&quot; нужный пользователь найден, то выдается 
+			сообщение <img border="0" src="Lab_2012.gif">, текущий сеанс 
+			закрывается. Система загружается повторно с требованием выбрать 
+			пользователя из списка. Закрытием системы и ее повторной загрузкой 
+			управляет функция &quot;ПрекратитьРаботуСистемы&quot;. </font></p>
+		<p class="MsoNormal" style="line-height: normal; margin-bottom: 7.5pt">
+		<font color="#800000" face="Times New Roman">
+		<img border="0" src="Lab_2013.gif"></font></p>
+		<p class="MsoNormal" style="line-height: normal; margin-bottom: 7.5pt">
+		<font color="#800000" face="Times New Roman">Рисунок 8 - Процедура, 
+			закрепленная за кнопкой &quot;Сохранить пользователя&quot;</font></p>
+		<p class="MsoNormal" style="line-height: normal; text-align: left; margin-bottom: 7.5pt">
+		<font color="#800000" face="Times New Roman">7) Создайте &quot;ПовторитеПарольПриИзмененииНаСервере&quot;, 
+			рисунок 9. Эта функция в справочник &quot;Клиенты&quot; заносит нового 
+			пользователя, затем&nbsp; создает пользователя в системе и формирует 
+			о нем информацию. Результатом работы этой функции будет новая запись 
+			в справочнике &quot;Клиенты&quot; и новый пользователь, зарегистрированный в 
+			системе.</font></p>
+		<p class="MsoNormal" style="line-height: normal; margin-bottom: 7.5pt">
+		<font color="#800000" face="Times New Roman">
+		<img border="0" src="Lab_2014.gif"></font></p>
+		<p class="MsoNormal" style="line-height: normal; margin-bottom: 7.5pt">
+		<font color="#800000" face="Times New Roman">Рисунок 9 - Функция &quot;ПовторитеПарольПриИзмененииНаСервере&quot;</font></p>
+		<p class="MsoNormal" style="line-height: normal; text-align: left; margin-bottom: 7.5pt">
+		<font color="#800000" face="Times New Roman">8) Зайдите в систему 
+			под именем &quot;ТекущийПользователь&quot;, вход без пароля. Зарегистрируйте 
+			себя и проверьте все режимы работы. После ввода нового пользователя 
+			откройте в конфигураторе последовательность Администрирование - 
+			Пользователи. В списке появится новое имя, которое Вы только что 
+			ввели в диалоге регистрации, рисунок 10. Проанализируйте эти окна и 
+			постарайтесь понять назначение строк кода, формирующие эти записи.</font></p>
+		<p class="MsoNormal" style="line-height: normal; margin-bottom: 7.5pt">
+		<font color="#800000" face="Times New Roman">
+		<img border="0" src="Lab_2014.jpg"></font></p>
+		<p class="MsoNormal" style="line-height: normal; margin-bottom: 7.5pt">
+		<font color="#800000" face="Times New Roman">Рисунок 10 - Новый 
+			пользователь, созданный программным путем</font></p>
+		<p class="MsoNormal" style="line-height: normal; margin-bottom: 7.5pt">
+		</font></p>
+		<p class="MsoNormal" style="line-height: normal; text-align: left; margin-bottom: 7.5pt">&nbsp;</p>
+		<p class="MsoNormal" style="line-height: normal; margin-bottom: 7.5pt">&nbsp;</p>
+		<p>&nbsp;</td>
+	</tr>
+</table>
+
+</body>
+
+</html>

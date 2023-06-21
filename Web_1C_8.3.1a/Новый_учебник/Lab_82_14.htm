@@ -1,0 +1,143 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="ru">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Лабораторная работа №13-14&nbsp; Обме</title>
+</head>
+
+<body background="../../Web_1C_8/Web_1C_82/Fon.jpg" leftmargin="10" rightmargin="10">
+
+<table border="3" cellpadding="10" cellspacing="0" bordercolor="#000080" width="1241" height="540">
+	<!-- MSTableType="layout" -->
+	<tr>
+		<td valign="top">
+		<!-- MSCellType="ContentHead" -->
+		&nbsp;<p align="center"><b><font size="5">&nbsp;<i> </i></font><i>
+		<font size="6">&nbsp;<font color="#800080">&nbsp; Лабораторная работа 
+		№13-14&nbsp; Обмен данными&nbsp; с другими программными системами</font></font></i></b></p>
+		<p align="center">&nbsp;</td>
+		<td valign="top" height="72">
+		<!-- MSCellType="DecArea" -->
+		&nbsp;</td>
+	</tr>
+	<tr>
+		<td valign="top" width="935">
+		<!-- MSCellType="ContentBody" -->
+		&nbsp;<p>&nbsp;</p>
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <u><b>&nbsp;Техническое 
+		задание</b></u></p>
+		<ol>
+			<li>Сформируйте константу&nbsp; ПрефиксНумерации для использования 
+			префиксов в нумерации строк всех объектов БД&nbsp;&nbsp;&nbsp;&nbsp;</li>
+			<li>Внесите корректировку в модули всех объектов, участвующих в 
+			обмене</li>
+			<li>жж</li>
+			</ol>
+			<p>&nbsp;</p>
+			<p>&nbsp;&nbsp;&nbsp;&nbsp; </p>
+		<p align="center"><u><b>Рекомендации к выполнению задания</b></u></p>
+			<p align="left">1.&nbsp;&nbsp; Создайте константу <i><b>
+			ПрефиксНумерации</b></i> тип Строка длина 2</p>
+			<p align="left">2.&nbsp;&nbsp; Добавьте в структуру БД общий модуль&nbsp;
+			<i><b>Обмен</b></i> и поместите в него функцию формирования&nbsp; 
+			префикса номера, рис. 1</p>
+			<p align="center">
+			<img border="0" src="../../Web_1C_8/Web_1C_82/Lab_850.gif"></p>
+			<p align="center">Рис. 1.&nbsp; Функция&nbsp; <i><b>
+			ПолучитьПрефиксНомера</b></i></p>
+			<p align="left">3.&nbsp; Доработайте справочник&nbsp; Клиенты. 
+			Выделите в дереве конфигурации справочник&nbsp; Клиенты и через 
+			контекстное меню откройте модуль объекта. Добавьте в модуль 
+			обработчик события&nbsp; ПриУстановкеНовогоКода, рис. 2.</p>
+			<p align="center">
+			<img border="0" src="../../Web_1C_8/Web_1C_82/Lab_851.gif"></p>
+			<p align="center">Рис. 2.&nbsp; Процедура&nbsp; <i><b>
+			ПриУстановкеНовогоКода</b></i></p>
+			<p align="left">Это событие возникает в тот момент, когда происходит 
+			создание новой строки в справочнике. Так как это событие возникает&nbsp; 
+			не для формы, а для всего объекта в целом, поэтому код пишется в 
+			модуле объекта.&nbsp; </p>
+			<p align="left">Добавьте такую же процедуру в справочники:</p>
+			<ul>
+				<li>
+				<p align="left"><i><b>Сотрудники</b></i></p></li>
+				<li>
+				<p align="left"><i><b>Склады</b></i></p></li>
+				<li>
+				<p align="left"><i><b>Номенклатура</b></i></p></li>
+				<li>
+				<p align="left"><i><b>ВариантыНоменклатуры</b></i></p></li>
+				<li>
+				<p align="left"><i><b>ДополнительныеСвойстваНоменклатуры</b></i></p>
+				</li>
+			</ul>
+			<p align="left">и в план видов характеристик <i><b>
+			СвойстваНоменклатуры</b></i></p>
+			<p align="left">Увеличьте длину кода у всех этих объектов на два 
+			символа.</p>
+			<p align="left">4.&nbsp; Добавьте в модуль документов <i><b>
+			ПриходнаяНакладная </b></i>&nbsp;и <i><b>ОказаниеУслугНовый</b></i>&nbsp; 
+			обработчик события <i><b>ПриУстановкеНовогоНомера</b></i>, рис. 3, и 
+			увеличьте длину кода на два символа.</p>
+			<p align="center">
+			<img border="0" src="../../Web_1C_8/Web_1C_82/Lab_852.gif"></p>
+			<p align="center">Рис. 3. Процедура&nbsp; ПриУстановкеНовогоНомера</p>
+			<p align="left">5.&nbsp; Раскройте ветвь<i><b>&nbsp; Общие </b></i>и 
+			добавьте объект конфигурации
+			<a href="TZ_82.htm#Требования_к_плану_обмена">ПланОбмена Филиалы</a>.&nbsp; 
+			На закладке&nbsp; Основные кнопкой Состав откройте окно, в котором 
+			укажите все объекты, которые будут участвовать в обмене, рис. 4. </p>
+			<p align="center">
+			<img border="0" src="../../Web_1C_8/Web_1C_82/Lab_8235.jpg"></p>
+			<p align="center">Рис. 4. Состав объектов, участвующих в обмене</p>
+			<p align="left">6.&nbsp; Создайте&nbsp;&nbsp;&nbsp; форму узла и 
+			форму списка, рис. 5-6.</p>
+			<p align="center">
+			<img border="0" src="../../Web_1C_8/Web_1C_82/Lab_8236.jpg"></p>
+			<p align="center">Рис. 5. Форма узла плана обмена Филиалы</p>
+			<p align="center">
+			<img border="0" src="../../Web_1C_8/Web_1C_82/Lab_8237.jpg"></p>
+			<p align="center">Рис. 6. Форма списка плана обмена Филиалы</p>
+			<p align="left">7.&nbsp; В окне Формы узла выделите корневой элемент 
+			Форма, откройте его свойства и создайте событие <i><b>
+			ПриСозданииНаСервере,</b></i> рис. 7-8.</p>
+			<p align="center">
+			<img border="0" src="../../Web_1C_8/Web_1C_82/Lab_8238.jpg"></p>
+			<p align="center">Рис. 7.&nbsp; Последовательность создания события
+			<i><b>ПриСозданииНаСервере</b></i></p>
+			<p align="center">
+			<img border="0" src="../../Web_1C_8/Web_1C_82/Lab_8217.gif"></p>
+			<p align="center">Рис. 8. Обработчик события <i><b>
+			ПриСозданииНаСервере</b></i></p>
+			<p align="left">В этой процедуре используется метод менеджера&nbsp; 
+			плана обмена<b><i> ЭтотУзел(), </i></b>который возвращает ссылку на 
+			узел плана обмена, соответствующий данной информационной базе</p>
+			<p align="left">8.&nbsp; Выделите созданную ранее Вами команду <i>
+			<b>ЗарегистрироватьИзменения</b></i>, откройте ее свойства и 
+			создайте процедуру <i><b>ЗарегистрироватьИзменения()</b></i>, рис. 
+			9.</p>
+			<p align="left">
+			<img border="0" src="../../Web_1C_8/Web_1C_82/Lab_8239.jpg"></p>
+			<p align="left">Рис. 9.&nbsp;&nbsp; Создание процедуры 
+			ЗарегистрироватьИзменения()</p>
+			<p align="left">9.&nbsp; Создайте в модуле формы списка три 
+			процедуры и одну функцию, рис. 10. Описание процедур</p>
+			<p align="center">
+			<img border="0" src="../../Web_1C_8/Web_1C_82/Lab_8218.gif"></p>
+			<p align="center">Рис. 10&nbsp; Процедуры и функции формы списка 
+			обработчика событий</p>
+			<p align="left">10.&nbsp; </p>
+			<p align="left">&nbsp;</p>
+			<p align="left">&nbsp;</p>
+			<p align="left">&nbsp;</p>
+			<p align="left">&nbsp;</p> </td>
+		<td valign="top" height="462" width="196">
+		<!-- MSCellType="NavBody" -->
+		&nbsp;</td>
+	</tr>
+</table>
+
+</body>
+
+</html>

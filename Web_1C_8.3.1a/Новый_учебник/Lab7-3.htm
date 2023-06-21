@@ -1,0 +1,138 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="ru">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Лабораторная работа №7-3 Внешняя</title>
+</head>
+
+<body>
+
+<table border="3" cellpadding="0" cellspacing="0" width="1290" height="534" background="Fon.jpg" bordercolor="#000080" style="text-align: justify; text-indent: 20; margin: 10 20; padding-left:6px; padding-right:10px">
+	<!-- MSTableType="layout" -->
+	<tr>
+		<td valign="top">
+		<!-- MSCellType="DecArea" -->
+		&nbsp;</td>
+		<td valign="top" height="72">
+		<!-- MSCellType="ContentHead" -->
+		&nbsp;<p style="text-align: center"><i><b>
+		<font size="5" color="#800080">Лабораторная работа №7-3 Внешняя 
+		обработка. Запросы к БД. Динамический список</font></b></i></td>
+	</tr>
+	<tr>
+		<td valign="top" width="180">
+		<!-- MSCellType="NavBody" -->
+		&nbsp;<p style="text-align: left"><a href="#Контрольные_вопросы">К контрольным вопросам</a></p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p style="text-align: left"><i><b>Внешняя обработка</b></i> создается по 
+		принципу создания обычного файла (<i>Файл-Новый-Внешняя обработка</i>). 
+		Сохраняется внешняя обработка также за пределами конфигурации (<i>Файл-Сохранить</i>), 
+		на любом магнитном носителе.</p>
+		<p style="text-align: left">Достоинство внешней обработки заключается в 
+		том, что если Вам придется вносить какие-либо дополнения в готовый 
+		программный продукт, то все добавлении удобнее всего выполнять в виде 
+		внешних обработок.</td>
+		<td valign="top" height="462" width="661">
+		<!-- MSCellType="ContentBody" -->
+		&nbsp;<p><a href="../Page1_1.htm">В оглавление</a></p>
+		<p style="text-align: center"><font color="#000080"><i><b>
+		Техническое задание</b></i></font></p>
+		<p>Создать внешнюю&nbsp; обработку, подключить к ней динамический 
+		список, с помощью запроса выбрать в список информацию из справочника 
+		&quot;Номенклатура&quot; и регистра накопления &quot;Товары&quot;</p>
+		<p style="text-align: center"><font color="#000080"><i><b>Рекомендации к 
+		решению</b></i></font></p>
+		<p>1&nbsp; В конфигураторе последовательностью <i><b>Файл-Новый-Внешняя</b></i>
+		<b><i>обработка </i></b>создайте обработку с именем &quot;ВнешняяОбработкаПробная&quot;,&nbsp; 
+		рисунок 1. В состав формы обработки ничего не включайте.</p>
+		<p style="text-align: center"><img border="0" src="Lab7-31.jpg"></p>
+		<p style="text-align: center">Рисунок 1 - Создание внешней обработки </p>
+		<p>2 Сохраните созданную обработку (удобнее всего сохранить ее в папке с 
+		вашей базой). Добавьте в обработку динамический список и подключите к 
+		нему справочник &quot;Номенклатура&quot;, рисунок 2.</p>
+		<p style="text-align: center"><img border="0" src="Lab7-32.jpg"></p>
+		<p style="text-align: center">Рисунок 2-Создание динамического списка</p>
+		<p>&nbsp;3&nbsp; Откройте список и выполните его настройку, рисунок 3.
+		</p>
+		<p style="text-align: center"><img border="0" src="Lab7-34.jpg"></p>
+		<p style="text-align: center">Рисунок 3 - Настройка Конструктора 
+		запросов</p>
+		<p>4&nbsp; Войдите в конструктор запросов. В правой секции уберите все 
+		записи кроме одной &quot;СправочникНоменклатура.Наименование&quot;. Подключите 
+		регистр &quot;ТоварыОстатки&quot;. Перенесите из регистра поля ТоварыОстатки.Склад&quot; 
+		&quot;ТоварыОстатки.КоличествоОстаток&quot;, рисунок 4.</p>
+		<p style="text-align: center"><img border="0" src="Lab7-33.jpg"></p>
+		<p style="text-align: center">Рисунок 4 - Построение запроса</p>
+		<p>4&nbsp; Откройте вкладку &quot;Связи&quot;, удалите строку, построенную 
+		конструктором и добавьте новую по образцу, рисунок 5.</p>
+		<p style="text-align: center">
+		<img border="0" src="Lab7-35.jpg" align="left"></p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</p>
+		<p style="text-align: left">&nbsp;</p>
+		<p style="text-align: center">Рисунок 5 - Построение связи двух таблиц</p>
+		<p style="text-align: left">5&nbsp; Закройте конструктор запросов и 
+		получите текст запроса, в который вручную допишите (<span lang="en-us">&amp;</span>ТекущаяДата,), 
+		рисунок 6.</p>
+		<p style="text-align: left">О соединениях таблиц
+		<a href="coedinenia_v_zaprosax.htm">можно прочесть здесь</a></p>
+		<p style="text-align: center"><img border="0" src="Lab7-36.jpg"></p>
+		<p style="text-align: center">Рисунок 6 - Построенный текст запроса</p>
+		<p style="text-align: left">6&nbsp; Создайте&nbsp; реквизит &quot;ДатаОстатков&quot; 
+		и перетащите его в форму. Также перетащите в форму и динамический 
+		список, реквизиту &quot;КоличествоОстаток&quot; присвойте заголовок &quot;Остаток 
+		товара&quot;, рисунок 7. </p>
+		<p style="text-align: center"><img border="0" src="Lab7-37.jpg"></p>
+		<p style="text-align: center">Рисунок 7 - Построение окна формы</p>
+		<p style="text-align: left">8&nbsp; Свяжите реквизит &quot;ДатаОстатков&quot;&nbsp; 
+		с процедурой &quot;ДатаОстатковПриИзменении()&quot;, а форму с процедурой &quot;ПриСозданииНаСервере()&quot;,&nbsp; 
+		рисунок 8.</p>
+		<p style="text-align: center"><img border="0" src="Lab7-38.jpg"></p>
+		<p style="text-align: center">Рисунок 8 - Процедуры формы</p>
+		<p style="text-align: left">9 Последовательностью Файл-Сохранить 
+		сохраните все изменения. Войдите в режим пользователя, откройте 
+		обработку (Файл-Открыть-ОбработкаПробная). В таблице будет отражена вся 
+		информация, записанная в регистр &quot;Товары&quot; на указанную дату, рисунок 9.</p>
+		<p style="text-align: center"><img border="0" src="Lab7-310.jpg"></p>
+		<p style="text-align: center">Рисунок 9 - Результат работы</p>
+		<p style="text-align: left"><i><b><font color="#800080" size="5">
+		Самостоятельно</font></b></i></p>
+		<p style="text-align: left"><i><b><font size="4" color="#800080">&nbsp;</font></b></i><font size="4">Напишите 
+		отчет по выполненной лабораторной работе. В состав отчета включите 
+		ответы на контрольные вопросы</font></p>
+		<p style="text-align: left"><a href="../Page1.htm">В оглавление</a></p>
+		<p style="text-align: left"><i><b><font size="4" color="#800080">
+		<a name="Контрольные_вопросы">Контрольные вопросы</a></font></b></i></p>
+		<p style="text-align: left">1)&nbsp; Особенности внешней обработки</p>
+		<p style="text-align: left">2)&nbsp; Чем внешняя обработка отличается от 
+		внутренней?</p>
+		<p style="text-align: left">3) Для каких целей используют динамический 
+		список?</p>
+		<p style="text-align: left">4) Какую роль играет запрос в работе 
+		созданной вами обработке?</p>
+		<p style="text-align: left">5)&nbsp; Как Вы понимаете&nbsp; ЛЕВОЕ 
+		СОЕДИНЕНИЕ в тексте запроса?</p>
+		<p style="text-align: left">6)&nbsp; Из каких таблиц&nbsp;&nbsp; была&nbsp; 
+		выполнена выборка информации?</p>
+		<p style="text-align: left">7) Расскажите принцип работы ЛЕВОГО 
+		СОЕДИНЕНИЯ</p>
+		<p style="text-align: center">&nbsp;</p>
+		<p style="text-align: center">&nbsp;</p>
+		<p style="text-align: left">&nbsp;</p>
+		<p style="text-align: left">&nbsp;</p>
+		<p>&nbsp;</p>
+		<p>&nbsp;</td>
+	</tr>
+</table>
+
+</body>
+
+</html>

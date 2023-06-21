@@ -1,0 +1,267 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="ru">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Лабораторная работа №14</title>
+</head>
+
+<body>
+
+<p>&nbsp;</p>
+
+<table border="0" cellpadding="0" cellspacing="0" width="1375" height="666" style="border: 1px solid #000080; padding-left: 16px; padding-right: 4px; padding-top: 20px; padding-bottom: 4px" background="Fon.jpg">
+	<!-- MSTableType="layout" -->
+	<tr>
+		<td valign="top" style="border: 2px solid #0000FF">
+		<!-- MSCellType="DecArea" -->
+		&nbsp;</td>
+		<td valign="top" height="91" style="border: 2px solid #0000FF; padding-left: 20px; padding-right: 10px; padding-top: 20px; padding-bottom: 10px">
+		<!-- MSCellType="ContentHead" -->
+		<p align="center"><i><b><font size="5" color="#000080">Лабораторная 
+		работа №<span lang="en-us">21-1</span>. Автоматизированное тестирование</font></b></i></td>
+	</tr>
+	<tr>
+		<td valign="top" width="237" style="border: 1px solid #0000FF; padding-left: 10px; padding-right: 4px; padding-top: 10px; padding-bottom: 4px">
+		<!-- MSCellType="NavBody" -->
+		&nbsp;</td>
+		<td valign="top" height="575" width="1138" style="border: 1px solid #000080; padding-left: 20px; padding-right: 6px; padding-top: 20px; padding-bottom: 6px">
+		<!-- MSCellType="ContentBody" -->
+		<p><a href="#13.__Ответить_на_вопросы_и_подготовиться_к_сдаче_зачета_">К 
+		вопросам </a>&nbsp; <a href="Page_1.htm">В оглавление&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</a> </p>
+		<p class="MsoNormal" align="justify"><font color="#000080">В платформе 
+		«1С:Предприятие 8.3» появился новый механизм, предназначенный для 
+		имитации интерактивных действий пользователей системы – 
+		автоматизированное тестирование. Автоматизированное тестирование не 
+		поддерживает работу с обычным интерфейсом, а только с<b> <i>управляемым.</i></b></font></p>
+		<div style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+			<p class="MsoNormal" align="justify"><b><font color="#FF0000">
+			Автоматизированное тестирование - это использование встроенного в 1С 
+			8.3 механизма для автоматизированного занесения в объекты информации 
+			как верной, так и не правильной</font><font color="#000080">.</font></b></div>
+		<p class="MsoNormal" align="justify"><font color="#000080">&nbsp;При 
+		тестировании используются два вида клиентских приложений – <i><b>
+		менеджер тестирования</b></i> и <i><b>клиент тестирования</b></i>. 
+		Менеджер тестирования устанавливает связь с клиентом тестирования и 
+		выполняет сценарий тестирования.</font></p>
+		<p class="MsoNormal" align="justify"><font color="#000080">&nbsp;<i><b>Сценарий 
+		тестирования</b></i> – это код на встроенном языке, в котором 
+		описывается последовательность выполняемых <i><b>интерактивных</b></i> 
+		действий.</font></p>
+		<p class="MsoNormal" align="justify"><font color="#000080">&nbsp;Для этого во 
+		встроенный язык добавлены новые объекты, которые на абстрактном уровне 
+		описывают интерфейс приложения (оперируя понятиями окна, формы, 
+		элементов управления и т.п.), а также описывают действия пользователей 
+		(навигация по конфигурации, ввод данных и т.п.).</font></p>
+		<p class="MsoNormal" align="justify"><font color="#000080">&nbsp;Менеджер 
+		тестирования может быть <i><b>толстым</b></i> или <i><b>тонким</b></i> 
+		клиентом. Клиент тестирования –<i><b> толстым, тонким</b></i> клиентом 
+		или <i><b>веб-клиентом.</b></i></font></p>
+		<p class="MsoNormal"><font color="#000080">&nbsp;<i><b>Менеджер тестирования</b></i> 
+		может быть подключен к нескольким клиентам тестирования, а <b><i>клиент 
+		тестирования</i></b> может быть подключен только к одному менеджеру.</font></p>
+		<p class="MsoNormal" align="justify"><font color="#000080">&nbsp;Для 
+		управления клиентом менеджер устанавливает с ним TCP-соединение. Важно, 
+		что для проведения автоматизированного тестирования не требуется вносить 
+		изменений в структуру конфигурации. По сути, клиент и менеджер 
+		тестирования – это конфигурации, запущенные с определенными параметрами 
+		командной строки, причем менеджер осуществляет управление клиентами, 
+		“заставляя” окна и элементы управления вести себя таким образом, как 
+		будто с ними взаимодействует пользователь.</font></p>
+		<p class="MsoNormal" align="justify"><font color="#000080">
+		.Автоматизированное тестирование имеет свои ограничения. Так, например, 
+		не поддерживается работа с обычным интерфейсом, а только с управляемым. 
+		Для выполнения автоматизированного тестирования должен быть запущен<i><b> 
+		менеджер и клиент тестирования.</b></i></font></p>
+		<p class="MsoNormal"><font color="#000080"><i><b>Менеджер тестирования</b></i> 
+		можно запустить несколькими способами:</font></p>
+		<ol>
+			<li>
+			<p class="MsoNormal"><font color="#000080">С помощью командной 
+			строки, используя ключ /TESTMANAGER.&nbsp; Например, </font></li>
+		</ol>
+		<p class="MsoNormal"><font color="#000080"><b><span lang="EN-US">
+		<font size="4">“c:\Program Files (x86)\1cv8\8.3.4.437\bin\1cv8c.exe” 
+		ENTERPRISE /F “X:\test” /N </font></span><font size="4">Администратор</font><span lang="EN-US"><font size="4"> 
+		/TESTMANAGER</font></span></b></font></p>
+		<p class="MsoNormal"><font color="#000080"><span lang="EN-US">&nbsp;</span>&nbsp;&nbsp; 
+		2.&nbsp;&nbsp; Из конфигуратора. &nbsp;Для этого через меню<i><b> Сервис – 
+		Параметры</b></i> открываем диалог “Параметры”, в котором на закладке <i>
+		<b>Запуск 1С:Предприятия – Дополнительные</b></i> отмечаем пункт <i><b>
+		“Запускать как менеджер тестирования”</b></i></font></p>
+		<p class="MsoNormal"><font color="#000080"><i><b>&nbsp;&nbsp; </b></i>&nbsp;3.&nbsp;&nbsp; 
+		Из встроенного языка при помощи метода <b>ЗапуститьСистему()</b>, в 
+		котором следует указать командную строку. Например,</font></p>
+		<p class="MsoNormal"><font color="#000080"><b><font size="4">
+		ЗапуститьСистему<span lang="EN-US">(“c:\Program Files 
+		(x86)\1cv8\8.3.4.437\bin\1cv8c.exe” ENTERPRISE /F X:\test /N </span>
+		Администратор</font><span lang="EN-US"><font size="4"> /TESTMANAGER”)</font></span></b></font></p>
+		<p class="MsoNormal"><font color="#000080"><span lang="EN-US">&nbsp;</span><i><b>Клиента 
+		тестирования</b></i> также можно запустить следующими способами:</font></p>
+		<ol>
+			<li>
+			<p class="MsoNormal"><font color="#000080">С помощью&nbsp; командной 
+			строки. Для этого следует воспользоваться ключом параметра командной 
+			строки /TESTCLIENT и при помощи параметра <i><b>TPort, </b></i>
+			указав номер порта, через который будет вестись взаимодействие 
+			менеджера и клиента тестирования. Если этот параметр не указан в 
+			командной строке, то будет использован порт 1538. Например, </font>
+			</li>
+		</ol>
+		<p class="MsoNormal"><font color="#000080"><i><b><span lang="EN-US">
+		<font size="4">“c:\Program Files (x86)\1cv8\8.3.4.437\bin\1cv8c.exe” 
+		ENTERPRISE /F “X:\Platform8Demo” /N </font></span><font size="4">
+		Администратор</font><span lang="EN-US"><font size="4"> /TESTCLIENT -TPort 
+		1539</font></span></b></i></font></p>
+		<p align="justify"><font color="#000080">&nbsp;&nbsp; 2.&nbsp; Из 
+		конфигуратора. Для этого через меню <i><b>Сервис – Параметры</b></i> 
+		открываем диалог “Параметры”, в котором на закладке <i><b>Запуск 
+		1С:Предприятия </b></i>– <i><b>Дополнительные</b></i> отмечаем пункт 
+		“Запускать как клиент тестирования”. <u>При этом надо будет указать 
+		номер используемого порта.</u></font></p>
+		<p class="MsoNormal"><font color="#000080">&nbsp;Для подключения к <i>
+		<b>клиенту тестирования</b></i> необходимо знать два параметра: <i><b>
+		IP-адрес (или имя) компьютера</b></i>, на котором запущен клиент 
+		тестирования, и номер <i><b>TCP-порта</b></i>, с помощью которого будет 
+		выполняться взаимодействие.</font></p>
+		<div style="border-style: solid; border-width: 1px; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+			<p class="MsoNormal"><font color="#800080">В качестве <i><b>
+			менеджера </b></i>и<i><b> клиента тестирования</b></i> могут 
+			использоваться как разные информационные базы (конфигурация базы 
+			менеджера тестирования может не совпадать с конфигурацией клиента 
+			тестирования), так и одна и та же информационная база.</font></div>
+		<p class="MsoNormal"><font color="#000080">Для выполнения 
+		автоматизированного тестирования необходимо проделать следующие шаги:</font></p>
+		<p class="MsoNormal" align="justify"><font color="#000080">&nbsp;1.&nbsp;&nbsp; 
+		Разработать сценарий тестирования – написать внешнюю или встроенную в 
+		конфигурацию обработку, в которой будут последовательно описаны 
+		выполняемые шаги.</font></p>
+		<p class="MsoNormal"><font color="#000080">&nbsp; 2.&nbsp;&nbsp;&nbsp; 
+		Запустить менеджер тестирования.</font></p>
+		<p class="MsoNormal"><font color="#000080">&nbsp; 3.&nbsp;&nbsp;&nbsp; 
+		Запустить клиент тестирования (один или несколько).</font></p>
+		<p class="MsoNormal"><font color="#000080">&nbsp; 4.&nbsp;&nbsp;&nbsp; В 
+		менеджере тестирования запустить на исполнение созданную обработку, 
+		убедиться в выполнении запрограммированных действий на клиенте.</font></p>
+		<p class="MsoNormal"><font color="#000080">Тестируемое приложение 
+		описывается набором объектов встроенного языка, которые используются для 
+		написания сценария:</font></p>
+		<ul>
+			<li>
+			<p class="MsoNormal" align="left"><font color="#000080">&nbsp;&nbsp;
+			<b><i>&nbsp; ТестируемоеПриложение;</i></b></font></li>
+			<li>
+			<p class="MsoNormal" align="left"><font color="#000080"><b><i>&nbsp;&nbsp;&nbsp;&nbsp; 
+			ТестируемоеОкноКлиентскогоПриложения;</i></b></font></li>
+			<li>
+			<p class="MsoNormal" align="left"><font color="#000080"><b><i>&nbsp;&nbsp;&nbsp;&nbsp; 
+			ТестируемыйКомандныйИнтерфейсОкна;</i></b></font></li>
+			<li>
+			<p class="MsoNormal" align="left"><font color="#000080"><b><i>&nbsp;&nbsp;&nbsp;&nbsp; 
+			ТестируемаяГруппаКомандногоИнтерфейса;</i></b></font></li>
+			<li>
+			<p class="MsoNormal" align="left"><font color="#000080"><b><i>&nbsp;&nbsp;&nbsp;&nbsp; 
+			ТестируемаяКнопкаКомандногоИнтерфейса;</i></b></font></li>
+			<li>
+			<p class="MsoNormal" align="left"><font color="#000080"><b><i>&nbsp;&nbsp;&nbsp;&nbsp; 
+			ТестируемаяФорма;</i></b></font></li>
+			<li>
+			<p class="MsoNormal" align="left"><font color="#000080"><b><i>&nbsp;&nbsp;&nbsp;&nbsp; 
+			ТестируемоеПолеФормы;</i></b></font></li>
+			<li>
+			<p class="MsoNormal" align="left"><font color="#000080"><b><i>&nbsp;&nbsp;&nbsp;&nbsp; 
+			ТестируемаяГруппаФормы;</i></b></font></li>
+			<li>
+			<p class="MsoNormal" align="left"><font color="#000080"><b><i>&nbsp;&nbsp;&nbsp;&nbsp; 
+			ТестируемаяКнопкаФормы;</i></b></font></li>
+			<li>
+			<p class="MsoNormal" align="left"><font color="#000080"><b><i>&nbsp;&nbsp;&nbsp;&nbsp; 
+			ТестируемаяТаблицаФормы;</i></b></font></li>
+			<li>
+			<p class="MsoNormal" align="left"><font color="#000080"><b><i>&nbsp;&nbsp;&nbsp;&nbsp; 
+			ТестируемаяДекорацияФормы.</i></b></font></li>
+		</ul>
+		<p> <font color="#000080"><u><b>Техническое задание</b></u></font></p>
+		<ol>
+			<li><font color="#000080">Разработать обработку предназначенную для 
+			выполнения тестирования созданного программного продукта</font></li>
+			<li><font color="#000080">Настроить менеджер тестирования для 
+			выполнения работы</font></li>
+			<li><font color="#000080">Настроить клиента тестирования для 
+			выполнения работы</font></li>
+			<li><font color="#000080">Проверить выполненную работу</font></li>
+		</ol>
+		<p>&nbsp;</p>
+		<p align="center"><font color="#000080"><u><b>Рекомендации к выполнению задания</b></u></font></p>
+		<p align="justify"><font color="#000080">1. Откройте конфигурацию, в 
+		которой Вы выполняли лабораторные работы и создайте внешнюю обработку,
+		<b><i>Файл - Новый - Внешняя обработка, </i></b>которой присвойте имя <b>
+		<i>ДляТестирования, </i></b>рисунок 1. </font></p>
+		<p align="center"><img border="0" src="Lab14.1.jpg"></p>
+		<p align="center"><font color="#000080">Рисунок 1 - Создание внешней 
+		обработки</font></p>
+		<p align="left"><font color="#000080">2.&nbsp; Включите в состав 
+		обработки кнопку <i><b>Запустить тестирование</b></i> и закрепите за ней 
+		процедуру, рисунок 2</font></p>
+		<p align="center"><img border="0" src="Lab14.3.gif"></p>
+		<p align="center"><font color="#000080">Рисунок 2 - Текст процедуры, 
+		обслуживающей кнопку обработки</font></p>
+		<p align="left"><font color="#000080">В строке <i><b>
+		ТестируемоеПриложение = Новый ТестируемоеПриложение(&quot;comp-PC&quot;,1539,</b></i>)&nbsp; 
+		информация <font size="4"><b><i>&quot;comp-PC&quot;,1539 </i></b></font>содержит 
+		сведения о компьютере и номере порта, на котором будет запускаться 
+		клиент тестирования. Так как запуск менеджера и клиента будет 
+		выполняться на одном компьютере, необходимо узнать имя ПК, на котором 
+		будет выполняться работа.</font></p>
+		<p align="left"><font color="#000080">&nbsp;В команде<span lang="en-us">
+		<i><b>e1cib</b></i></span><b><i>/<span lang="en-us">command&nbsp;&nbsp;
+		</span></i></b>второй символ ЕДИНИЦА, а не буква &quot;<span lang="en-us">L</span>&quot;.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><font color="#000080">3.&nbsp; Определите Конфигурацию, 
+		которую Вы будете тестировать (в нашем случае возьмем другую 
+		конфигурацию) и выберем в ней справочник, который будет тестироваться. 
+		На рисунке 2 определен справочник <b><i>Отдел, </i></b>в который нужно 
+		записать информацию в поле Наименование, она будет <i><b>Администрация</b></i>.</font></p>
+		<p align="left"><font color="#000080">Откройте свойства компьютера и 
+		скопируйте его имя, под которым он зарегистрирован в системе, рисунок 3. 
+		Это имя впишите в текст строки кода, номер порта можно оставить таким 
+		как на рисунке.</font></p>
+		<p align="center"><img border="0" src="Lab14.3.jpg"></p>
+		<p align="center"><font color="#000080">Рисунок 3 - Определение имени 
+		компьютера</font></p>
+		<p align="left"><font color="#000080">4.&nbsp; Сохраните созданную 
+		обработку методом <i><b>Файл - Сохранить как...</b></i> В качестве 
+		адреса укажите папку, в которой размещенена Ваша БД.</font></p>
+		<p align="left"><font color="#000080">5.&nbsp;&nbsp; Выполните настройку 
+		менеджера и клиента. В Конфигураторе последовательностью <i><b>Сервис 
+		-Параметры - Запуск 1С Предприятие - Дополнительные</b></i> настройте 
+		конфигурацию той БД, которая будет играть роль менеджера, рисунок 4, в 
+		этой конфигурации Вы создали обработку. Откройте конфигурацию второй БД, 
+		которую Вы собираетесь тестировать,&nbsp; последовательностью <i><b>Сервис 
+		-Параметры - Запуск 1С Предприятие - Дополнительные </b></i> настройте 
+		конфигурацию под<i><b> клиента, </b></i> рисунок 4а.</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="left"><img border="0" src="Lab14.4.jpg"><img border="0" src="Lab14.5.jpg"></p>
+		<p align="center"><font color="#000080">Рисунок 4 - Настройка Менеджера&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		Рисунок 4а - Настройка клиента</font></p>
+		<p align="left"><font color="#000080">6. Откройте обе конфигурации в 
+		режиме пользователя, в пользователе, открытом как менеджер, откройте 
+		обработку и путем нажатия кнопки Запустить тестирование активизируйте 
+		написанную Вами процедуру. Результатом работы этой процедуры будет 
+		добавление в справочник Отдел новой записи Администрация, рисунок 5.</font></p>
+		<p align="center"><img border="0" src="Lab14.7.jpg"></p>
+		<p align="center">Рисунок 5 - Добавленный в справочник элемент методом 
+		автоматизированного тестирования</p>
+		<p align="center">&nbsp;</p>
+		<p align="left"><font color="#000080"><br>
+&nbsp;</font></p>
+		<p align="left">&nbsp;</p>
+		<p align="justify">&nbsp;</p>
+		<p>&nbsp;</td>
+	</tr>
+</table>
+
+</body>
+
+</html>

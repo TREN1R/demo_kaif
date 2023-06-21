@@ -1,0 +1,389 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="ru">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Введение в СОМ технологии</title>
+</head>
+
+<body>
+
+<table border="2" cellpadding="0" cellspacing="0" background="Fon.jpg" bordercolor="#000080" width="1375" height="670" style="text-align: justify; line-height: 150%; margin-left: 16; margin-right: 6">
+	<!-- MSTableType="layout" -->
+	<tr>
+		<td valign="top">
+		<!-- MSCellType="DecArea" -->
+		&nbsp;</td>
+		<td valign="top" height="91">
+		<!-- MSCellType="ContentHead" -->
+		&nbsp;<p style="text-align: center"><b>
+		<font color="#000080" face="Arial">Введение в СОМ технологии</font></b></p>
+		<h1 style="font-size: 18pt; font-family: Arial, Tahoma; font-weight: bold; color: #000080; text-align: center; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		Передача объектов 1С:Предприятия через <span lang="en-us">COM&nbsp;&nbsp;
+		</span></h1>
+		<p style="text-align: center">&nbsp;</td>
+	</tr>
+	<tr>
+		<td valign="top" width="235">
+		<!-- MSCellType="NavBody" -->
+		&nbsp;</td>
+		<td valign="top" style="line-height: 150%; text-align: justify; text-indent: 30; margin-left: 26; margin-right: 10" height="575" width="1132">
+		<!-- MSCellType="ContentBody" -->
+		&nbsp;<p><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		</font><span lang="EN-US" style="font-family: Arial; color: black">COM 
+		(Component Object Model) – </span>
+		<span style="font-family: Arial; color: black">модель компонентных 
+		объектов</span><span lang="EN-US" style="font-family: Arial; color: black"> 
+		Microsoft. </span><span style="font-family: Arial; color: black">
+		Стандартный механизм, включающий интерфейсы, с помощью которых одни 
+		объекты предоставляют свои сервисы другим. Является основой многих 
+		объектных технологий, в том числе OLE и ActiveX. Другой перевод: 
+		многокомпонентная модель объектов.</span></p>
+		<p style="font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; word-spacing: 0px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+		<span style="font-family: Arial; color: black">DCOM (Distributed 
+		Component Object Model) – распределенная модель компонентных объектов. 
+		Расширение модели COM фирмы Microsoft, ориентированное на поддержку и 
+		интеграцию распределенных объектных приложений, функционирующих в сети.</span></p>
+		<p style="font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; word-spacing: 0px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+		<span style="font-family: Arial; color: black">COM представляет собой 
+		основанную на объектах клиент-серверную модель, разработанную Microsoft 
+		для обеспечения взаимодействия между компонентами программного 
+		обеспечения и приложениями. </span></p>
+		<p style="font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; word-spacing: 0px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+		<span style="font-family: Arial; color: black">Ключевым аспектом COM 
+		является то, что эта технология обеспечивает связь между клиентами и 
+		серверами посредством&nbsp;</span><strong><i><span style="font-family: Arial; color: black">интерфейсов</span></i></strong><span style="font-family: Arial; color: black">. 
+		Именно интерфейс предоставляет клиенту способ &quot;узнать&quot; у сервера, какие 
+		именно возможности он поддерживает на этапе выполнения. Для расширения 
+		возможностей сервера необходимо просто добавить новый интерфейс к 
+		существующим.</span></p>
+		<p style="font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; word-spacing: 0px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+		<strong><span style="font-family: Arial; color: black">Технология COM 
+		как спецификация и реализация.</span></strong><span style="font-family: Arial; color: black">&nbsp;COM 
+		является одновременно и спецификацией и реализацией. Спецификация COM 
+		определяет правила создания объектов и их взаимодействия, способ связи 
+		между объектами. В соответствии со спецификацией объекты COM могут быть 
+		написаны на различных языках, выполняться в адресном пространстве 
+		различных процессов и на разнообразных платформах. До тех пор, пока 
+		объекты полностью соответствуют спецификации, они могут 
+		взаимодействовать. Это позволяет объединять унаследованный код как 
+		компонент с новыми компонентами, разработанными в любом из 
+		объектно-ориентированных языков.</span></p>
+		<p style="font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; word-spacing: 0px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">
+		<span style="font-family: Arial; color: black">COM как реализация 
+		представляет собой библиотеку (файлы OLE32.dll OLEAut32.dll), которая 
+		предоставляет ряд основных служб, поддерживающих описанные спецификации. 
+		Библиотека COM содержит набор стандартных интерфейсов, определяющих 
+		основную функциональность объектов COM, и небольшой набор функций API, 
+		разработанных для целей создания и управления объектами COM.</span></p>
+		<p style="font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; word-spacing: 0px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</p>
+		<h2 id="chapter1" style="font-family: Arial; font-weight: bold; text-align: left; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		<font size="3">Когда данные передаются через COM</font></h2>
+		<p id="chapter1" style="color: rgb(0, 0, 0); font-family: Verdana; font-size: 12.8px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		<font size="3" face="Arial">При использовании 1С:Предприятия совместно с 
+		другими программами или системами, а также при необходимости доступа к 
+		данным нескольких разных информационных баз 1С:Предприятия, могут 
+		использоваться средства модели межкомпонентного доступа к объектам (Component 
+		Object Model, COM). Ее главная идея заключается в предоставлении 
+		универсального средства создания и освобождения объектов, и 
+		универсального способа обращения к свойствам и методам объектов, включая 
+		передачу необходимых данных. Частным случаем реализации модели COM 
+		является&nbsp;Automation, определяющий универсальный интерфейс&nbsp;<strong>IDispatch</strong>&nbsp;для 
+		доступа к свойствам и методам объектов, а также универсальный способ 
+		передачи данных (структура&nbsp;<strong>VARIANT</strong>)</font></p>
+		<p id="chapter1" style="color: rgb(0, 0, 0); font-family: Arial; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		1С:Предприятие поддерживает средства&nbsp;Automation и тем самым позволяет:</p>
+		<ul style="color: rgb(0, 0, 0); font-family: Verdana; font-size: 12.8px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+			<li>
+			<p id="chapter1"><font size="3" face="Arial">с одной стороны, 
+			использовать во встроенном языке 1С:Предприятия произвольные 
+			объекты, доступные через&nbsp;Automation на данном компьютере или в сети. 
+			Для этого во встроенном языке 1С:Предприятия может быть использован 
+			оператор &quot;Новый COMОбъект(&lt;идентификатор COM объекта&gt;)&quot;;</li>
+			<li>
+			<p id="chapter1">с другой стороны, использовать объекты 
+			1С:Предприятия при разработке других программ на различных языках 
+			программирования с применением различных инструментальных средств. 
+			Для этого 1С:Предприятие регистрирует объекты с идентификаторами: 
+			&quot;V8.Application&quot; - клиентское приложение 1С:Предприятия, 
+			&quot;V8.COMConnector&quot; - внешнее соединение 1С:Предприятия.</font></li>
+		</ul>
+		<p id="chapter2" style="color: rgb(0, 0, 0); font-family: Arial; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		Обращения к свойствам объектов, а также передача значений входных и 
+		выходных параметров методов при помощи&nbsp;Automation предполагает 
+		универсальный способ представления передаваемых данных. Представление 
+		данных при помощи структуры VARIANT накладывает определенные ограничения 
+		на типы передаваемых данных и может создать определенные трудности при 
+		интерпретации получаемых данных.</p>
+		<p id="chapter2" style="color: rgb(0, 0, 0); font-family: Arial; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		Набор типов данных, представимых структурой VARIANT, ограничен, и не 
+		охватывает всего многообразия типов данных, доступных в 1С:Предприятии. 
+		Ниже будут рассмотрены некоторые особенности передачи средствами COM 
+		(через структуру VARIANT) данных 1С:Предприятия различных типов.</p>
+		<h2 id="chapter5" style="font-family: Arial; font-weight: bold; text-align: left; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		<font size="3">Примитивные типы</font></h2>
+		<p id="chapter6" style="color: rgb(0, 0, 0); font-family: Arial; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		Значения&nbsp;<strong>NULL</strong>&nbsp;и&nbsp;<strong>Неопределено</strong>, а также 
+		типы данных&nbsp;<strong>Число</strong>,&nbsp;<strong>Строка</strong>,&nbsp;<strong>Дата</strong>,&nbsp;<strong>Булево</strong>, 
+		определенные в 1С:Предприятии, считаются примитивными. Они 
+		представляются аналогичными типами, определенными в&nbsp;<strong>VARIANT</strong>. 
+		Преобразование примитивных типов 1С:Предприятия в&nbsp;<strong>VARIANT</strong>&nbsp;представлено 
+		в таблице:</p>
+		<table class="withBorder" cellspacing="0" cellpadding="3" width="631" border="0" style="font-family: Verdana; text-align: left; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; border-right: 1px solid rgb(255, 215, 0); border-top: 1px solid rgb(255, 215, 0)">
+			<tr>
+				<th width="457" colspan="2" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0); background-color: rgb(255, 255, 238)">
+				<font face="Arial"><font size="3">Тип в 1С:Преприятии</font></th>
+				<th width="159" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0); background-color: rgb(255, 255, 238)">
+				<font size="3">Тип VARIANT</font></th>
+			</tr>
+			<tr>
+				<td width="457" colspan="2" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0)">
+				<font size="3">значение NULL</font></td>
+				<td width="159" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0)">
+				<font size="3">VT_NULL</font></td>
+			</tr>
+			<tr>
+				<td width="457" colspan="2" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0)">
+				<font size="3">значение Неопределено</font></td>
+				<td width="159" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0)">
+				<font size="3">VT_EMPTY</font></td>
+			</tr>
+			<tr>
+				<td rowspan="2" width="79" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0)">
+				<font size="3">тип Число</font></td>
+				<td width="373" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0)">
+				<font size="3">Целое в диапазоне от -2147483648 до 2147483647</font></td>
+				<td width="159" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0)">
+				<font size="3">VT_I4</font></td>
+			</tr>
+			<tr>
+				<td width="373" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0)">
+				<font size="3">Другие</font></td>
+				<td width="159" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0)">
+				<font size="3">VT_R8</font></td>
+			</tr>
+			<tr>
+				<td width="457" colspan="2" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0)">
+				<font size="3">тип Строка</font></td>
+				<td width="159" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0)">
+				<font size="3">VT_BSTR</font></td>
+			</tr>
+			<tr>
+				<td width="457" colspan="2" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0)">
+				<font size="3">тип Дата</font></td>
+				<td width="159" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0)">
+				<font size="3">VT_DATE</font></td>
+			</tr>
+			<tr>
+				<td width="457" colspan="2" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0)">
+				<font size="3">тип Булево</font></td>
+				<td width="159" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0)">
+				<font size="3">VT_BOOL</font></font></td>
+			</tr>
+		</table>
+		<p id="chapter7" style="color: rgb(0, 0, 0); font-family: Arial; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		Примитивные типы и значения, определенные в&nbsp;<strong>VARIANT</strong>, 
+		преобразуются в примитивные типы и значения 1С:Предприятия в 
+		соответствии со следующей таблицей.</p>
+		<table class="withBorder" cellspacing="0" cellpadding="3" width="631" border="0" style="font-family: Verdana; text-align: left; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; border-right: 1px solid rgb(255, 215, 0); border-top: 1px solid rgb(255, 215, 0)">
+			<tr>
+				<th width="438" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0); background-color: rgb(255, 255, 238)">
+				<font face="Arial"><font size="3">Тип VARIANT</font></th>
+				<th width="178" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0); background-color: rgb(255, 255, 238)">
+				<font size="3">Тип в 1С:Предприятии</font></th>
+			</tr>
+			<tr>
+				<td width="438" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0)">
+				<p id="chapter3"><font size="3">VT_NULL</font></td>
+				<td width="178" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0)">
+				<font size="3">значение NULL</font></td>
+			</tr>
+			<tr>
+				<td width="438" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0)">
+				<p id="chapter8"><font size="3">VT_EMPTY</font></td>
+				<td width="178" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0)">
+				<font size="3">значение Неопределено</font></td>
+			</tr>
+			<tr>
+				<td width="438" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0)">
+				<p id="chapter4"><font size="3">VT_I2, VT_I4, VT_R4, VT_R8, 
+				VT_CY, VT_ERROR, VT_DECIMAL, VT_I1, VT_UI1, VT_UI2, VT_UI4, 
+				VT_I8, VT_UI8, VT_INT, VT_UINT</font></td>
+				<td width="178" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0)">
+				<font size="3">тип Число</font></td>
+			</tr>
+			<tr>
+				<td width="438" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0)">
+				<font size="3">VT_BSTR</font></td>
+				<td width="178" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0)">
+				<font size="3">тип Строка</font></td>
+			</tr>
+			<tr>
+				<td width="438" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0)">
+				<font size="3">VT_DATE</font></td>
+				<td width="178" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0)">
+				<font size="3">тип Дата</font></td>
+			</tr>
+			<tr>
+				<td width="438" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0)">
+				<font size="3">VT_BOOL</font></td>
+				<td width="178" style="font-size: 12.8px; border-left: 1px solid rgb(255, 215, 0); border-bottom: 1px solid rgb(255, 215, 0)">
+				<font size="3">тип Булево</font></font></td>
+			</tr>
+		</table>
+		<p id="chapter9" style="color: rgb(0, 0, 0); font-family: Arial; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		При передаче через COM значение примитивного типа сохраняется, быть 
+		может, за исключением точности представления числа. Это значит, что, 
+		например, значение типа&nbsp;<strong>Строка</strong>, после передачи через&nbsp;<strong>VARIANT</strong>&nbsp;сколько 
+		угодно раз, никак не изменится, и любые операции над ней будут давать 
+		такой же результат, который они давали до передачи через&nbsp;<strong>VARIANT</strong>.</p>
+		<h2 id="chapter10" style="font-family: Arial; font-weight: bold; text-align: left; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		<font size="3">Массивы</font></h2>
+		<p id="chapter11" style="color: rgb(0, 0, 0); font-family: Arial; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		В структуре&nbsp;<strong>VARIANT</strong>&nbsp;предусмотрен специальный тип -&nbsp;<strong>VT_ARRAY</strong>, 
+		представляющий собой массив с несколькими измерениями и заданными 
+		диапазонами индексов по каждому из измерений. Он представляется 
+		специальной структурой&nbsp;<strong>SAFEARRAY</strong>. Для совместимости с 
+		другими объектами, представленными в COM, в 1С:Предприятии предусмотрен 
+		специальный тип данных&nbsp;<strong>COMSafeArray</strong>, в который 
+		преобразуется структура&nbsp;<strong>SAFEARRAY</strong>&nbsp;и наоборот.</p>
+		<p id="chapter12" style="color: rgb(0, 0, 0); font-family: Arial; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		При получении 1С:Предприятием структуры&nbsp;<strong>VARIANT</strong>, 
+		содержащей данные&nbsp;<strong>VT_ARRAY</strong>, она преобразуется в объект 
+		1С:Предприятия&nbsp;<strong>COMSafeArray</strong>. При необходимости передачи 
+		из 1С:Предприятия структуры&nbsp;<strong>VARIANT</strong>, содержащей данные&nbsp;<strong>VT_ARRAY</strong>, 
+		в 1С:Предприятии должен быть подготовлен соответствующий объект&nbsp;<strong>COMSafeArray</strong>.</p>
+		<p id="chapter13" style="color: rgb(0, 0, 0); font-family: Arial; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		Важно, что данные типа&nbsp;<strong>VT_ARRAY</strong>&nbsp;являются аналогом 
+		примитивных типов в том смысле, что выступают в качестве значений, а не 
+		ссылок. В частности, преобразование структуры&nbsp;<strong>VARIANT</strong>&nbsp;в&nbsp;<strong>COMSafeArray</strong>&nbsp;приводит 
+		к копированию всех содержащихся в ней данных, и наоборот.</p>
+		<h2 id="chapter14" style="font-family: Arial; font-weight: bold; text-align: left; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		<font size="3">Объектные типы</font></h2>
+		<p id="chapter15" style="color: rgb(0, 0, 0); font-family: Arial; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		Все остальные типы данных, определенные в 1С:Предприятии, в том числе и 
+		коллекции значений, являются объектами и преобразуются к типу&nbsp;<strong>VT_DISPATCH</strong>&nbsp;структуры&nbsp;<strong>VARIANT</strong>.</p>
+		<p id="chapter16" style="color: rgb(0, 0, 0); font-family: Arial; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		С другой стороны, при получении 1С:Предприятием значения&nbsp;<strong>VARIANT</strong>&nbsp;типа&nbsp;<strong>VT_DISPATCH</strong>, 
+		оно будет преобразовано в значение типа&nbsp;<strong>COMОбъект</strong>, 
+		набор свойств и методов которого будет совпадать с набором свойств и 
+		методов объекта, указатель на который содержался в&nbsp;<strong>VARIANT</strong>&nbsp;типа&nbsp;<strong>VT_DISPATCH</strong>. 
+		Работа с таким объектом может выполняться только через предоставляемые 
+		им свойства и методы, кроме оператора&nbsp;<strong>Для Каждого ...</strong>.</p>
+		<p id="chapter17" style="color: rgb(0, 0, 0); font-family: Arial; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		Однако, в том случае, если 1С:Предприятие узнает в нем &quot;свой&quot; объект,&nbsp;<strong>VT_DISPATCH</strong>&nbsp;будет 
+		обратно преобразован в исходный объект 1С:Предприятия и его можно будет 
+		использовать так, как любой другой объект 1С:Предприятия этого же типа 
+		(оператор&nbsp;<strong>Для Каждого ...</strong>, обращения по индексу, 
+		встроенные функции&nbsp;<strong>Строка()</strong>,&nbsp;<strong>Тип()</strong>&nbsp;и 
+		т.д.).</p>
+		<p id="chapter18" style="color: rgb(0, 0, 0); font-family: Arial; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		1С:Предприятие или COM-соединение, подсоединенное к некоторой 
+		информационной базе,&nbsp; распознает объект как &quot;свой&quot; только в том случае, 
+		если он был создан этим же подсоединением к информационной базе. 
+		Например, если из COM-соединения получить элемент справочника и передать 
+		этот элемент справочника в качестве параметра какого-нибудь метода 
+		объекта, полученного из этого же COM-соединения, то при выполнении этого 
+		метода объект будет распознан как &quot;свой&quot;. Объект, полученный из другого 
+		соединения с информационной базой, не будет распознан как &quot;свой&quot;.</p>
+		<p id="chapter19" style="color: rgb(0, 0, 0); font-family: Arial; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		Такое поведение объектов 1С:Предприятия объясняется тем, что большинство 
+		объектов 1С:Предприятия используют свой экземпляр контекста 
+		информационной базы, из которой они получены, и в другом экземпляре 
+		контекста информационной базы они &quot;своими&quot; не являются. Каждое 
+		приложение 1С:Предприятия и каждый экземпляр COM-соединения поддерживает 
+		свой экземпляр контекста информационной базы. Поэтому объекты 
+		1С:Предприятия не распознаются как &quot;свои&quot; не в том приложении 
+		1С:Предприятия или экземпляре COM-соединения, в котором они были 
+		созданы.</p>
+		<p id="chapter20" style="color: rgb(0, 0, 0); font-family: Arial; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		В&nbsp;Automation (интерфейс&nbsp;<strong>IDispatch</strong>) не предусмотрено 
+		штатных средств для реализации обращений к элементам массивов по 
+		индексам. Предусмотренные в&nbsp;Automation индексированные свойства 
+		допускают неоднозначность толкования и не поддерживаются встроенным 
+		языком 1С:Предприятия. Это значит, что для коллекций значений, не 
+		опознанных 1С:Предприятием как &quot;свои&quot; объекты, невозможно обращение к 
+		элементам по индексам из встроенного языка 1С:Предприятия. Однако, 
+		многие коллекции, в том числе и коллекции, определенные в 
+		1С:Предприятии, поддерживают специальный интерфейс&nbsp;<strong>IEnumVARIANT</strong>, 
+		позволяющий совершить последовательный обход всех элементов коллекции. 
+		Этот механизм используется оператором&nbsp;<strong>Для Каждого ...</strong>, 
+		который имеется во многих языках программирования, в том числе и во 
+		встроенном языке 1С:Предприятия. Этот же механизм используется 
+		встроенным отладчиком 1С:Предприятия, когда он показывает элементы 
+		коллекции.</p>
+		<p style="color: rgb(0, 0, 0); font-family: Arial; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		Для удобства обращения к элементам коллекций, определенных в 
+		1С:Предприятии, после передачи коллекции через&nbsp;<strong>VARIANT</strong>&nbsp;в 
+		большинстве коллекций значений (<strong>Массив</strong>,&nbsp;<strong>ТаблицаЗначений</strong>,&nbsp;<strong>Структура</strong>&nbsp;и 
+		другие) предусмотрены методы&nbsp;<strong>Получить()</strong>&nbsp;и&nbsp;<strong>Установить()</strong>, 
+		действие которых аналогично обращению к элементам коллекций по индексам.</p>
+		<p style="color: rgb(0, 0, 0); font-family: Arial; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		Например, если переменная &quot;ПолученныйМассив&quot; содержит объект типа&nbsp;<strong>Массив</strong>, 
+		то&nbsp;оператор</p>
+		<pre class="programtext" style="font-family: Arial; color: rgb(0, 0, 255); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0pt; padding: 10px; background-color: rgb(240, 240, 240)"><font size="3">Элемент <span class="k" style="color: red">=</span> ПолученныйМассив<span class="k" style="color: red">.</span>Получить<span class="k" style="color: red">(</span><span class="n" style="color: black">5</span><span class="k" style="color: red">);</span> </font></pre>
+		<p style="color: rgb(0, 0, 0); font-family: Arial; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		аналогичен оператору</p>
+		<pre class="programtext" style="font-family: Arial; color: rgb(0, 0, 255); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; margin-top: 0pt; padding: 10px; background-color: rgb(240, 240, 240)"><font size="3">Элемент <span class="k" style="color: red">=</span> ПолученныйМассив<span class="k" style="color: red">[</span><span class="n" style="color: black">5</span></font><span class="k" style="color: red"><font size="3">];</font></span></pre>
+		<h1 style="font-weight: bold; font-size: 18pt; color: rgb(0, 51, 102); font-family: Ariall, Tahoma; text-align: left; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		Особенности использования COM-объектов</h1>
+		<p style="color: rgb(0, 0, 0); font-family: Verdana; font-size: 12.8px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		В этой статье приведены некоторые особенности работы с COM-объектами, 
+		которые могут оказаться полезными в практической деятельности.</p>
+		<h2 id="chapter21" style="font-weight: bold; font-size: 14pt; font-family: Arial, Tahoma; text-align: left; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		Использование оператора доступа по индексу []</h2>
+		<p style="color: rgb(0, 0, 0); font-family: Verdana; font-size: 12.8px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		В технологии Automation не предусмотрено штатных средств для реализации 
+		обращений по индексам, а доступ к индексированным свойствам (т.е. 
+		выражения вида МояФункция(X, Y) = Z) через Automation допускает 
+		неоднозначность толкования и не поддерживается встроенным языком 
+		1С:Предприятия.</p>
+		<p style="color: rgb(0, 0, 0); font-family: Verdana; font-size: 12.8px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		Для обработки свойств-коллекций рекомендуется использовать оператор 
+		цикла&nbsp;<strong>Для Каждого ...</strong>, использующий стандартный для 
+		Automation интерфейс&nbsp;<strong>IEnumVARIANT</strong>. Для доступа по 
+		индексу через Automation объекты-коллекции 1С:Предприятия также 
+		реализуют методы&nbsp;<strong>Получить()</strong>&nbsp;и&nbsp;<strong>Установить()</strong>.</p>
+		<h2 class style="font-weight: bold; font-size: 14pt; font-family: Arial, Tahoma; text-align: left; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		Передача параметров в конструктор объекта</h2>
+		<p class style="color: rgb(0, 0, 0); font-family: Verdana; font-size: 12.8px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		Метод&nbsp;<strong>NewObject()</strong>&nbsp;объекта Automation 1С:Предприятия 
+		имеет переменное число параметров - первым параметром в&nbsp;<strong>NewObject()</strong>&nbsp;всегда 
+		передается имя типа создаваемого объекта, а последующие параметры могут 
+		быть использованы для передачи данных в конструктор создаваемого 
+		объекта.</p>
+		<h2 class style="font-weight: bold; font-size: 14pt; font-family: Arial, Tahoma; text-align: left; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		Совпадение имен свойств и методов объекта</h2>
+		<p style="color: rgb(0, 0, 0); font-family: Verdana; font-size: 12.8px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		Технология Automation подразумевает возможность двоякого толкования 
+		некоторых элементов агрегатного объекта. Например,&nbsp;могут не 
+		различаться&nbsp;одноименные свойство и метод, возвращающий значение и не 
+		имеющий параметров. Эту особенность следует иметь в виду при работе с 
+		объектами 1С:Предприятия через Automation.</p>
+		<p style="color: rgb(0, 0, 0); font-family: Verdana; font-size: 12.8px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		Например, если реквизит справочника назван так же, как и один его 
+		методов (реквизит&nbsp;<strong>ПолноеНаименование</strong>&nbsp;и метод&nbsp;<strong>ПолноеНаименование()</strong>), 
+		то&nbsp;получение реквизита&nbsp;<strong>Справочник.ПолноеНаименование</strong>&nbsp;может 
+		привести к вызову метода&nbsp;<strong>Справочник.ПолноеНаименование()</strong>. 
+		Такая неразличимость возможна именно при работе через Automation, во 
+		встроенном языке 1С:Предприятия свойства и методы объектов 
+		1С:Предприятия разделены.</p>
+		<h2 class id="chapter1.2" style="font-weight: bold; font-size: 14pt; font-family: Arial, Tahoma; text-align: left; color: rgb(0, 0, 0); font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		Отображение в отладчике свойств со значением &quot;Ошибка чтения значения&quot;</h2>
+		<p class style="color: rgb(0, 0, 0); font-family: Verdana; font-size: 12.8px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		Упомянутая выше возможность двоякого толкования элементов агрегатного 
+		объекта имеет и визуальное отображение - при просмотре в отладчике 
+		1С:Предприятия свойств COM-объектов можно видеть свойства со значением 
+		&quot;Ошибка чтения значения&quot;. В действительности эти свойства являются 
+		методами, однако могут использоваться и как свойства&nbsp;(например, в таком 
+		языке как Visual Basic).</p>
+		<p class style="color: rgb(0, 0, 0); font-family: Verdana; font-size: 12.8px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial">
+		Также рекомендуется ознакомиться с разделом &quot;<a style="text-decoration-skip-ink: none; color: rgb(204, 0, 0); text-decoration: none" href="https://its.1c.ru/db/content/metod8dev/src/developers/platform/metod/integration/i8102262.htm?_=1562831798">Передача 
+		объектов 1С:Предприятия через COM</a>&quot;.</p>
+		<p style="font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; widows: 2; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; word-spacing: 0px; margin-left: 0cm; margin-right: 0cm; margin-top: 0cm; margin-bottom: .0001pt">&nbsp;</td>
+	</tr>
+</table>
+
+</body>
+
+</html>
